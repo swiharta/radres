@@ -1,0 +1,250 @@
+{% load i18n %}
+{% load compress %}
+
+<!DOCTYPE html>
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">#}
+{#<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"#}
+{#      xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">#}
+<html>
+<head>
+    <meta name="author" content="Andrew Swihart"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% block head_title %}{{ SITE_NAME }}{% endblock %}</title>
+    <!--[if IE]>
+        <style>
+            div { zoom: 1; /* trigger hasLayout */ }
+            sup { font-size: 57% !important; } /* never could fix this */
+        </style>
+    <![endif]-->
+
+    {% compress css %}
+        <link rel="stylesheet" type="text/css" media="print" href="{{ STATIC_URL }}css/boilerplate/print.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/boilerplate/screen.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/screen.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/radres_base.css" />
+        {# including ajax_select stuff inline through the settings.py variable #}
+        {# only because haven't figured out how to get the stuff included properly in the admin otherwise #}
+{#        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ajax_select.css"/>#}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/facebox.css"/>
+{#        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/chosen.css"/>#}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/chosen-bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/token-input.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/jquery.timepicker.css"/>
+{#        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}uni_form/uni-form.css"/>#}
+{#        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}uni_form/default.uni-form.css" />#}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ui-lightness/jquery-ui-1.8.20.custom.css"/>
+{#        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/ui-lightness/jquery-ui-1.10.2.css"/>#}
+{#        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/fullcalendar.css"/>#}
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/radcal.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/radfullcal.css"/>
+    {% endcompress %}
+
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/boilerplate/ie.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/ie.css" type="text/css" media="screen"/>
+    <![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Adding "maximum-scale=1" fixes the Mobile Safari auto-zoom bug: http://filamentgroup.com/examples/iosScaleBug/ -->
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui.min.js"></script>
+{#    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>#}
+{#    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>#}
+{#    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>#}
+{#    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>#}
+    <!--[if lt IE 8]>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/json2.js"></script>
+    <![endif]-->
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}{% block body_base_class %} newlayout{% endblock %}">
+
+{% include "_nav_bar.html" %}
+
+<div id="page">
+
+    <div class="content">
+{#                    {% if messages %}#}
+{#                        <ul id="messages">#}
+{#                            {% for message in messages %}#}
+{#                                <li id="message_{{ forloop.counter }}"{% if message.tags %}#}
+{#                                    class="{{ message.tags }}"{% endif %}>#}
+{#                                    <a href="#">#}
+{#                                        <small>{% trans "clear" %}</small>#}
+{#                                    </a>#}
+{#                                    {{ message }}#}
+{#                                </li>#}
+{#                            {% endfor %}#}
+{#                        </ul>#}
+{#                    {% endif %}#}
+
+        {% block main %}
+        {% endblock %}
+
+        <div id="myModal" class="modal hide fade">
+            <div id="modalContent">
+{#              #modalContent gets replaced via AJAX with #modalContent as the top level element #}
+{#              Works with bootstrap-ajax #}
+            </div>
+        </div>
+
+        <div id="footer">{% block footer %}{% endblock %}</div>
+    </div>
+</div>
+        {% compress js %}
+{#            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.jeditable.mini.js'></script>#}
+            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.autogrowtextarea.js'></script>
+            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.jeditable.js'></script>
+            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.jeditable.autogrow.js'></script>
+{#            <script type='text/javascript' src='{{ STATIC_URL }}js/moment.min.js'></script>#}
+            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.mousewheel.js'></script>
+            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.tokeninput.js'></script>
+            <script type='text/javascript' src='{{ STATIC_URL }}js/chosen.jquery.js'></script>
+{#            <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_select/jquery.autocomplete.min.js"></script>#}
+{#            <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_select/jquery.neededforautocomplete.js"></script>#}
+
+            {# including ajax_select stuff inline through the settings.py variable #}
+            {# only because haven't figured out how to get the stuff included properly in the admin otherwise #}
+{#            <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_select.js"></script>#}
+            <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_csrf_fix.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}js/ajax-switch/jquery.iphone-switch.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap-ajax.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.simpletabs.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.formset.min.js"></script>
+            <script type="text/javascript" src="{{ STATIC_URL }}js/smoke/smoke.min.js"></script>
+            <script type='text/javascript' src='{{ STATIC_URL }}js/jquery.timepicker.min.js'></script>
+{#            <script type='text/javascript' src='{{ STATIC_URL }}js/test.js'></script>#}
+        {% endcompress %}
+        <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+{#        <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>#}
+        {% include "facebox_js.html" %}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // for iOS POST response caching bug: http://stackoverflow.com/a/12856562/416687
+                $.ajaxSetup({
+                    type: 'POST',
+                    headers: { "cache-control": "no-cache" }
+                });
+
+                $('li', '#nav').hover(
+                        function () {
+                            //show its submenu
+                            $('ul', this).slideDown(100);
+                        },
+                        function () {
+                            //hide its submenu
+                            $('ul', this).slideUp(100);
+                        }
+                );
+                $('#agenda-cal').on('click', 'th.new_month', function() {
+                    var data = {new_month: $(this).attr('id')};
+                    $.get("{% url home %}", data, function(result) {
+                        if (result != "failure") {
+                            var cal = $('#agenda-cal');
+                            cal.empty();
+                            cal.html(result);
+                        } else {
+                            alert("Failed to set filters.");
+                        }
+                    });
+                    return false;
+                });
+                $('#resources-2').on('click', '.new_week', function() {
+                    var data = {sunday: $(this).attr('id')};
+                    $.get("{% url conferences %}", data, function(result) {
+                        if (result != "failure") {
+                            var week = $('#conferences');
+                            week.empty();
+                            week.html(result);
+                        } else {
+                            alert("Failed to set filters.");
+                        }
+                    });
+                    return false;
+                });
+
+                /*!
+                 * Convert <select> elements to Dropdown Group
+                 * http://blog.iamjamoy.com/convert-select-boxes-to-a-fancy-html-dropdown
+                 * Author: John Rocela 2012 <me@iamjamoy.com>
+                 */
+                $(function(){
+                    $('select.bootstrap').each(function(i, e){
+                        if (!($(e).data('convert') == 'no')) {
+                            $(e).hide().wrap('<div class="btn-group" id="select-group-' + i + '" />');
+                            var select = $('#select-group-' + i);
+                            var current = ($(e).val()) ? $(e).val(): '&nbsp;';
+                            select.html('<input type="hidden" value="' + $(e).val() + '" name="' + $(e).attr('name') + '" id="' + $(e).attr('id') + '" class="' + $(e).attr('class') + '" /><a class="btn" href="javascript:;">' + current + '</a><a class="btn dropdown-toggle" data-toggle="dropdown" href="javascript:;"><span class="caret"></span></a><ul class="dropdown-menu"></ul>');
+                            $(e).find('option').each(function(o,q) {
+                                select.find('.dropdown-menu').append('<li><a href="javascript:;" data-value="' + $(q).attr('value') + '">' + $(q).text() + '</a></li>');
+                                if ($(q).attr('selected')) select.find('.dropdown-menu li:eq(' + o + ')').click();
+                            });
+                            select.find('.dropdown-menu a').click(function() {
+                                select.find('input[type=hidden]').val($(this).data('value')).change();
+                                select.find('.btn:eq(0)').text($(this).text());
+                            });
+                        }
+                    });
+                });
+
+{#                $('#agenda-cal span[rel=tooltip]').tooltip();#}
+//                    $('#calendar span').tooltip();
+
+
+                // Delegates like .on() apparently:
+                // http://stackoverflow.com/questions/9958825/how-do-i-bind-twitter-bootstrap-tooltips-to-dynamically-created-elements
+                $('body').tooltip({
+                    selector: '[rel=tooltip]'
+{#                    html: true // this quit working when upgraded from 2.2.2 > 2.3.1, had to add data-html="true" to <a> elements#}
+                });
+
+{#                $('#calendar').on('mouseover', '.fc-header', function(){#}
+{#                    alert('hey');#}
+{#                });#}
+
+                var $modal = $('#myModal'); // works for true modal
+
+                $modal.on('focus', 'input, select', function() {
+                    $modal.find('button[type="submit"]').removeAttr("disabled");
+                });
+                $modal.on('click', '#ical_url', function() {
+                    $(this).select();
+                });
+
+                var $modalC = $('#modalContent'); // works for non-ajax form page, because I suck
+
+                $modalC.on('focus', 'input, select', function() {
+                    $modalC.find('button[type="submit"]').removeAttr("disabled");
+                });
+                $modalC.on('click', '#ical_url', function() {
+                    $(this).select();
+                });
+
+                $(".defaultText").focus(function() {
+                    // For clearing initial value from text inputs and restoring it when nothing is typed
+                    if ($(this).val() == $(this)[0].title)
+                    {
+                        $(this).removeClass("defaultTextActive");
+                        $(this).val("");
+                    }
+                }).blur(function() {
+                    if ($(this).val() == "")
+                    {
+                        $(this).addClass("defaultTextActive");
+                        $(this).val($(this)[0].title);
+                    }
+                });
+
+            });
+        </script>
+{#        {% endcompress %}#}
+        {% block extra_body_base %}
+            {% block extra_body %}{% endblock %}
+        {% endblock %}
+</body>
+</html>

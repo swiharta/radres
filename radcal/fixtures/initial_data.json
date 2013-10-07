@@ -1,0 +1,442 @@
+[
+    {
+        "fields": {
+            "abbr": "AM",
+            "end_time": "08:00:00", 
+            "location": "", 
+            "name": "Morning Conference", 
+            "start_time": "07:15:00"
+        }, 
+        "model": "radcal.conference", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "abbr": "Noon", 
+            "end_time": "13:00:00", 
+            "location": "", 
+            "name": "Noon Conference", 
+            "start_time": "12:00:00"
+        }, 
+        "model": "radcal.conference", 
+        "pk": 1
+    }, 
+    {
+        "fields": {
+            "abbr": "Angio", 
+            "cash": null, 
+            "code": "Angio_W", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "07:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "IR", 
+            "name": "IR Weekend", 
+            "night_call": false, 
+            "start_time": "07:00:10", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 22
+    }, 
+    {
+        "fields": {
+            "abbr": "CHP", 
+            "cash": null, 
+            "code": "CHP_W", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "08:00:00", 
+            "hospital": "CHP", 
+            "hourly_cash": null, 
+            "initials": "CHP", 
+            "name": "Childrens Weekend", 
+            "night_call": true, 
+            "start_time": "08:00:00", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 21
+    }, 
+    {
+        "fields": {
+            "abbr": "PUH", 
+            "cash": null, 
+            "code": "PUH_W", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "08:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "PUH", 
+            "name": "Presby / Mercy Weekend", 
+            "night_call": true, 
+            "start_time": "08:00:01", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 20
+    }, 
+    {
+        "fields": {
+            "abbr": "SHY", 
+            "cash": null, 
+            "code": "SHY_W", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "08:00:00", 
+            "hospital": "SHY", 
+            "hourly_cash": null, 
+            "initials": "SHY", 
+            "name": "Shadyside Weekend", 
+            "night_call": true, 
+            "start_time": "08:00:02", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 19
+    }, 
+    {
+        "fields": {
+            "abbr": "Mville", 
+            "cash": 300, 
+            "code": "Mville_S", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "12:00:00", 
+            "hospital": "MVL", 
+            "hourly_cash": null, 
+            "initials": "Mv", 
+            "name": "Monroeville Saturday", 
+            "night_call": false, 
+            "start_time": "07:00:01", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 18
+    }, 
+    {
+        "fields": {
+            "abbr": "Magee", 
+            "cash": 200, 
+            "code": "Magee_S", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "16:00:00", 
+            "hospital": "MVL", 
+            "hourly_cash": null, 
+            "initials": "Mg", 
+            "name": "Magee Saturday", 
+            "night_call": false, 
+            "start_time": "12:00:00", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 17
+    }, 
+    {
+        "fields": {
+            "abbr": "Sports", 
+            "cash": 500, 
+            "code": "Sports_S", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "17:00:00", 
+            "hospital": "SMED", 
+            "hourly_cash": null, 
+            "initials": "Sp", 
+            "name": "Sports Saturday", 
+            "night_call": false, 
+            "start_time": "07:00:05", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 16
+    }, 
+    {
+        "fields": {
+            "abbr": "Hillman", 
+            "cash": 425, 
+            "code": "Hillman_S", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "16:00:00", 
+            "hospital": "HIL", 
+            "hourly_cash": null, 
+            "initials": "H", 
+            "name": "Hillman Saturday", 
+            "night_call": false, 
+            "start_time": "07:30:00", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 15
+    }, 
+    {
+        "fields": {
+            "abbr": "Hillman", 
+            "cash": 175, 
+            "code": "Hillman", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "20:30:00", 
+            "hospital": "HIL", 
+            "hourly_cash": null, 
+            "initials": "H", 
+            "name": "Hillman", 
+            "night_call": false, 
+            "start_time": "17:00:04", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 14
+    }, 
+    {
+        "fields": {
+            "abbr": "Mville", 
+            "cash": 150, 
+            "code": "Mville", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "19:00:00", 
+            "hospital": "MVL", 
+            "hourly_cash": null, 
+            "initials": "Mv", 
+            "name": "Monroeville", 
+            "night_call": false, 
+            "start_time": "17:00:01", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 13
+    }, 
+    {
+        "fields": {
+            "abbr": "Sports", 
+            "cash": 150, 
+            "code": "Sports", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "20:00:00", 
+            "hospital": "SMED", 
+            "hourly_cash": null, 
+            "initials": "Sp", 
+            "name": "Sports", 
+            "night_call": false, 
+            "start_time": "17:00:03", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 12
+    }, 
+    {
+        "fields": {
+            "abbr": "Monte", 
+            "cash": 250, 
+            "code": "Monte", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "22:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "Mt", 
+            "name": "Montefiore", 
+            "night_call": false, 
+            "start_time": "17:00:05", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 11
+    }, 
+    {
+        "fields": {
+            "abbr": "Magee", 
+            "cash": 125, 
+            "code": "Magee", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "19:30:00", 
+            "hospital": "MWH", 
+            "hourly_cash": null, 
+            "initials": "Mg", 
+            "name": "Magee", 
+            "night_call": false, 
+            "start_time": "17:00:02", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 10
+    }, 
+    {
+        "fields": {
+            "abbr": "EDN", 
+            "cash": null, 
+            "code": "EDN", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "07:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "EN", 
+            "name": "ED Nights Neuro", 
+            "night_call": false, 
+            "start_time": "22:00:01", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 9
+    }, 
+    {
+        "fields": {
+            "abbr": "EDB", 
+            "cash": null, 
+            "code": "EDB", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "07:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "EB", 
+            "name": "ED Nights Body", 
+            "night_call": false, 
+            "start_time": "22:00:00", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 8
+    }, 
+    {
+        "fields": {
+            "abbr": "MNeuro", 
+            "cash": null, 
+            "code": "MNeuro", 
+            "day_call": true, 
+            "description": null, 
+            "end_time": "17:00:00", 
+            "hospital": "MER", 
+            "hourly_cash": null, 
+            "initials": "MN", 
+            "name": "Mercy Neuro Saturday", 
+            "night_call": false, 
+            "start_time": "07:00:04", 
+            "weekend": true
+        }, 
+        "model": "radcal.shift", 
+        "pk": 7
+    }, 
+    {
+        "fields": {
+            "abbr": "Neuro", 
+            "cash": null, 
+            "code": "Neuro", 
+            "day_call": true, 
+            "description": "", 
+            "end_time": "17:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "N", 
+            "name": "Neuro", 
+            "night_call": false, 
+            "start_time": "07:00:03", 
+            "weekend": true
+        }, 
+        "model": "radcal.shift", 
+        "pk": 6
+    }, 
+    {
+        "fields": {
+            "abbr": "Angio", 
+            "cash": null, 
+            "code": "Angio", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "07:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "IR", 
+            "name": "Angio / Interventional", 
+            "night_call": false, 
+            "start_time": "17:00:09", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 5
+    }, 
+    {
+        "fields": {
+            "abbr": "Chest", 
+            "cash": null, 
+            "code": "Chest", 
+            "day_call": true, 
+            "description": null, 
+            "end_time": "12:00:00", 
+            "hospital": "PUH", 
+            "hourly_cash": null, 
+            "initials": "Che", 
+            "name": "Chest Saturday", 
+            "night_call": false, 
+            "start_time": "07:00:02", 
+            "weekend": true
+        }, 
+        "model": "radcal.shift", 
+        "pk": 4
+    }, 
+    {
+        "fields": {
+            "abbr": "SHY", 
+            "cash": null, 
+            "code": "SHY", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "08:00:00", 
+            "hospital": "SHY", 
+            "hourly_cash": null, 
+            "initials": "SHY", 
+            "name": "Shadyside", 
+            "night_call": true, 
+            "start_time": "17:00:12", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 3
+    }, 
+    {
+        "fields": {
+            "abbr": "CHP", 
+            "cash": null, 
+            "code": "CHP", 
+            "day_call": false, 
+            "description": "", 
+            "end_time": "08:00:00", 
+            "hospital": "CHP", 
+            "hourly_cash": null, 
+            "initials": "CHP", 
+            "name": "Childrens", 
+            "night_call": true, 
+            "start_time": "17:00:10", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 2
+    }, 
+    {
+        "fields": {
+            "abbr": "PUH", 
+            "cash": null, 
+            "code": "PUH", 
+            "day_call": false, 
+            "description": null, 
+            "end_time": "08:00:00", 
+            "hospital": "MER", 
+            "hourly_cash": null, 
+            "initials": "PUH", 
+            "name": "Presby / Mercy", 
+            "night_call": true, 
+            "start_time": "17:00:11", 
+            "weekend": false
+        }, 
+        "model": "radcal.shift", 
+        "pk": 1
+    }
+]

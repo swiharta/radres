@@ -1,0 +1,135 @@
+{% extends "site_base.html" %}
+{% load compress %}
+{% load i18n %}
+
+{% block head_title %}Questions | {% endblock %}
+
+{% block extra_head_base %}
+{% compress css %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/questions.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}js/smoke/smoke.css"/>
+    <link rel="stylesheet" type="text/css" id="theme" href="{{ STATIC_URL }}js/smoke/themes/100s.css"/>
+{% endcompress %}
+{% endblock %}
+
+{% block body_class %}questions{% endblock %}
+{% block header %}
+{% endblock %}
+
+
+{% block subnav %}
+    <!--<ul>
+        <li><a href="{% url add_question %}">Add a Question</a></li>
+        <li><a href="{% url user_question_list %}">Edit Questions</a></li>
+        <li><a href="{% url question_list %}">View Questions</a></li>
+    </ul>-->
+{% endblock %}
+
+{% block resources-2 %}
+{#    <ul id="question_nav">#}
+{#        <li><a href="{% url question_index %}">{% trans "All Questions" %}</a></li>#}
+{#        <li><a href="{% url user_question_stats %}">{% trans "Your Question Stats" %}</a></li>#}
+{#    </ul>#}
+    <div id="filters">
+        <h4 id="reset_filter" class="button{% if filters.reset_filter%} active{% endif %}">All</h4>
+        <h4 id="unvisited_filter" class="button{% if filters.unvisited_filter %} active{% endif %}">Unvisited</h4>
+        <h4 id="marked_filter" class="button{% if filters.marked_filter %} active{% endif %}">Marked</h4>
+        <h4 id="flagged_filter" class="button{% if filters.flagged_filter %} active{% endif %}">Flagged</h4>
+        <h4 id="incorrect_filter" class="button{% if filters.incorrect_filter %} active{% endif %}">Incorrect</h4>
+        <h4 id="correct_filter" class="button{% if filters.correct_filter %} active{% endif %}">Correct</h4>
+    </div>
+    <form id="filter_form" method="post"
+          class="focus-input" action="{% url user_filters %}">
+        {% csrf_token %}
+
+        {% for filter in filter_form %}
+            {{ filter }}
+        {% endfor %}
+
+        <input type="submit" value="{% trans 'Submit' %}" name="submit" id="filter_submit"/>
+    </form>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block extra_body_base %}
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#filters h4').click(function() {
+                var filter_ids = { // this code needs seriously refactored and condensed
+                    flagged_filter: '#id_flagged_filter',
+                    marked_filter: '#id_marked_filter',
+                    incorrect_filter: '#id_incorrect_filter',
+                    correct_filter: '#id_correct_filter',
+                    unvisited_filter: '#id_unvisited_filter',
+                    reset_filter: '#id_reset_filter'
+                };
+
+                var filters = {};
+                var filter_id = 0;
+
+                if ($(this).attr('id') == 'reset_filter') {  // TODO: Maybe we can get rid of more js logic and move it into Django
+//                    smoke.confirm('reset your filters?', function(e) { // this was getting executed after
+                                                            // the rest of the .click(function) completed
+//                        if (e) {
+                            $("#filter_form input").attr('checked', false);
+//                            $('#filters h2').removeClass('active');
+                            for (filter_id in filter_ids) {
+                                filters[filter_id] = false;
+                            }
+//                        } else {
+//                        }
+//                    });
+                } else {
+                    for (filter_id in filter_ids) {
+                        filters[filter_id] = $(filter_ids[filter_id]).prop('checked');
+                            // these values get sent to Django in the HTTP header
+                    }
+                    var clicked = $(this).attr('id');
+                    $(filter_ids[clicked]).attr('checked', !(filters[clicked])); // reverse the clicked element's associated checkbox
+                    filters[clicked] = !(filters[clicked]); // edit the dictionary to be sent in the HTTP header
+
+//                    $('#id_reset_filter').attr('checked', false); // not needed now with the batch un-check
+                }
+                $("#filter_form").ready(filter_submit(filters));
+            });
+
+            function filter_submit(filters) {
+                // cancel the default action
+                var form = $(this);
+                $.post("{% url user_filters %}", filters, function(result) {
+                    if (result != "failure") {
+                        $('#filters h2').removeClass('active');
+                        var filter = 0;
+                        for (filter in result) {
+                            //do something by accessing data[i];
+                            if (result[filter]) {
+                                if (filter != 'reset_filter') { // maybe we can take this out later
+                                    $('#'+filter).addClass('active');
+                                }
+                            } else {
+                                $('#'+filter).removeClass('active');
+                            }
+                        }
+                        $.get("{% url question_index %}", null, function(result) {
+                            var qlist = $('#question_list');
+                            qlist.empty();
+                            qlist.html(result);
+                        });
+                    } else {
+                        alert("Failed to set filters.");
+                    }
+                });
+                return false;
+            }
+        });
+    </script>
+            {% block extra_body %}
+            {% endblock %}
+{#    <script type="text/coffeescript" charset="utf-8">#}
+{#    square = 5#}
+{#    console.log square#}
+{#    alert square#}
+{#    </script>#}
+{% endblock %}

@@ -1,0 +1,106 @@
+/* line 18, ../sass/questions.sass */
+h4 {
+  text-align: center;
+  line-height: 1.5;
+  margin: 3em;
+  border: 1px solid #bdbdbd;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+  color: #bdbdbd !important;
+  background: #e8e8e8 !important;
+}
+
+/* line 27, ../sass/questions.sass */
+h4.button {
+  cursor: pointer;
+}
+/* line 29, ../sass/questions.sass */
+h4.button.active {
+  background-color: #e7ddd3 !important;
+  color: #444444 !important;
+}
+/* line 32, ../sass/questions.sass */
+h4.button:hover {
+  background-color: #dddddd !important;
+  color: #444444 !important;
+}
+
+/* line 36, ../sass/questions.sass */
+#body h2 {
+  margin-bottom: 50px;
+}
+
+/* line 39, ../sass/questions.sass */
+ul#choices {
+  margin-bottom: 50px;
+}
+/* line 41, ../sass/questions.sass */
+ul#choices li.choice {
+  margin: 2em 0;
+  list-style-type: none;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em;
+  padding-left: 15.09434%;
+  padding-right: 15.09434%;
+  cursor: pointer;
+}
+/* line 47, ../sass/questions.sass */
+ul#choices li.choice.active {
+  background-color: #dddddd;
+}
+/* line 49, ../sass/questions.sass */
+ul#choices li.choice.correct {
+  background-color: #e7ddd3;
+}
+/* line 51, ../sass/questions.sass */
+ul#choices li.choice:hover {
+  background-color: #e8e8e8;
+}
+
+/* line 54, ../sass/questions.sass */
+#id_choice, #id_mark, #id_ignore, #userchoice_submit {
+  display: none;
+}
+
+/* line 57, ../sass/questions.sass */
+#answers {
+  display: none;
+}
+
+/* line 60, ../sass/questions.sass */
+#show {
+  cursor: pointer;
+}
+
+/* line 64, ../sass/questions.sass */
+#resources-2 #prev, #resources-2 #next {
+  width: 17.24138%;
+  float: left;
+  margin-right: 10.34483%;
+  display: inline;
+}
+/* line 66, ../sass/questions.sass */
+#resources-2 #queryset {
+  width: 44.82759%;
+  float: left;
+  margin-right: 10.34483%;
+  display: inline;
+}
+/* line 68, ../sass/questions.sass */
+#resources-2 #next {
+  float: right;
+  margin-4: 0;
+  *margin-left: -3em;
+  display: inline;
+}
+
+/* line 71, ../sass/questions.sass */
+#id_flagged_filter, #id_marked_filter, #id_unvisited_filter, #id_incorrect_filter, #id_correct_filter, #id_reset_filter, #filter_submit {
+  display: none;
+}

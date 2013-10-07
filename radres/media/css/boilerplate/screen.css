@@ -1,0 +1,466 @@
+/* --------------------------------------------------------------
+ *  
+ *   Boilerplate Screen Styles
+ *   * Version:   0.5 (2007-11-19)
+ *   
+ *-------------------------------------------------------------- */
+/* --------------------------------------------------------------
+ *  
+ *   Boilerplate reset.css
+ *   * Resets default browser CSS.
+ *   
+ *-------------------------------------------------------------- */
+/* line 8, ../../sass/boilerplate/_reset.sass */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../sass/boilerplate/_reset.sass */
+body {
+  line-height: 1.5;
+  background: white;
+  margin: 1.5em 0;
+}
+
+/* line 23, ../../sass/boilerplate/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 27, ../../sass/boilerplate/_reset.sass */
+caption, th, td {
+  text-align: left;
+  font-weight: 400;
+}
+
+/* line 32, ../../sass/boilerplate/_reset.sass */
+blockquote:before, blockquote:after {
+  content: "";
+}
+
+/* line 36, ../../sass/boilerplate/_reset.sass */
+q:before, q:after {
+  content: "";
+}
+
+/* line 39, ../../sass/boilerplate/_reset.sass */
+blockquote, q {
+  quotes: "" "";
+}
+
+/* line 42, ../../sass/boilerplate/_reset.sass */
+a img {
+  border: none;
+}
+
+/* line 45, ../../sass/boilerplate/_reset.sass */
+input, textarea {
+  margin: 0;
+}
+
+/* Removes Firefox imposed outline */
+/* line 50, ../../sass/boilerplate/_reset.sass */
+a {
+  outline: none;
+}
+
+/* Clearing floats without extra markup */
+/* line 55, ../../sass/boilerplate/_reset.sass */
+.wrapper {
+  display: inline-block;
+}
+/* line 57, ../../sass/boilerplate/_reset.sass */
+.wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* line 64, ../../sass/boilerplate/_reset.sass */
+* html .wrapper {
+  height: 1%;
+}
+
+/* line 67, ../../sass/boilerplate/_reset.sass */
+.wrapper {
+  display: block;
+}
+
+/* --------------------------------------------------------------
+ *   
+ *   Boilerplate typography.css
+ *   * Sets up some sensible default typography.
+ *  
+ *-------------------------------------------------------------- */
+/* This is where you set your desired font size. The line-heights
+ * and vertical margins are automatically calculated from this. 
+ * The percentage is of 16px (0.75 * 16px = 12px). */
+/* line 12, ../../sass/boilerplate/_typography.sass */
+body {
+  font-size: 75%;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #444444;
+}
+
+/* Default fonts and colors. */
+/* line 19, ../../sass/boilerplate/_typography.sass */
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, input, textarea {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Headings
+ *-------------------------------------------------------------- */
+/* line 25, ../../sass/boilerplate/_typography.sass */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* line 28, ../../sass/boilerplate/_typography.sass */
+h1 {
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 0.5em;
+}
+
+/* line 33, ../../sass/boilerplate/_typography.sass */
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+
+/* line 37, ../../sass/boilerplate/_typography.sass */
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+/* line 42, ../../sass/boilerplate/_typography.sass */
+h4 {
+  font-size: 1.2em;
+  line-height: 1.25;
+  margin-bottom: 1.25em;
+}
+
+/* line 47, ../../sass/boilerplate/_typography.sass */
+h5 {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+/* line 51, ../../sass/boilerplate/_typography.sass */
+h6 {
+  font-size: 1em;
+}
+
+/* Text elements
+ *-------------------------------------------------------------- */
+/* line 57, ../../sass/boilerplate/_typography.sass */
+p {
+  margin: 0 0 1.5em;
+}
+
+/* line 60, ../../sass/boilerplate/_typography.sass */
+ul, ol {
+  margin: 0 1.5em 1.5em 1.5em;
+}
+
+/* line 63, ../../sass/boilerplate/_typography.sass */
+ul {
+  list-style-type: circle;
+}
+
+/* line 66, ../../sass/boilerplate/_typography.sass */
+ol {
+  list-style-type: decimal;
+}
+
+/* line 69, ../../sass/boilerplate/_typography.sass */
+dl {
+  margin: 0 0 1.5em 0;
+}
+/* line 71, ../../sass/boilerplate/_typography.sass */
+dl dt {
+  font-weight: bold;
+}
+/* line 73, ../../sass/boilerplate/_typography.sass */
+dl dd {
+  margin-left: 1.5em;
+}
+
+/* line 76, ../../sass/boilerplate/_typography.sass */
+abbr, acronym {
+  border-bottom: 1px dotted black;
+}
+
+/* line 79, ../../sass/boilerplate/_typography.sass */
+address {
+  margin-top: 1.5em;
+  font-style: italic;
+}
+
+/* line 83, ../../sass/boilerplate/_typography.sass */
+del {
+  color: black;
+}
+
+/* line 86, ../../sass/boilerplate/_typography.sass */
+a {
+  color: #000099;
+  text-decoration: none;
+}
+/* line 89, ../../sass/boilerplate/_typography.sass */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 92, ../../sass/boilerplate/_typography.sass */
+blockquote {
+  margin: 1.5em;
+}
+
+/* line 95, ../../sass/boilerplate/_typography.sass */
+strong {
+  font-weight: bold;
+}
+
+/* line 98, ../../sass/boilerplate/_typography.sass */
+em {
+  font-style: italic;
+}
+
+/* line 101, ../../sass/boilerplate/_typography.sass */
+dfn {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 105, ../../sass/boilerplate/_typography.sass */
+pre, code {
+  margin: 1.5em 0;
+  white-space: pre;
+}
+
+/* line 109, ../../sass/boilerplate/_typography.sass */
+pre, code {
+  font: 1em monospace;
+  line-height: 1.5;
+}
+
+/* line 113, ../../sass/boilerplate/_typography.sass */
+tt {
+  font: 1em monospace;
+  line-height: 1.5;
+  display: block;
+  margin: 1.5em 0;
+  line-height: 1.5;
+}
+
+/* Tables
+ *-------------------------------------------------------------- */
+/* line 123, ../../sass/boilerplate/_typography.sass */
+table {
+  margin-bottom: 1.4em;
+}
+
+/* line 126, ../../sass/boilerplate/_typography.sass */
+th {
+  border-bottom: 2px solid #dddddd;
+  font-weight: bold;
+}
+
+/* line 132, ../../sass/boilerplate/_typography.sass */
+tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* line 135, ../../sass/boilerplate/_typography.sass */
+th, td {
+  padding: 4px 10px 4px 0;
+}
+
+/* line 138, ../../sass/boilerplate/_typography.sass */
+tfoot {
+  font-style: italic;
+}
+
+/* line 141, ../../sass/boilerplate/_typography.sass */
+caption {
+  background: #ffffcc;
+}
+
+/* Some default classes
+ *-------------------------------------------------------------- */
+/* line 147, ../../sass/boilerplate/_typography.sass */
+.small {
+  font-size: 0.8em;
+  margin-bottom: 1.875em;
+  line-height: 1.875em;
+}
+
+/* line 152, ../../sass/boilerplate/_typography.sass */
+.large {
+  font-size: 1.2em;
+  line-height: 2.5em;
+  margin-bottom: 1.25em;
+}
+
+/* line 157, ../../sass/boilerplate/_typography.sass */
+.quiet {
+  color: #999999;
+}
+
+/* line 160, ../../sass/boilerplate/_typography.sass */
+.hide {
+  display: none;
+}
+
+/* line 163, ../../sass/boilerplate/_typography.sass */
+.highlight {
+  background: #ffffcc;
+}
+
+/* line 166, ../../sass/boilerplate/_typography.sass */
+.top {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* line 170, ../../sass/boilerplate/_typography.sass */
+.bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* --------------------------------------------------------------
+ *   
+ *   Boilerplate forms.css
+ *   * Sets up some default styling for forms
+ *   
+ *-------------------------------------------------------------- */
+/* line 8, ../../sass/boilerplate/_forms.sass */
+label {
+  font-weight: bold;
+}
+
+/* Fieldsets */
+/* line 13, ../../sass/boilerplate/_forms.sass */
+fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+  border: 1px solid #dddddd;
+}
+
+/* line 18, ../../sass/boilerplate/_forms.sass */
+legend {
+  padding: 0 0.4em;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Textareas */
+/* line 25, ../../sass/boilerplate/_forms.sass */
+textarea {
+  margin: 0.5em 0.5em 0 0;
+  padding: 0.4em;
+}
+
+/* hForm
+ *-------------------------------------------------------------- */
+/* line 33, ../../sass/boilerplate/_forms.sass */
+form.hform p {
+  margin: 0 0 0.5em;
+}
+/* line 35, ../../sass/boilerplate/_forms.sass */
+form.hform p label {
+  float: left;
+  width: 100px;
+}
+/* line 38, ../../sass/boilerplate/_forms.sass */
+form.hform p input, form.hform p select {
+  width: 200px;
+}
+/* line 41, ../../sass/boilerplate/_forms.sass */
+form.hform p input.button, form.hform p input.checkbox, form.hform p input.radio {
+  width: auto;
+}
+/* line 43, ../../sass/boilerplate/_forms.sass */
+form.hform p.checkbox {
+  margin-left: 100px;
+}
+/* line 45, ../../sass/boilerplate/_forms.sass */
+form.hform p.checkbox label {
+  float: none;
+}
+/* line 47, ../../sass/boilerplate/_forms.sass */
+form.hform p.checkbox input {
+  width: auto;
+}
+/* line 49, ../../sass/boilerplate/_forms.sass */
+form.vform p {
+  margin: 0 0 0.5em;
+}
+/* line 51, ../../sass/boilerplate/_forms.sass */
+form.vform p label {
+  display: block;
+}
+/* line 53, ../../sass/boilerplate/_forms.sass */
+form.vform p.checkbox label {
+  display: inline;
+}
+
+/* vForm
+ *-------------------------------------------------------------- */
+/* --------------------------------------------------------------
+ *   
+ *   Tabs
+ *   * A basic ruleset for beginning tabs
+ *   
+ *-------------------------------------------------------------- */
+/* line 8, ../../sass/boilerplate/_tabs.sass */
+ul.tabs {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+/* line 11, ../../sass/boilerplate/_tabs.sass */
+ul.tabs li {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 16, ../../sass/boilerplate/_tabs.sass */
+ul.tabs li a {
+  float: left;
+  display: block;
+}
+/* line 20, ../../sass/boilerplate/_tabs.sass */
+ul.tabs:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Clearing floats without extra markup */
+/* line 29, ../../sass/boilerplate/_tabs.sass */
+* html ul.tabs {
+  height: 1%;
+}
+
+/* line 32, ../../sass/boilerplate/_tabs.sass */
+ul.tabs {
+  display: block;
+}

@@ -1,0 +1,20 @@
+# comment
+*.pyc
+*.db
+
+#  settings.py
+local_settings.py
+secret_key.py
+
+site-packages
+_schedule_data
+radres/add_to_db/tags
+tmp
+migrations
+migrations/
+.sass-cache
+/*.txt
+
+# JetBrains PyCharm
+projectFilesBackup
+.idea

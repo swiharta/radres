@@ -1,0 +1,335 @@
+{% extends "site_base.html" %}
+{% load compress %}
+{% block body_class %}calendar{% endblock %}
+
+{% block main %}
+    <div id="full">
+        {% block full %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+{#    cleaner look to end of schedule list   #}
+{% endblock %}
+
+{% block extra_body_base  %}
+    <script type="text/javascript">
+jQuery(document).ready(function($) {
+        // I think inArray might be available in jQuery as $.inArray
+        function inArray(needle, haystack) {
+            var length = haystack.length;
+            var i;
+            for (i = 0; i < length; i++) {
+                if (haystack[i] === needle) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        $.fn.clearForm = function() {
+          return this.each(function() {
+            var type = this.type, tag = this.tagName.toLowerCase();
+            if (tag == 'form')
+              return $(':input',this).clearForm();
+            if (type == 'text' || type == 'password' || tag == 'textarea')
+              this.value = '';
+            else if (type == 'checkbox' || type == 'radio')
+              this.checked = false;
+            else if (tag == 'select')
+              this.selectedIndex = -1;
+          });
+        };
+
+{#        $('#calendar').on('click', 'li', function() {#}
+{#            ///////  TODO:#}
+{#            ///////  Send confirm email with before / after (+/- 2wks) snapshots of each switch#}
+{#            ///////  Add hover / clicked indications to cal events and change names after composing a switch#}
+{#            ///////  Hover over status message to view pre-trade events#}
+{#            ///////  Spinner overlay for calendar refresh#}
+{#            if ($(this).hasClass('moderating')) {#}
+{#                alert('This call has a pending trade, try another.');#}
+{#                return true;#}
+{#            }#}
+{#            var events = $('#status').attr('class').split(' ');#}
+{#            var event1 = $(this).attr('id').split('_');#}
+{#            var abbr1 = event1[0];#}
+{#            var date1 = event1[1];#}
+{#            var user1 = event1[2];#}
+{#            var eid1 = event1[3];#}
+{#            var uis1 = false;#}
+{#            if (user1 === '{{ user.username }}') {#}
+{#                uis1 = true;#}
+{#            }#}
+{#//                    var eid = $(this).attr('id').replace(/\D/g, ''); // removes all non-integers#}
+{#//                    alert('hey');#}
+{#            if ($('#pending').length) {#}
+{#                var event2 = $('#pending').attr('event').split(',');#}
+{#                var abbr2 = event2[0];#}
+{#                var date2 = event2[1];#}
+{#                var user2 = event2[2];#}
+{#                var eid2 = event2[3];#}
+{#                if (user1 === user2) {#}
+{#                    alert('You can\'t trade with yourself.');#}
+{#                } else if (inArray(eid1, events) || inArray(eid2, events)) {#}
+{#                    alert('You can\'t trade the same event twice.');#}
+{#                } else {#}
+{#                    // get the integer in the id of the first empty form field#}
+{#                    var fid1 = $("#changeList").find(":input[value='']").filter(":first").attr('id').replace(/\D/g, '');#}
+{#                    var fid2;#}
+{#                    if (uis1) {#}
+{#                        fid2 = fill_shift_forms(fid1, event1, event2);#}
+{#                        $('#pending').html('You\'re trading your shift at ' + abbr1 + ' on ' + date1 + ' for ' + user2 + '\'s shift at ' + abbr2 + ' on ' + date2 + '. // <span class="cancel">Cancel</span>');#}
+{#                        $('#pending').addClass(eid1 + ' ' + eid2).attr('id', ('id_form-' + fid1 + '-,id_form-' + fid2 + '-'));#}
+{#//                                alert($(form).find("input[id$='resident']").attr('id')); // selects by the end of the 'id' string#}
+{#                    } else if (user2 === '{{ user.username }}') {#}
+{#                        fid2 = fill_shift_forms(fid1, event1, event2);#}
+{#                        $('#pending').html('You\'re trading your shift at ' + abbr2 + ' on ' + date2 + ' for ' + user1 + '\'s shift at ' + abbr1 + ' on ' + date1 + '. // <span class="cancel">Cancel</span>');#}
+{#                        $('#pending').addClass(eid1 + ' ' + eid2).attr('id', ('id_form-' + fid1 + '-,id_form-' + fid2 + '-'));#}
+{#                    } else {#}
+{#                        alert('Add your own trades before adding others.');#}
+{#                    }#}
+{#                }#}
+{#            } else {#}
+{#//                        alert(eid1, events);#}
+{#                if (inArray(eid1, events)) {#}
+{#                    alert('You can\'t trade the same event twice.');#}
+{#                } else if (uis1) {#}
+{#                    $('#status').append('<p id="pending" event="' + event1 + '">Select someone else\'s call to trade for yours at ' + abbr1 + ' on ' + date1 + '. <span class="no_trade">Give away without trading</span> // <span class="cancel">Cancel</span></p>');#}
+{#                } else {#}
+{#                    $('#status').append('<p id="pending" event="' + event1 + '">Select one of your shifts to trade for ' + user1 + '\'s ' + abbr1 + ' on ' + date1 + '. <span class="no_trade">Take it without trading</span> // <span class="cancel">Cancel</span></p>');#}
+{#                }#}
+{#            }#}
+{#//                    $('#status').append('<p id="pending ' + eid + '">Select a call to trade for call #' + eid + '. <span class="no_trade">I want to give it away with no trade.</span> // <span class="cancel">Cancel</span></p>');#}
+{#        });#}
+
+{#        $('#status').on('click', '.no_trade', function() { // 'live' method allows event handlers for dynamically created elements#}
+{#            var event1 = $(this).parent().attr('event').split(',');#}
+{#            var abbr1 = event1[0];#}
+{#            var date1 = event1[1];#}
+{#            var user1 = event1[2];#}
+{#            var eid1 = event1[3];#}
+{#            var fid1 = $("#changeList").find(":input[value='']").filter(":first").attr('id').replace(/\D/g, '');#}
+{#            if (user1 === '{{ user.username }}') {#}
+{#                $(this).parent().html('Choose someone to take your shift at ' + abbr1 + ' on ' + date1 + '. // <span class="cancel">Cancel</span>');#}
+{#            } else {#}
+{#                $(this).parent().html('You\'re taking ' + user1 + '\'s shift at ' + abbr1 + ' on ' + date1 + '. // <span class="cancel">Cancel</span>');#}
+{#                var event2 = [0, 0, '{{ user.username }}']; // just a dummy so I can use the same function for takes and trades#}
+{#                fill_shift_forms(fid1, event1, event2);#}
+{#                $('#pending').addClass(eid1).attr('id', ('id_form-' + fid1 + '-'));#}
+{#            }#}
+{#//                    $(this).remove();#}
+{#        });#}
+{##}
+{#        $('#status').on('click', '.cancel', function() { // 'live' method allows event handlers for dynamically created elements#}
+{#            console.log('hey');#}
+{#            var message = $(this).parent();#}
+{#            var fid_pres = $(message).attr('id').split(',');#}
+{#            var fields = ['shift', 'date', 'user'];#}
+{#            var d, i, r;#}
+{#            if ($(message).attr('id') !== 'pending') {#}
+{#                for (d = 0; d < fid_pres.length; d++) { // expects prefix format 'id_form-'+fid+'-'#}
+{#                    for (i = 0; i < fields.length; i++) {#}
+{#                        $('#' + fid_pres[d] + fields[i]).clearForm();#}
+{#                    }#}
+{#                }#}
+{#                var ids = $(message).attr('class').split(' ');#}
+{#                for (r = 0; r < ids.length; r++) {#}
+{#                    $('#status').removeClass(ids[r]);#}
+{#                }#}
+{#            }#}
+{#            $(message).remove();#}
+{#        });#}
+
+{#        function fill_shift_forms(fid1, event1, event2) {#}
+{#            $('#id_form-' + fid1 + '-shift option:contains("' + event1[0] + '")').attr('selected', 'selected');#}
+{#            $('#id_form-' + fid1 + '-date').val(event1[1]);#}
+{#            $('#id_form-' + fid1 + '-user option:contains("' + event2[2] + '")').attr('selected', 'selected');#}
+{#            $('#status').addClass(event1[3]); // add the event id to #status#}
+{#            if (event2[0]) {#}
+{#                // get the integer in the id of the first empty form field#}
+{#                var fid2 = $("#changeList").find(":input[value='']").filter(":first").attr('id').replace(/\D/g, '');#}
+{#                $('#id_form-' + fid2 + '-shift option:contains("' + event2[0] + '")').attr('selected', 'selected');#}
+{#                $('#id_form-' + fid2 + '-date').val(event2[1]);#}
+{#                $('#id_form-' + fid2 + '-user option:contains("' + event1[2] + '")').attr('selected', 'selected');#}
+{#                $('#status').addClass(event2[3]); // add the event id to #status#}
+{#                return fid2;#}
+{#            }#}
+{#            return true;#}
+{#//                    $('#id_form-' + fid1 + '-user').val(user1).change(); // this could be used if user1 was the user.id#}
+{#        }#}
+
+        $('#calendar').on('click', 'span.new_month', function() {
+            var month = {new_month: $(this).attr('id')};
+            var result = 0;
+            load_month(month, result);
+            return false;
+        });
+
+        $('#filters h4').click(function() {
+            var filter_ids = { // this code needs seriously refactored and condensed
+                user_filter: '#id_user_filter',
+                night_call_filter: '#id_night_call_filter',
+                day_call_filter: '#id_day_call_filter',
+                ED_filter: '#id_ED_filter',
+                IR_filter: '#id_IR_filter',
+                moon_filter: '#id_moon_filter'
+            };
+
+            var filters = {};
+            var filter_id = 0;
+
+            for (filter_id in filter_ids) {
+                filters[filter_id] = $(filter_ids[filter_id]).prop('checked');
+                // these values get sent to Django in the HTTP header
+            }
+            var clicked = $(this).attr('id');
+            $(filter_ids[clicked]).attr('checked', !(filters[clicked])); // reverse the clicked element's associated checkbox
+            filters[clicked] = !(filters[clicked]); // edit the dictionary to be sent in the HTTP header
+
+//                    $('#id_reset_filter').attr('checked', false); // not needed now with the batch un-check
+            $("#filter_form").ready(filter_submit(filters));
+        });
+
+        function filter_submit(filters) {
+            // cancel the default action
+//            var form = $(this);
+            $.post("{% url cal_filters %}", filters, function(result) {
+                if (result !== "failure") {
+                    $('#filters h2').removeClass('active');
+                    var filter = 0;
+                    for (filter in result) {
+                        //do something by accessing data[i];
+                        if (result[filter]) {
+                            $('#' + filter).addClass('active');
+                        } else {
+                            $('#' + filter).removeClass('active');
+                        }
+                    }
+                    var month = {new_month: $('.this_month').attr('id')};
+                    load_month(month, result);
+                } else {
+                    alert("Failed to set filters.");
+                }
+            });
+            return false;
+        }
+
+    $('#filters .switch').iphoneSwitch('{{ conflict_switch|yesno:'on,off' }}', function(obj) {
+        switches_submit(obj, true);
+    }, function(obj) {
+        switches_submit(obj, false);
+    }, { // options set in base script
+    });
+
+    function switches_submit(this_switch, status) {
+        // cancel the default action
+        var this_switch_id = $(this_switch).parent().parent().attr('id');
+        var data = {};
+        data[this_switch_id] = status;
+//        var form = $(this);
+        $.post("{% url cal_switches %}", data, function(result) {
+            if (result !== "failure") {
+                var month = {new_month: $('.this_month').attr('id')};
+                load_month(month, result);
+            } else {
+                alert("Failed to set switches.");
+            }
+        });
+        return false;
+    }
+
+    function load_month(month, data) {
+
+        $.get("{% url cal_index %}", month, function(result) {
+            $('#calendar').html(result);
+            calendar_css();
+        });
+    }
+
+    function calendar_css() {
+        $('#calendar').find('table tr td ul li:even').addClass('even');
+        $('#calendar').find('table tr td ul li:odd').addClass('odd');
+//                    cal.find('table tr:last td.noday').addClass('noday-last');
+        $('#calendar td li.you:last-child, #calendar td li.selected:last-child').each(function(){
+            $(this).css({"border-bottom": "1px solid #e0e0e0"});
+        });
+    }
+
+    $(function() {
+        calendar_css();
+    });
+
+        $(function() {
+//                  var w = $('tbody tr td').width();
+            var w = 0;
+            var first_row = $('tbody tr:first');
+            var a = function() {
+                var b = $(window).scrollTop();
+                var d = $("#scroller-anchor").offset().top; // didn't work with this inside offset: {scroll:false}
+                var c = $("#scroller");
+                if (b > d) {
+//                      c.css({position:"fixed",top:"0px",width:"17.895%",margin-right:"1.053%"})
+                    if (c.hasClass('special')) {
+{#                        c.css({position:"fixed",top:"60px",width:'12.85%','max-width':'155px'});#}
+                        c.css({position:"fixed",top:"60px",width:'13.2%','max-width':'189px'});
+                    } else {
+                        c.css({position:"fixed",top:"0px",width:'100%',zoom: 1, 'z-index': 9999});
+                        $('tfoot').css({position:"fixed",bottom:"0px",width:'100%','margin-right':'20px'});
+//                        $('td, th', 'tfoot, thead').css({'background-color':'#e7ddd3'});
+                        $('th, td', first_row).each(function(i) {
+                            w = $(this).width();
+                            $('th:eq(' + i + ')', 'thead').css('width', w + 'px');
+                            $('th:eq(' + i + ')', 'tfoot').css('width', w + 'px');
+//                            $('th:eq('+i+'), td:eq('+i+')', 'tfoot').css('width',w+'px');
+                        });
+                    }
+                } else {
+                    if (b <= d) {
+                        c.css({position:"relative",top:"",width:'auto'});
+//                        $('td, th', 'tfoot, thead').css({'background-color':'#fff'});
+                        $('tfoot').css({position:"relative",bottom:"",width:'auto'});
+                    }
+                }
+            };
+            $(window).scroll(a);
+            a();
+        });
+
+
+{#        $('#calendar').on('mouseenter', '.moderating', function () {#}
+{#            $('#calendar li.unmod').hide();#}
+{#            $('#calendar li.mod').show();#}
+{#        }).on('mouseleave', '.moderating', function() {#}
+{#            $('#calendar li.unmod').show();#}
+{#            $('#calendar li.mod').hide();#}
+{#        });#}
+//                $('#calendar table tr:last td.noday').addClass('noday-last');
+
+//                $(function() {
+//                    moveScroller();
+//                });
+
+{#        $('#myForm li').formset();#}
+{#        $('.add-row').click().click();//.click().click().click().click().click().click().click();#}
+
+{#        $('.datePicker').datepicker();#}
+
+//        $('.collapse').collapse({
+//            parent: "#accordion",
+//            toggle: false
+//                                }); // bootstrap-collapse
+
+        {% block extra_body %}
+        {% endblock %}
+    });
+</script>
+
+{% endblock %}
+
+{#    <script type="text/coffeescript" charset="utf-8">#}
+{#    square = 5#}
+{#    console.log square#}
+{#    alert square#}
+{#    </script>#}
+{#    {% endcompress %}#}

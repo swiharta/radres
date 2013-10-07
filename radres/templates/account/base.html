@@ -1,0 +1,30 @@
+{% extends request.is_ajax|yesno:"ajax_base.html,site_base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+
+{% block body_class %}account{% endblock %}
+{% block head_title %}{% endblock %}
+
+{% block main %}
+    <div id="modalContent">
+        <form method="POST" data-replace="#modalContent" action="{% block form_url %}{% endblock %}" autocapitalize="off"
+              class="form-horizontal form {% if request.is_ajax %}ajax{% endif %}">
+            <div class="modal-header">
+                {% if request.is_ajax %}<a class="close" data-dismiss="modal">×</a>{% endif %}
+                <h3>{% block modal-header %}{% endblock %}</h3>
+            </div>
+            {% csrf_token %}
+            {% block modal-body-base %}
+                <div class="modal-body">
+                    {% block modal-body %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+            <div class="modal-footer">
+                {% block modal-footer %}
+                {% endblock %}
+            </div>
+        </form>
+    </div>
+{% endblock %}

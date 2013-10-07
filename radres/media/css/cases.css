@@ -1,0 +1,248 @@
+/* line 4, ../sass/cases.sass */
+body.cases .sidebar {
+  width: 29.6%;
+  float: left;
+  margin-right: 2.4%;
+  display: inline;
+}
+/* line 6, ../sass/cases.sass */
+body.cases .sidebar .qq-upload-success {
+  display: none;
+}
+
+/* line 9, ../sass/cases.sass */
+body.cases .image-container {
+  width: 68%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -3em;
+  display: inline;
+}
+/* line 11, ../sass/cases.sass */
+body.cases .image-container #image {
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+/* line 15, ../sass/cases.sass */
+body.cases .image-container #image .note {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  z-index: 10;
+  background: #0044cc;
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 25px;
+  letter-spacing: -1px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  display: block;
+}
+/* line 34, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+/* line 41, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay a.btn {
+  margin: 0px 8px;
+}
+/* line 43, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls {
+  position: absolute;
+  bottom: 0;
+  background: #222222;
+  width: 96%;
+  padding: 2%;
+  text-align: left;
+}
+/* line 50, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls a.btn.annotate {
+  margin-right: 200px;
+}
+/* line 52, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls h3, body.cases .image-container #image #image-overlay #edit-controls h4, body.cases .image-container #image #image-overlay #edit-controls p, body.cases .image-container #image #image-overlay #edit-controls select, body.cases .image-container #image #image-overlay #edit-controls input {
+  float: left;
+  margin: 0 8px;
+}
+/* line 55, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls h3, body.cases .image-container #image #image-overlay #edit-controls p {
+  color: #aaaaaa;
+}
+/* line 57, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls h4 {
+  color: #555555;
+}
+/* line 59, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls select, body.cases .image-container #image #image-overlay #edit-controls input {
+  position: relative;
+  bottom: 5px;
+  margin-right: 16px;
+  background-color: #dddddd;
+}
+/* line 64, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls .image-attributes {
+  clear: both;
+  margin-top: 50px;
+}
+/* line 67, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls .image-attributes input {
+  width: 5%;
+}
+/* line 69, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #edit-controls .button-controls {
+  clear: both;
+  margin-top: 120px;
+  background-color: transparent;
+}
+/* line 73, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #annotate-controls {
+  position: absolute;
+  bottom: 0;
+  background: transparent;
+  width: 96%;
+  padding: 0 2% 2%;
+}
+/* line 80, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a, body.cases .image-container #image #image-overlay #nav-controls a:hover, body.cases .image-container #image #image-overlay #nav-controls a:focus {
+  color: black;
+}
+/* line 82, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  cursor: pointer;
+}
+/* line 89, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a div {
+  font-size: 800%;
+  font-weight: bold;
+  float: left;
+  width: 25%;
+  height: 100%;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  background-color: white;
+}
+/* line 99, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a div span {
+  position: absolute;
+  top: 48%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 104, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a:hover div {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+  opacity: 0.2;
+}
+/* line 106, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a:hover div span {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 109, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.prev span {
+  left: 5%;
+}
+/* line 111, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.edit {
+  right: 30%;
+  left: auto;
+}
+/* line 114, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.edit div {
+  float: none;
+  width: 80%;
+  position: absolute;
+  right: 10%;
+}
+/* line 119, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.edit div span {
+  width: 80%;
+  display: block;
+  left: 10%;
+}
+/* line 123, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.next {
+  left: auto;
+  right: 0;
+}
+/* line 126, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.next div {
+  float: right;
+}
+/* line 128, ../sass/cases.sass */
+body.cases .image-container #image #image-overlay #nav-controls a.next div span {
+  right: 5%;
+}
+
+/* line 132, ../sass/cases.sass */
+body.cases #images {
+  list-style: none;
+  margin: 0.5em 0 0;
+}
+/* line 135, ../sass/cases.sass */
+body.cases #images li {
+  float: left;
+  margin: 1em;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 5px solid white;
+}
+/* line 142, ../sass/cases.sass */
+body.cases #images li.ui-selecting {
+  border: 5px solid #aa33ff;
+}
+/* line 145, ../sass/cases.sass */
+body.cases #images li.ui-selected {
+  border: 5px solid #ffaa33;
+}
+/* line 148, ../sass/cases.sass */
+body.cases #images li .grip {
+  position: absolute;
+  top: 0;
+  height: 19px;
+  width: 100px;
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  cursor: move;
+}
+/* line 156, ../sass/cases.sass */
+body.cases #images li .grip span, body.cases #images li .grip a {
+  padding: 1px 3px;
+}
+/* line 158, ../sass/cases.sass */
+body.cases #images li .grip a {
+  cursor: pointer;
+}
+/* line 160, ../sass/cases.sass */
+body.cases #images li .grip a.edit-image {
+  float: right;
+}
+
+/* line 163, ../sass/cases.sass */
+body.cases #fine-uploader {
+  margin-top: 2em;
+}
+
+/* line 166, ../sass/cases.sass */
+body.cases #tags {
+  margin-bottom: 2em;
+}

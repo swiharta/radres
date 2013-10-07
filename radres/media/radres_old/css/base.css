@@ -1,0 +1,74 @@
+.delicious-tags {
+  font-family:arial, sans-serif;
+}
+.delicious-tags a img {
+  border-bottom-width:0;
+  border-color:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  display:inline;
+  margin-bottom:0;
+  margin-left:3px;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.delicious-tags a {
+  text-decoration:none;
+}
+.delicious-tags a:hover {
+  text-decoration:underline;
+}
+.delicious-tags ul {
+  list-style-type:none;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  text-align:justify;
+}
+.delicious-list li {
+  background-image:none !important;
+  display:block;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.delicious-list .delicious-tag-count {
+  float:left;
+  text-align:right;
+}
+.delicious-cloud li {
+  background-image:none !important;
+  display:inline;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  text-align:justify;
+}
+.delicious-cloud .delicious-tag-count {
+  font-size:15px;
+  padding-left:0.2em;
+}
+.delicious-cloud li::before {
+  content:'' !important;
+}

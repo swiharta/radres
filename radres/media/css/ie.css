@@ -1,0 +1,50 @@
+/* line 19, ../sass/ie.sass */
+#resources-2 h4.first {
+  margin-bottom: 0;
+}
+/* line 22, ../sass/ie.sass */
+#resources-2 #agenda dt {
+  padding-left: 27px;
+}
+/* line 24, ../sass/ie.sass */
+#resources-2 #agenda dt .week_day {
+  bottom: 12px;
+}
+/* line 26, ../sass/ie.sass */
+#resources-2 #agenda .day .shift {
+  top: 25px;
+}
+/* line 28, ../sass/ie.sass */
+#resources-2 #agenda .day .shift.active {
+  top: 17px;
+}
+
+/* line 6, ../sass/ie.sass */
+#agenda-cal td.today {
+  border: 1px solid #bdbdbd !important;
+}
+/* line 10, ../sass/ie.sass */
+#agenda-cal td.tomorrow {
+  border-left: 1px solid #bdbdbd !important;
+}
+/* line 33, ../sass/ie.sass */
+#agenda-cal td {
+  border-bottom: 1px solid #dddddd !important;
+}
+
+/* line 6, ../sass/ie.sass */
+#calendar td.today {
+  border: 1px solid gray !important;
+}
+/* line 10, ../sass/ie.sass */
+#calendar td.tomorrow {
+  border-left: 1px solid gray !important;
+}
+/* line 38, ../sass/ie.sass */
+#calendar td {
+  border-width: 0px 1px 1px !important;
+}
+/* line 40, ../sass/ie.sass */
+#calendar li {
+  *margin-top: -3px;
+}

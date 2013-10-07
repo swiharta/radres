@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /site_media/static/docs/
+Disallow: /calendar/

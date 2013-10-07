@@ -1,0 +1,192 @@
+{% extends "layout_classic.html" %}
+{% load i18n %}
+{% load my_tags %}
+
+<!--suppress HtmlUnknownTarget -->
+
+{% block body_class %}radres homepage{% endblock %}
+{% block body_base_class %}{% endblock %}
+
+{% block rad_search %}
+    <!-- Google CSE Search Box Begins  -->
+    <form id="searchbox_008466791108937414871:oabpp0iyt10" action="http://google.com/cse">
+        <input type="hidden" name="cx" value="008466791108937414871:oabpp0iyt10"/>
+        <input type="hidden" name="cof" value="FORID:0"/>
+        <input name="q" type="text" size="40"/>
+        <input type="submit" name="sa" value="Search" class="submit-button"/>
+    </form>
+    <script type="text/javascript" src="http://google.com/coop/cse/brand?form=searchbox_008466791108937414871%3Aoabpp0iyt10"></script>
+    <!-- Google CSE Search Box Ends -->
+{% endblock %}
+
+{% block resources-1 %}
+    {% include "resources1_old.html" %}
+{% endblock %}
+
+{% block body %}
+
+    {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <h2 class="first schedule">My Schedule <span class="mylabel">updated {{ updated|timesince_human }}</span></h2>
+    <dl id="agenda">
+        {% if no_user_events %}
+            <dt>Your schedule is not available yet.</dt>
+            {% else %}
+            {#      <dt>Next call in {{ user_horizon|timeuntil_human }}.</dt>#}
+            {% for event in agenda %}
+                {% ifchanged %}<dt class="{{ event.get_state }}">
+                    {{ event.date|date:"D, F j" }}
+{#                      <span class="week_day">{{ event.date|date:"D" }}</span> #}
+{#                      <span class="num_day">{{ event.date|date:"j" }}</span>#}
+{#                      {% ifchanged %}#}
+{#                          <span class="month"> {{ event.date|date:"M" }}</span>#}
+{#                      {% endifchanged %}#}
+                </dt>
+                {% else %}
+                    <span class="{% cycle 'odd' 'even' as cycler %}"></span>
+                {% endifchanged %}
+                <dd class="{{ event.get_classes }}{{ cycler }}"> {# extra div below needed for proper background-color in IE6 #}
+                        <div>{{ event.shift.abbr }}
+                            {% if event.id in conflicts %}<span class="conflict_label">!</span>{% endif %}
+                            {{ event.get_time_relative }}
+                        </div>
+                </dd>
+            {% endfor %}
+            {#      {% if not conflicts %}<dt class="message"><span class="smiley">☺</span> &nbsp;<span class="text">Conflict-free</span></dt>#}
+            {#      {% endif %}#}
+        {% endif %}
+    </dl>
+    <div id="agenda-cal">
+        {{ calendar }}
+    </div>
+    {% endif %}
+
+    <h2 class="after-cal no-narrow{% if not user.is_authenticated %} first{% endif %}">Residency Suggestion
+        Box</h2>
+    <p class="no-narrow">Please <a href="http://www.surveymonkey.com/s/9JX9J7F">submit
+        feedback</a> about the residency.</p>
+
+    <h2 class="clearme">Calling Off</h2>
+    <ul>
+        <li>Call 412-647-6868</li>
+        <li>Call the <a href="https://spis.upmc.com/psd/home/Radiology/Lists/Secretary%20Contact%20Information/AllItems.aspx">secretary</a> of the rotation you are on</li>
+        <li>Call Patty: 412-647-7338</li>
+    </ul>
+
+    <div class="no-narrow">
+        <h2>1st years</h2>
+        <dl>
+            <dt><a href="http://www.med-ed.virginia.edu/courses/rad/">Introduction to Radiology</a></dt>
+            <dd>An online interactive tutorial</dd>
+        </dl>
+        <p>
+            <a href="http://www.sciencedirect.com/science?_ob=MImg&_imagekey=B75BK-49XWK3S-2B-1&_cdi=12985&_user=10&_orig=search&_coverDate=05%2F31%2F2003&_sk=999899994&view=c&wchp=dGLbVzb-zSkWA&md5=ac05e3982497c1c0d87fcc9d63b892c7&ie=/sdarticle.pdf">What
+                makes a great radiology resident?</a> (online access if on campus)</p>
+    </div>
+
+    <h2 class="no-narrow">Radiology Links</h2>
+    <p class="no-narrow">
+        {# <script type="text/javascript" src="http://feeds.delicious.com/v2/js/tags/radlinks?size=11-23;color=e56d00-ff900b"></script> #}
+        {% include "delicious-html.html" %}
+    </p>
+    <br />
+
+    {#    <h2>Birthdays</h2>#}
+    {##}
+    {#    <p><a href="/calendar">Residents Birthday Calendar</a></p>#}
+{% endblock %}
+
+{% block resources-2 %}
+    <h4 class="first">Conferences</h4>
+    <dl id="conferences">
+        {% include "radcal/conf_week.html" %}
+    </dl>
+
+    <h4>Resident Contributions</h4>
+    {# <script type="text/javascript" src="http://feeds.delicious.com/v2/js/tags/radlinks?size=11-23;color=e56d00-ff900b"></script> #}
+
+    <dl>
+        <!--<dt><a href="http://radres.info/cases">RadRes.Info Teaching File</a></dt>
+      <dd>by Andrew Swihart</dd>-->
+        <dt>
+            <a href="http://7pumps.com">7pumps.com</a>
+        </dt>
+        <dd>by Stamatis Kantartzis</dd>
+        {#        <dd>UPMC Radiology conference videos</dd>#}
+        {#        <dd>Learn the names of your fellow residents</dd>#}
+
+        <dt><a href="http://radnames.wangmd.com">Face Cards</a> <span class="info">(pw: sarcoid)</span>
+        </dt>
+        <dd>by David Wang</dd>
+
+        <dt><a href="http://mri.wangmd.com">MRI signal simulator</a>
+        </dt>
+        <dd>by David Wang</dd>
+
+        <dt>
+            <a href="http://radres.info/mri-intensity">MRI intensity chart</a></dt>
+        <dd>by Naomi Schwarz</dd>
+
+        <dt>
+            <a href="{{ STATIC_URL }}docs/MRI Sequence Acronyms.xlsx">
+                MRI Sequence Acronyms
+            </a>
+        </dt>
+        <dd>by David Fetzer</dd>
+
+        <dt>
+            <a href="{% url mri_protocol_index %}">
+                MRI Protocols
+            </a>
+        </dt>
+        <dd>by Amir Borhani</dd>
+
+        <dt>
+            <a href="{{ STATIC_URL }}docs/Abdominal and Chest CT Protocols.doc">
+                Abdomen and Chest CT Protocols
+            </a>
+        </dt>
+        <dd>by Michelle Ding</dd>
+
+        <dt>
+            <a href="/fluoro-protocols">Fluoro Protocols</a>
+        </dt>
+        <dd>by Howard O'Rourke</dd>
+
+        <dt>
+            <a href="{{ STATIC_URL }}docs/Resident_Contrast_Manual 2010 (Tony Fargiano and Than Charter).doc">
+                Resident Contrast Manual
+            </a>
+        </dt>
+        <dd>by Tony Fargiano and Than Charter</dd>
+
+        <dt>
+            <a href="{{ STATIC_URL }}docs/DDD Terminology.docx">
+                Degenerative Disc Disease Terminology
+            </a>
+        </dt>
+        <dd>by Wendy Rhoads and Geoff Hill</dd>
+
+    </dl>
+
+{#          <dt>#}
+{#              <a href="http://www.delicious.com/radlinks">Radlinks</a>#}
+{#          </dt>#}
+{#          <dd>by Matt Morgan</dd>#}
+{#          <dt>#}
+{#              <a href="http://www.librarything.com/catalog/radlibrary">Library textbook database</a>#}
+{#          </dt>#}
+{#          <dd>by Matt Morgan</dd>#}
+{% endblock %}
+
+{% block footer %}
+    <div class="legal">
+        <p class="label label-info">&copy; 2013 Andrew Swihart</p>
+    </div>
+{% endblock %}

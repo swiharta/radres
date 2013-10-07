@@ -1,0 +1,37 @@
+/* -------------------------------------------------------------- 
+   
+   Boilerplate ie.css
+   * Contains hacks for Internet Explorer < IE7
+   
+-------------------------------------------------------------- */
+
+/* Make sure the layout is centered in IE5 
+body { text-align: center; }
+#page { text-align: left; } */
+
+/* Keeps IE6 from cutting pulled/pushed images */
+ul, ol { position: relative; }
+
+/* Fixes incorrect styling of legend in IE6 fieldsets. */
+legend { margin-bottom: 1.4em; }
+
+/* Fixes incorrect placement of numbers in ol's in IE6/7 */
+ol { margin-left: 2em; }
+
+input.submit-button, input.zemSubmit { margin: 0 0 0.5em; padding: 0px; }
+
+#body h2 { line-height: 1.2; } 
+
+#body h2.first { line-height: 1.35; }
+
+label.zemText { position: relative; bottom: 8px; }
+
+input.text-field, input.zemText { margin-top: 3px;  padding: 2px; }
+
+#body h2.link { margin-left: 33px; padding-left: 16px; }
+
+/* #resources-2 h3 { padding-top: 7px; } */
+
+#resources-2 h3.link { width: 212px; }
+
+/* #resources-2 input.submit-button { margin: 0 0.5em 0.1em; } */

@@ -1,0 +1,6 @@
+Call / Moonlighting schedule for {{ day|date:'l, F jS, Y' }}:
+-----------------------------------------------------------
+
+{% for event in events %}
+{% if event.user == user %}{% endif %}{{ event.shift.abbr }}: 	{% if event.user == user %}{% if event.user.get_profile.last_name %}{{ event.user.get_profile.last_name|upper }}{% else %}{{ event.resident|upper }}{% endif %}		<<<{% else %}{% if event.user.get_profile.last_name %}{{ event.user.get_profile.last_name }}{% else %}{{ event.resident }}{% endif %}{% endif %}
+{% endfor %}

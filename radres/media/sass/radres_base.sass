@@ -1,0 +1,297 @@
+@import "compass"
+@import "colors"
+@import "mixins"
+
+//sup, sub // this can be removed after adding Bootstrap
+//  line-height: 0
+//sup // this can be removed after adding Bootstrap
+//  position: relative
+//  top: -0.5em
+
+.hidden
+  display: none
+
+.orange
+  color: $orange
+
+p, ul, dl, table
+  color: $grey1
+
+dt
+  margin-top: 1.5em
+  &.inactive
+    color: $grey4
+
+#scroller-anchor // temporary for IE
+  height: 0
+
+//#status // temporary for IE
+//  height: 0
+
+.new_month:hover, .new_week:hover
+  background-color: $grey5
+  cursor: pointer
+
+#header
+  height: 50px
+  position: fixed
+  left: 0
+  top: 0px
+  z-index: 1040
+  //background: url(../images/headerbg.gif) repeat-x bottom
+  //margin-top: 10px
+  h1
+    font-family: 'Trebuchet MS', Arial, sans-serif
+    font-weight: normal
+    font-size: 2.3em
+    color: $grey4
+    //margin: 15px 0 0.5em 7px
+    margin: 7px 0 0.5em 15px
+    line-height: 1
+    a
+      color: $grey2
+    sup
+      //font-size: 57%
+      font-size: 0.475em
+      vertical-align: 0.7em // makes IE6 consistent with other browsers ('super' is default for 'sup' I think)
+
+#header
+  .account_bar,.search-bar
+    float: right
+    padding-right: 7px
+  .search-bar
+    clear: right
+    margin-top: 20px
+  #nav
+    float: right
+    padding-right: 0
+    clear: right
+    margin: 33px 0 0 0
+    list-style: none
+    li
+      float: left
+      border-left: 1px solid $black
+      &.first
+        border-left: none
+      display: block
+      width: auto
+      padding: 0 //10px
+      position: relative
+      z-index: 500
+      a
+        display: block
+        padding: 0px 5px
+        //height: 23px
+        text-decoration: none
+        text-align: center
+        color: $grey4
+    ul // ul within ul#nav
+      position: absolute
+      right: -7px
+      display: none
+      margin: 0 0 0 -1px
+      padding: 0
+      list-style: none
+      li
+        width: 110px
+        line-height: 3
+        float: left
+        border: 1px solid $grey3
+        border-bottom: none
+        &.last
+          border-bottom: 1px solid $grey3
+        a
+          background-color: $white
+          &:hover
+            background-color: $grey5
+
+#resources-1
+  h3
+    color: $grey1
+    font-family: $tahoma
+
+.info
+  font-weight: normal
+  font-size: 0.8em
+
+#body, #resources-3
+  .clearme
+    clear: both
+    zoom: 1 // fixes doubled vertical padding on cleared element
+  h2
+    color: $grey1
+    background: $grey5 url(../images/h2bg.gif) no-repeat center left
+    font-family: 'Trebuchet MS', Arial, sans-serif
+    font-size: 1.39em
+    padding: 2px 0 2px 43px
+    margin-top: 3em
+    position: relative
+    &.first //, &:first-child
+      margin-top: 0
+    &.after-cal //, &:first-child
+      margin-top: 0 // this is for IE, doesn't affect Chrome
+      clear: both
+      zoom: 1 // fixes doubled vertical padding on cleared element
+    &.schedule
+      margin-bottom: 0
+    .mylabel
+      font: 68% Arial, sans-serif
+      color: $grey4
+      position: absolute
+      top: 7px
+      right: 14px
+  &+h2
+    margin-top: 0
+
+#resources-2
+  h4
+    background: $grey3 url(../images/h3bg.gif) no-repeat center right
+    color: $white
+    font-family: $tahoma
+    font-size: 1.0em
+    padding: 7px 0 7px 5px
+    position: relative
+    //margin: 0 0 3px 0
+    .my-label
+      font: 90% Arial, sans-serif
+      position: absolute
+      top: 8px
+      right: 40px
+  #prev
+    text-align: right
+  dd
+    &.active
+      +blobL($lightblue, 7px, 7px)
+      border: 1px solid $grey3
+      &.even
+        +blobR($lightblue, 7px, 7px)
+    &.inactive
+      color: $grey4
+    .div
+      font-weight: bold
+    .start
+      clear: right
+      float: right
+      color: $grey3
+      //font-weight: bold
+    //.title
+    //  font-weight: bold
+    //  color: $grey2
+  #conferences
+    dt.first
+      margin-top: 0
+    .new_week
+      text-align: center
+
+#agenda
+  dt
+    position: relative
+    //padding-left: 18px
+    .week_day
+      //text-transform: uppercase
+      //font-size: 150%
+      font-weight: normal
+      letter-spacing: -1px
+    //.week_day
+    //  display: block
+    //  position: absolute
+    //  left: 0
+    //  bottom: 6px
+    //  +rotate($rotate: -90deg)
+    //  text-transform: uppercase
+    //  font-size: 80%
+    //  font-weight: normal
+    //  letter-spacing: -1px
+    .num_day
+      font-size: 150% //%180
+    .month
+      font-size: 150% //%180
+      color: $grey3
+      letter-spacing: -1px
+  dd
+    margin-left: 0
+    font-size: 100%
+    .div
+      font-weight: bold
+    &.inactive
+      color: $grey4
+    &.shift
+      color: $grey1
+    div// added div for proper background-color in IE6
+      position: relative // for IE (slightly shrinks height)
+      +blobL($brown, 7px)
+      color: $grey1
+    &.odd
+      div
+        +blobR($brown, 7px)
+      div .conflict_label
+        +blobR(darken($orange, 10%), 5px)
+    &.inactive div
+      background-color: lighten($brown, 15%)
+      color: lighten($grey1, 20%)
+    &.active
+      +blobL($lightblue, 7px, 7px)
+      border: 1px solid $grey3
+      top: 0px //5px
+      &.odd
+        +blobR($lightblue, 7px, 7px)
+    &.day
+      +addInactive($new2)
+    &.moon
+      +addInactive($green)
+    &.ED
+      +addInactive($orangenew, $grey5)
+    &.IR
+      +addInactive($blue)
+    div .conflict_label
+      color: $white
+      +blobL($red, 5px)
+      //font-size: 90%
+      font-weight: bold
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+    &.past div .conflict_label
+      background-color: lighten($red, 15%)
+
+body.calendar
+  #calendar
+    table
+      width: 100%
+      td
+        width: 14.2857%
+
+body.calendar, body.full-calendar
+  ul
+    list-style-type: none
+    margin: 0
+
+#agenda-cal
+  margin-top: 14px
+  margin-bottom: 27px
+  table
+    width: 100%
+    table-layout: fixed
+    th, td
+      text-align: center
+      padding-right: 0
+    td
+      .shift
+        +blobL($brown)
+      .day .shift
+        background-color: $new2
+      .moon .shift
+        background-color: $green
+      .ED .shift
+        background-color: $orangenew
+        color: $grey5
+      .IR .shift
+        background-color: $blue
+      &.today
+        background-color: $lightblue//$grey5
+        outline: 1px solid $grey3
+      ul
+        padding: 0
+        margin: 0
+        list-style-type: none

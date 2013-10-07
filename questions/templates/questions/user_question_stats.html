@@ -1,0 +1,17 @@
+{% extends "questions/base.html" %}
+{% load i18n %}
+{% block body %}
+<h1>{% trans "Stats for"%} {{ user.username }}</h1>
+<fieldset class="module">
+<table style="width: 100%">
+    <thead><th>{% trans "Question Set"%}</th><th>{% trans "Correct"%}</th><th>{% trans "Total"%}</th><th>{% trans "Percentage"%}</th></thead>
+    <tr class="{% cycle row1,row2 %}">
+		<td>All Questions</td>
+		<td>{{ total_answered }}</td>
+		<td>{{ total_correct }}</td>
+		<td>{{ percentage }} %</td>
+	  </tr>
+</table>
+</fieldset>
+
+{% endblock %}

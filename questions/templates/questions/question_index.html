@@ -1,0 +1,43 @@
+{% extends "questions/base.html" %}
+
+{% load i18n %}
+{% block body %}
+    {% if user.get_profile.name %}
+        <h1>{{ user.get_profile.name }}'s Score</h1>
+    {% else %}
+        <h1>{{ user.username }}'s Score</h1>
+{#        <p><a href="{% url profile_edit %}" rel="facebox">What's your real name?</a></p>#}
+    {% endif %}
+
+    <fieldset class="module">
+        <table style="width: 100%">
+            <thead>
+            <th>{% trans "Question Set" %}</th>
+            <th>{% trans "Flagged" %}</th>
+            <th>{% trans "Marked" %}</th>
+            <th>{% trans "Correct" %}</th>
+            <th>{% trans "Total" %}</th>
+            <th>{% trans "Percentage" %}</th>
+            </thead>
+
+            <tr class="{% cycle row1,row2 %}">
+                <td>All Questions</td>
+                <td>{{ flagged.count }}</td>
+                <td>{{ marked.count }}</td>
+                <td>{{ correct.count }}</td>
+                <td>{{ answered.count }}</td>
+                <td>{{ percentage }} %</td>
+            </tr>
+        </table>
+    </fieldset>
+    <br/>
+
+
+    {% block question_list %}
+        <h1>{% trans "Questions" %}</h1>
+        <div id="question_list">
+            {% include 'questions/question_list.html' %}
+        </div>
+    {% endblock %}
+
+{% endblock %}

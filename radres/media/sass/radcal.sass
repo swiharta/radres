@@ -1,0 +1,203 @@
+@import base
+//@import "../../../../../Ruby187/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass"
+@import "compass"
+//@import "../../../../../Ruby187/lib/ruby/gems/1.8/gems/sassy-buttons-0.1.0/stylesheets/sassy-buttons"
+@import "sassy-buttons"
+@import "colors"
+@import "mixins"
+
+//$iconSpritePath: '../images/glyphicons-halflings.png' // doesn't seem to work
+
+#full
+  clear: both
+  //+full()
+  //+alpha
+
+#sidebar
+  +span-columns(2.1,16) // as of 1/14/2013
+  //+span-columns(2,16)
+  //padding-top: 10px
+  margin-bottom: 20px
+  h3
+    margin-top: 16px
+  input
+    width: 95% // needed with Bootstrap
+
+.button
+  +sassy-button-structure(3px, 100%, 0)
+  +sassy-button-gradient("glass", lighten($grey5, 5%), $grey5, $grey1)
+
+.collapse // need to include bootstrap.css
+  position: relative
+  overflow: hidden
+  height: 0
+  &.in
+    height: auto
+    overflow: visible
+
+//.active
+  
+#filters
+  margin: 2px 0 3em
+  position: relative
+  .filter
+    text-align: center
+    h4
+      line-height: 1.5
+    h4#night_call_filter.active
+      +my-button($brown, $grey1)
+    h4#IR_filter.active
+      +my-button($blue, $grey1)
+    h4#ED_filter.active
+      +my-button($orangenew, $grey5)
+    h4#day_call_filter.active
+      +my-button($new2, $grey1)
+    h4#moon_filter.active
+      +my-button($green, $char)
+  #switches
+    margin-top: 1em
+  h4.big_label
+    display: inline
+    margin-left: 8%
+    font-size: 180%
+    color: $white
+    +blobL(darken($orange, 10%))
+  #conflict_switch
+    position: absolute
+    right: 0
+    bottom: 0
+
+body.calendar #calendar
+  +span-columns(13.3 omega,16) // as of 1/14/2013
+  //+span-columns(14 omega,16)
+  //table
+  //  min-height: 800px
+  //  height: 800px
+  th
+    //text-align: center
+    padding-left: 5px
+    padding-right: 5px
+    &.this_month
+      font-size: 150%
+      padding: 0px 5px 12px
+    .new_month
+      margin: 0 3px
+      text-align: center
+      +sassy-button-structure(2px, 100%, 0)
+      width: 4%
+      +sassy-button-gradient("glass", lighten($grey5, 5%), $grey5, $grey1)
+  td
+    height: 80px
+    padding: 0px
+    border: 1px solid #dddddd
+    &.noday
+      //+linear-gradient(color-stops($grey5, $white 80%), top)
+      +background-image(linear-gradient(top, $grey5, $white 80%))
+    &.today
+      background-color: $lightblue//$grey5
+      border: none
+      outline: 1px solid $grey4
+      li.you, li.selected
+        background-color: $white
+    //&.yesterday
+    //  border-right: 1px solid $grey4
+    //&.tomorrow
+    //  border-left: 1px solid $grey4
+    //&.week_forward
+    //  border-top: 1px solid $grey4
+    //&.week_back
+    //  border-bottom: 1px solid $grey4
+    li
+      clear: both
+      +clearfix
+      padding: 0 5px
+      //+ .you, + .selected
+      //  border-top: 1px solid $grey3
+      //  border-bottom: 1px solid $grey3
+      .name
+        float: left
+      &.moderating .name
+        border-bottom: 1px dashed $blue
+      &.mod
+        display: none
+        .name
+          background-color: lighten($yellow, 20%)
+      .shift
+        +blobL($brown)
+        float: right
+        position: relative
+        color: $char
+      &.odd .shift
+        +blobR($brown)
+      &.day .shift
+        background-color: $new2
+      &.moon .shift
+        background-color: $green
+      &.ED .shift
+        background-color: $orangenew
+        color: $grey5
+      &.IR .shift
+        background-color: $blue
+      &.you, &.selected
+        //border: 1px solid $grey3
+        background-color: $lightblue //$grey5//lighten($grey5, 10%)
+        border-color: #cdcdcd
+        border-top: 1px solid #cdcdcd
+        .name
+          font-weight: bold
+        + li
+          border-top: 1px solid $grey5
+        + li.you, + li.selected
+          border-top: none
+      &.conflict.odd .shift
+        .conflict_label
+          +blobR(darken($orange, 10%), 5px)
+      &.conflict .shift
+        padding-right: 1.2em
+        .conflict_label
+          color: $white
+          +blobL(darken($orange, 10%), 5px)
+          //font-size: 90%
+          font-weight: bold
+          position: absolute
+          right: 0
+          top: 0
+          bottom: 0
+    //color: $grey4
+    //font-size: 90%
+  //td
+    //font-size: 95%
+    //letter-spacing: 1px
+
+#shift-table
+  table
+    width: 100%
+    //th // keeps date from collapsing to two lines
+    //  min-width: 40px
+    thead th, tfoot th
+      background-color: $new1
+    td, th
+      text-align: center
+    td // fixes problem with fixed thead when all cells in tbody column are empty
+      min-width: 27px // = empty EDB / EDN width (most commonly empty)
+    tr:hover
+      background-color: $grey5
+    #scroller
+      background-color: $white
+    tfoot
+      font-style: normal // default is italic in boilerplate
+      background-color: $white
+
+#filter_form, #switch_form, #myForm
+  display: none
+  clear: both
+
+// for ajax-selects
+#div_id_users
+  label, #hint_id_users
+    display: none
+  //h3+label, .helptext
+  //  display: none
+
+#div_id_recipients
+  display: none

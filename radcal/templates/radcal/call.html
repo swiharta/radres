@@ -1,0 +1,84 @@
+{% extends "radcal/callbase.html" %}
+
+{% block full %}
+
+    <div id="filter-controls">
+        <div id="event-filters">
+        </div>
+        <div id="event-filter">
+        </div>
+    </div>
+
+    <div id="calendar"></div>
+
+
+    <div id='confEventModal' class='modal hidden'>
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>Conference</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group" id="type">
+                    <label class="control-label">Time</label>
+                    <div class="controls">
+                        <label class="radio inline">
+                            <input id='typeRadios2' name="typeRadios" type="radio" value="/api/v1/conference/2/" checked /> Morning
+                        </label>
+                        <label class="radio inline">
+                            <input id='typeRadios1' name="typeRadios" type="radio" value="/api/v1/conference/1/" /> Noon
+                        </label>
+                        <label class="radio inline">
+                            <input id='typeRadios3' name="typeRadios" type="radio" value="null" /> Other
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group" id="time">
+                    {#                <label class="control-label">Hours</label>#}
+                    <label class="control-label"></label>
+                    <div class="controls">
+                        {#                    <span class="help-inline">Start</span>#}
+                        <input type="text" class="time input-small" id="start_time" placeholder="Start" />
+                        <span class="help-inline"> thru &nbsp;</span>
+                        <input type="text" class="time input-small" id="end_time" placeholder="End" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Division:</label>
+                    <div class="controls">
+                        <select id='division' class="field">
+                            <option value="">None</option>
+                            {% for abbr, name in divs.items %}
+                                <option value="{{ abbr }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Presenter</label>
+                    <div class="controls">
+                        <input id='presenter' class="field" type="text" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Title</label>
+                    <div class="controls">
+                        <input id='title' class="field" type="text" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">7pumps URL:</label>
+                    <div class="controls">
+                        <input id='link' class="field" type="text" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-danger pull-left">Delete</a>
+            <a href="#" class="btn btn-close">Close</a>
+            <a href="#" class="btn btn-primary">Save changes</a>
+        </div>
+    </div>
+
+{% endblock %}

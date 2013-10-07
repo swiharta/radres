@@ -1,0 +1,14 @@
+{% load crispy_forms_tags %}
+
+<form class="uniForm in_facebox" method="POST" action="{% url profile_edit %}?next={{ redirect_to }}">
+    {% csrf_token %}
+    <fieldset>
+{#        {{ profile_form.as_p }}#}
+        {{ profile_form|as_uni_form }}
+        <div class="form_block btn-toolbar">
+{#        <div class="ctrlHolder">#}
+            <input type="submit" class="btn btn-primary" value="Save changes" />
+{#            or <a href="{% url profile_detail user.profile.username %}">cancel</a>#}
+        </div>
+    </fieldset>
+</form>

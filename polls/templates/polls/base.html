@@ -1,0 +1,56 @@
+{% extends "site_base.html" %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block body_class %}polls{% endblock %}
+
+{% block subnav %}
+    <ul>
+        <li><a href="{% url polls_create %}">Create a Poll</a></li>
+        <li><a href="{% url polls_index %}">View Polls</a></li>
+        <li><a href="{% url polls_help %}">Help</a></li>
+    </ul>
+{% endblock %}
+
+{% block head_title %}{% trans "It's Pollin' time!" %}{% endblock %}
+
+{% block resources-1 %}&nbsp;
+{% endblock %}
+
+{% block body %}
+    <h2>{% trans "It's Pollin' time!" %}</h2>
+
+					<!-- primary content start -->
+					{% block content %}
+
+					{% endblock %}
+					<!-- secondary content end -->
+{% endblock %}
+
+    {% block resources-2 %}
+        <h4>Your Polls</h4>
+        <div class="content">
+            {% if user.is_authenticated %}
+                <p><a href="{% url polls_create %}">Create a new poll</a></p>
+            {% endif %}
+            <ul class="linklist">
+                {% if your_polls %}
+                    {% for poll in your_polls %}
+                        <li class="first"><a href="{{poll.get_absolute_url}}">{{poll.text}}</a></li>
+                    {% endfor %}
+                {% else %}
+                    <p>You don't have any polls yet. <a href="{% url polls_create %}">Create one!</a></p>
+                {% endif %}
+            </ul>
+        </div>
+        <h4>Recent polls</h4>
+        <div class="content">
+            <ul class="linklist">
+                {% for poll in recent_polls %}
+                    <li class="first"><a href="{{poll.get_absolute_url}}">{{poll.text}}</a></li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    {% endblock %}

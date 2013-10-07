@@ -1,0 +1,68 @@
+{% extends "site_base.html" %}
+{% load compress %}
+{% block body_class %}conf-calendar{% endblock %}
+{% block calendar-name %}Conference{% endblock %}
+
+{% block main %}
+    <div id="full">
+        {% block full %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {#    cleaner look to end of schedule list   #}
+{% endblock %}
+
+{% block extra_body_base  %}
+    <script>
+        var authorized;
+        {% if perms.radcal.add_confevent %}
+            authorized = true;
+        {% else %}
+            authorized = false;
+        {% endif %}
+        var ce_json = '{{ ce_json|escapejs }}';
+        var c_json = '{{ c_json|escapejs }}';
+        {#        var se_json = '{{ se_json|escapejs }}';#}
+        {#        var s_json = '{{ s_json|escapejs }}';#}
+    </script>
+
+    {% compress js %}
+        <script type='text/javascript' src='{{ STATIC_URL }}js/fullcalendar.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/underscore.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/backbone.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/backbone-tastypie.js'></script>
+        <script type='text/coffeescript' charset='utf-8' src='{{ STATIC_URL }}js/radcal.coffee'></script>
+    {% endcompress %}
+
+{#    <script type='text/javascript' src='{{ STATIC_URL }}js/moment.min.js'></script>#}
+{#    <script type='text/javascript' src='{{ STATIC_URL }}js/backbone-relational.js'></script>#}
+
+    <script type="text/template" id="shiftevent_template">
+        <div class="event">
+        <span class="name"><%= name %></span>
+        <span class="shift" title="<%= shift__name %> - <%= shift__start %>-<%= shift__end %><%= shift__cash %>"><%= shift__initials %></span>
+        <span class="clearme"></span>
+        </div>
+    </script>
+
+    <script type="text/template" id="confevent_template">
+        <div id="<%= id %>" class="event conf-event <%= division %>">
+            <div class="time"><%= start_time %><span class="end">-<%= end_time %></span></div>
+            <span class="event-tag"><%= division %></span>
+            <span class="name"><%= presenter %></span>
+            <% if (url) { %><a href="<%= url %>"><span class="title"><%= title %></span></a>
+            <% } else { %><span class="title"><%= title %></span><% } %>
+            <div class="ui-resizable-handle ui-resizable-s" style="">=</div>
+        </div>        
+        <div class="ui-resizable-handle ui-resizable-s" style="">=</div>
+    </script>
+    <script type="text/template" id="event_template2">
+        <span class="name"><%= event.name %></span>
+    </script>
+
+    {# IE8 stupidly needs to have this .coffee file separate from the others, might also be django-compressor issue #}
+{#    {% compress js %}#}
+{#        <script type='text/coffeescript' charset='utf-8' src='{{ STATIC_URL }}js/radcal.coffee'></script>#}
+{#    {%  endcompress %}#}
+{% endblock %}

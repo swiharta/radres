@@ -1,0 +1,35 @@
+{% extends request.is_ajax|yesno:"ajax_base.html,site_base.html" %}
+
+{% load i18n %}
+
+{% load url from future %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}Profile{% endblock %}
+{% block body_class %}profile{% endblock %}
+
+{% block main %}
+    <div id="modalContent">
+        <form method="POST" data-replace="#modalContent" action="{% url "profile_edit" %}" class="form-horizontal form ajax">
+            <div class="modal-header"><h3>Profile</h3></div>
+            {% csrf_token %}
+            <div class="modal-body">
+                <!--<ul id="myTab" class="nav nav-tabs">-->
+                <!--<li class="active">-->
+                <!--<a href="#home" data-toggle="tab">Profile</a>-->
+                <!--</li>-->
+                <!--<li class="">-->
+                <!--<a id="uploadRevision" href="#upload" data-toggle="tab">Account</a>-->
+                <!--</li>-->
+                <!--<li class="">-->
+                <!--<a href="#editRev" data-toggle="tab">More</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+                {{ form|crispy }}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit" disabled="disabled">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

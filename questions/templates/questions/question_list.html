@@ -1,0 +1,41 @@
+{% load i18n %}
+
+<fieldset class="module">
+    <table style="width: 100%">
+        <thead>
+        <th>{% trans "Question" %}</th>
+        <th>{% trans "Set" %}</th>
+        <th>{% trans "Division" %}</th>
+        <th>{% trans "Flagged" %}</th>
+        <th>{% trans "Marked" %}</th>
+        <th>{% trans "Answered" %}</th>
+        <th>{% trans "Correct" %}</th>
+        <th>{% trans "Incorrect" %}</th>
+        </thead>
+
+        {% for question in question_list %}
+            <tr class="{% cycle row1,row2 %}">
+                <td><a id='question_id' href='{% url question question_id=question.id %}'>{{ question.id }}</a>
+                </td>
+                <td>{{ question.set }}</td>
+                <td>{{ question.div }}</td>
+                <td>{% if question.id in flagged %}Yes{% else %}No{% endif %}</td>
+                <td>{% if question.id in marked %}Yes{% else %}No{% endif %}</td>
+                {% if question.id in answered %}
+                    <td>Yes</td>
+                    {% if question.id in correct %}
+                        <td>Yes</td>
+                        <td>No</td>
+                    {% else %}
+                        <td>No</td>
+                        <td>Yes</td>
+                    {% endif %}
+                {% else %}
+                    <td>No</td>
+                    <td></td>
+                    <td></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+</fieldset>

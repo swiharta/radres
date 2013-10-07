@@ -1,0 +1,7 @@
+{% load i18n %}
+
+<h1>{{ profile.get_full_name }}</h1>
+<p></p><b>Phone</b>: {{ profile.phone }}<br/>
+<b>Pager</b>: {{ profile.short_range }}</p>
+
+{% include "radprofile/user_message.html" %}

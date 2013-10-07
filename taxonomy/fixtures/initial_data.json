@@ -1,0 +1,137 @@
+[
+    {
+        "pk": 15, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Women's Imaging", 
+            "abbr": "WI", 
+            "slug": "womens-imaging"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Vascular / Interventional", 
+            "abbr": "VIR", 
+            "slug": "vascular-interventional"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Radiology Physics", 
+            "abbr": "Physics", 
+            "slug": "physics"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Pediatric Imaging", 
+            "abbr": "Peds", 
+            "slug": "pediatric-imaging"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Nuclear Medicine", 
+            "abbr": "Nucs", 
+            "slug": "nuclear-medicine"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Neuroradiology", 
+            "abbr": "Neuro", 
+            "slug": "neuroradiology"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Musculoskeletal", 
+            "abbr": "MSK", 
+            "slug": "msk"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Mammography", 
+            "abbr": "Mammo", 
+            "slug": "mammography"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Head and Neck", 
+            "abbr": "ENT", 
+            "slug": "ent"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Grand Rounds", 
+            "abbr": "Grand", 
+            "slug": "grand-rounds"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Genitourinary", 
+            "abbr": "GU", 
+            "slug": "gu"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Gastrointestinal", 
+            "abbr": "GI", 
+            "slug": "gi"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Emergency Radiology", 
+            "abbr": "ED", 
+            "slug": "ed"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Chest Imaging", 
+            "abbr": "Chest", 
+            "slug": "chest"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "taxonomy.subspecialty", 
+        "fields": {
+            "name": "Cardiac Imaging", 
+            "abbr": "Cardiac", 
+            "slug": "cardiac-imaging"
+        }
+    }
+]

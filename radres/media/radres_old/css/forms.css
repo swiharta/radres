@@ -1,0 +1,96 @@
+/* -------------------------------------------------------------- 
+
+   
+
+   Boilerplate forms.css
+
+   * Sets up some default styling for forms
+
+   
+
+-------------------------------------------------------------- */
+
+
+/* my additions
+----------------------------------------- */
+
+.send-article { height: 36px; text-align: center; }
+
+
+label { font-weight: bold; display: block; width: 65px; margin-top: 0.5em; }
+
+
+
+/* Fieldsets */
+
+fieldset { /* padding: 1.4em; margin: 0 0 1.5em 0; border: 1px solid #ddd; */ }
+
+legend { padding: 0 .4em; font-weight: bold; font-size: 1.2em; }
+
+
+
+/* Textareas */
+
+textarea, input { margin: 0 0.5em 0.5em 0; padding: 0.2em; }
+
+.selector input { margin-bottom: 0; }
+
+textarea { font-size: 107.2%;  } /*So "Message" box fits and has the same font-size in FF (was 110%) */
+
+textarea.txpCommentInputMessage { width: 230px; }
+
+/* label.zemText, label.Email {  float: none; width: auto; display:inline; } */
+
+input.zemText { margin: 0 0.5em 0.5em 0.8em; }
+
+/* .zemSubmit, .form_buttons { margin-left: 65px; } */
+
+
+
+
+
+/* hForm
+
+-------------------------------------------------------------- */
+
+form.hform p { margin: 0 0 .5em; }
+
+form.hform p label { float: left; width: 100px; }
+
+
+
+form.hform p input { width: 200px; }
+
+form.hform p select { width: 200px; }
+
+
+
+form.hform p input.button { width: auto; }
+
+form.hform p input.checkbox { width: auto; }
+
+form.hform p input.radio { width: auto; }
+
+
+
+form.hform p.checkbox { margin-left: 100px; }
+
+form.hform p.checkbox label { float: none; }
+
+form.hform p.checkbox input { width: auto; }
+
+
+
+
+
+/* vForm
+
+-------------------------------------------------------------- */
+
+form.vform p { margin: 0 0 .5em; }
+
+form.vform p label { display: block; }
+
+
+
+form.vform p.checkbox label { display: inline; }

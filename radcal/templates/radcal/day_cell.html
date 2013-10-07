@@ -1,0 +1,22 @@
+<ul>
+    <li>{{ day_number }}</li>
+    {% for event in events %}
+        <li id="{{ event.shift.abbr }}_{{ event.date|date:"Y-m-d" }}_{{ event.resident }}_{{ event.id }}"
+            class="{{ event.classes }}{% if event.pending %} unmod{% endif %}">
+            <span class="name">{{ event.resident }}</span>
+{#            <a title="hey hey">hey you</a>#}
+            <span class="shift" rel="tooltip" data-html="true" title="{{ event.shift.name }}<br />{{ event.shift.start_time }}-{{ event.shift.end_time }}{% if event.shift.cash %}<br />${{ event.shift.cash }}{% endif %}">{{ event.shift.initials }}{% if event.conflict %}<span class="conflict_label">!</span>{% endif %}</span>
+            <span class="clearme"></span>
+        </li>
+
+{#        {% if event.pending %}#}
+{#            <li id="{{ event.moderated_object.changed_object.shift.abbr }}_{{ event.moderated_object.changed_object.date|date:"Y-m-d" }}_{{ event.moderated_object.changed_object.user.username }}_{{ event.moderated_object.changed_object.id }}"#}
+{#                class="{{ event.classes }} mod">#}
+{#                <span class="name">{% if  event.moderated_object.changed_object.user.last_name %}{{ event.moderated_object.changed_object.user.last_name }}{% else %}{{ event.moderated_object.changed_object.resident }}{% endif %}</span>#}
+{#                <span class="shift" title="{{ event.moderated_object.changed_object.shift.name }}">#}
+{#                    {{ event.moderated_object.changed_object.shift.initials }}#}
+{#                </span>#}
+{#            </li>#}
+{#        {% endif %}#}
+    {% endfor %}
+</ul>

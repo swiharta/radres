@@ -1,0 +1,95 @@
+{% load i18n %}
+{% if bootstrap %}{% include "ajax_select/bootstrap.html" %}{% endif %}
+<input type="text" name="{{name}}_text" id="{{html_id}}_text" value="{{current_name}}" {{ extra_attrs }} />
+
+<select name="sub" id="sub_select">
+	<option value="">All</option>
+	<option value="8">Breast</option>
+	<option value="7">Chest</option>
+	<option value="2">CV</option>
+	<option value="6">ENT</option>
+	<option value="1">GI</option>
+	<option value="3">GU</option>
+	<option value="4">MSK</option>
+	<option value="5">Neuro</option>
+</select>
+
+<input type="checkbox" id="peds_checkbox" value="True" />
+
+{% if add_link %}
+	<a href="{{ add_link }}" class="add-another" id="add_{{ html_id }}" onclick="return showAddAnotherPopup(this);"> <img src="{{ admin_media_prefix }}img/admin/icon_addlink.gif" width="10" height="10" alt="Add Another"></a>
+{% endif %}
+{% block help %}{% if help_text %}<p class="help">{{help_text}}</p>{% endif %}{% endblock %}
+<p id="{{html_id}}_on_deck" class="results_on_deck"></p>
+<input type="hidden" name="{{name}}" id="{{html_id}}" value="{{current_ids}}" />
+<script type="text/javascript">
+jQuery(document).ready(function($){
+    {% block set_tag_filters %}
+        var sub = $('#id_subspecialty').val();
+        $("#sub_select").val(sub);
+
+        $("#id_subspecialty").change( function(event) {
+            sub = $('#id_subspecialty').val();
+            // sub = sub.toLowerCase()  // needed if matching slug with abbr as value
+            $("#sub_select").val(sub);
+        });
+
+        $("#id_pediatric").change( function(event) {
+            if ($('#id_pediatric').is(':checked'))
+            { $("#peds_checkbox").attr('checked', true); }
+            else
+            { $("#peds_checkbox").attr('checked', false); }
+        });
+    {% endblock %}
+
+    {% block extra_script %}
+        $("#{{html_id}}_on_deck").bind('added',function() {
+            $("#save_tags").removeAttr('disabled');
+        });
+        $("#{{html_id}}_on_deck").bind('killed',function() {
+            $("#save_tags").removeAttr('disabled');
+        });
+    {% endblock %}
+
+    addAutoComplete("{{html_id}}", function(html_id) {
+        $("#"+html_id).autocompleteselectmultiple({
+          minLength: {{min_length}},
+          initial: {{current_reprs}},
+          source: function(request, response) {
+            $.ajax({
+              url: '{{lookup_url}}',
+              dataType: "json",
+              data: {
+                term : request.term,
+                sub: function() { return $('#sub_select').val(); },
+                peds: function() {	return $('#peds_checkbox').is(':checked'); }
+              },
+              success: function(data) {
+                response(data);
+              }
+            });
+          }
+        });
+    });
+
+{#	$("#{{html_id}}_text").autocomplete('{{lookup_url}}', {#}
+{#		width: 320,#}
+{#		//multiple: true,#}
+{#		//multipleSeparator: " ",#}
+{#		scroll: true,#}
+{#		scrollHeight:  300,#}
+{#		formatItem: function(row) { return row[2]; },#}
+{#		formatResult: function(row) { return row[1]; },#}
+{#		dataType: "text",#}
+{#		cacheLength: 1,#}
+{#		extraParams: { 	sub: function() { return $('#sub_select').val(); },#}
+{#						peds: function() {	return $('#peds_checkbox').is(':checked'); },#}
+{#					 }#}
+{#	});#}
+
+
+});
+//]]>
+</script>
+{# django admin adds the help text. this is for use outside of the admin #}
+{{ inline }}

@@ -1,0 +1,33 @@
+/* -------------------------------------------------------------- 
+ *   
+ *   Tabs
+ *   * A basic ruleset for beginning tabs
+ *   
+ *--------------------------------------------------------------
+
+ul.tabs
+  margin: 0
+  padding: 0
+  li
+    float: left
+    list-style: none
+    margin: 0
+    padding: 0
+    a
+      float: left
+      display: block
+  display: inline-block
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+/* Clearing floats without extra markup
+
+* html ul.tabs
+  height: 1%
+
+ul.tabs
+  display: block

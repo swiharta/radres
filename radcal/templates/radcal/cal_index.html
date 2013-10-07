@@ -1,0 +1,101 @@
+{% extends "radcal/base.html" %}
+{% load my_tags %}
+
+{% block body_class %}calendar change{% endblock %}
+{% block calendar-name %}Call{% endblock %}
+
+{% block full %}
+    <form id="filter_form" method="post"
+          class="focus-input" action="{% url cal_filters %}">
+        {% csrf_token %}
+        {% for filter in filter_form %}
+            {{ filter }}
+        {% endfor %}
+        <input type="submit" value="Submit" name="submit" id="filter_submit"/>
+    </form>
+    <form id="switch_form" method="post"
+          class="focus-input" action="{% url cal_switches %}">
+        {% csrf_token %}
+            {{ switch }}
+        <input type="submit" value="Submit" name="submit" id="switch_submit"/>
+    </form>
+
+{#    {{ conf_formset }}#}
+
+    <div id="sidebar">
+
+    <div id="scroller-anchor"></div>
+    <div id="scroller" class="special">
+{#        <select name="test" id="weee">#}
+{#            <option>Call</option>#}
+{#            <option>Conf</option>#}
+{#            <option value="With Value">Misc</option>#}
+{#        </select>#}
+{#          <div class="btn-group">#}
+{#            <a class="btn btn-small btn-primary" data-parent="#accordion" href="#call-cal-controls"><i class="icon-lock"></i>&#8194;Call</a>#}
+{#            <a class="btn btn-small" data-parent="#accordion" href="#call-cal-controls"><i class="icon-eye-open"></i>&#8194;Conf</a>#}
+{#            <a class="btn btn-small" data-parent="#accordion" href="#call-cal-controls"><i class="icon-retweet"></i></a>#}
+{#            <a class="btn" data-parent="#accordion" href="#call-cal-controls">Misc</a>#}
+{#          </div>#}
+{#        <div id="accordion">#}
+{#            <a class="btn" data-toggle="collapse" data-parent="#accordion" href="#call-cal-controls">Conf</a>#}
+{#            <div id="call-cal-controls" class="collapse in">#}
+                <div id="filters">
+                    <div class="first filter"><h4 id="night_call_filter" class="button{% if filters.night_call_filter%} active{% endif %}">Night Call</h4></div>
+                    <div class="filter"><h4 id="IR_filter" class="button{% if filters.IR_filter %} active{% endif %}">IR</h4></div>
+                    <div class="filter"><h4 id="ED_filter" class="button{% if filters.ED_filter %} active{% endif %}">ED</h4></div>
+                    <div class="filter"><h4 id="day_call_filter" class="button{% if filters.day_call_filter %} active{% endif %}">Day Call</h4></div>
+                    <div class="filter"><h4 id="moon_filter" class="button{% if filters.moon_filter %} active{% endif %}">Moonlighting</h4></div>
+                    <div id="switches">
+                      <h4 title="Call conflicts" class="big_label">!</h4>
+                      <div id="conflict_switch" class="switch"></div>
+                    </div>
+                </div>
+                {{ user_select }}
+                <div id="status" class=""> <!--empty class gets filled by JS-->
+                </div>
+{#            </div>#}
+{#    <h3>Residents</h3>#}
+{#    <form id="residents_form" method="post"#}
+{#          class="focus-input" action="{% url cal_residents %}">#}
+{#        {% csrf_token %}#}
+{#            {{ res_form|as_uni_form }}#}
+{#        <input type="submit" value="Submit" name="submit" id="residents_submit"/>#}
+{#    </form>#}
+
+{#            <a class="btn" data-toggle="collapse" data-parent="#accordion" href="#conf-cal-controls">Call</a>#}
+{#            <div id="conf-cal-controls" class="collapse">Some controls</div>#}
+{#            <a class="btn" data-toggle="collapse" data-parent="#accordion" href="#conf-cal-controls2">Call2</a>#}
+{#            <div id="conf-cal-controls2" class="collapse">Some controls2</div>#}
+{#        </div>#}
+
+    </div>
+
+    </div>
+
+
+    <div id="calendar">
+        {% include "radcal/calendar.html" %}
+    </div>
+
+    <form id="myForm" method="post" action="{% url cal_index %}">
+        {% csrf_token %}
+        <ul id="changeList">
+            {% for form in shift_formset %}
+                <li>
+                    {{ form.date }}
+                    {{ form.user }}
+                    {{ form.shift }}
+{#                    {{ form.DELETE }}#}
+                </li>
+            {% endfor %}
+        </ul>
+        {{ shift_formset.management_form }}
+        <input type="submit" name="submit" id="cal_change_submit"/>
+    </form>
+{% endblock %}
+
+{#{% block extra_body_base %}#}
+{#    {% block extra_body %}#}
+{#    {% endblock %}#}
+{#{% endblock %}#}

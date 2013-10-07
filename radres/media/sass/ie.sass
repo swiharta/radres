@@ -1,0 +1,63 @@
+@import "colors"
+@import 'susy'
+
+@mixin bordered-cell($border: $grey4)
+  td
+    &.today
+      border: 1px solid $border !important
+    //&.yesterday
+    //  border-right: 1px solid $border !important
+    &.tomorrow
+      border-left: 1px solid $border !important
+    //&.week_forward
+    //  border-top: 1px solid $border !important
+    //&.week_back
+    //  border-bottom: 1px solid $border !important
+    //&.noday
+
+#resources-2
+  h4.first
+    margin-bottom: 0
+  #agenda
+    dt
+      padding-left: 27px
+      .week_day
+        bottom: 12px
+    .day .shift
+      top: 25px
+      &.active
+        top: 17px
+
+#agenda-cal
+  +bordered-cell($grey3)
+  td
+    border-bottom: 1px solid #ddd !important
+
+#calendar
+  +bordered-cell
+  td
+    border-width: 0px 1px 1px !important
+  li
+    *margin-top: -3px
+
+//#calendar
+  .fc-header
+    tbody
+      width: 100%
+    tr
+      position: relative
+      td
+        &.fc-header-left
+          //width: 2%
+          //position: absolute
+          //left: -1px
+        &.fc-header-right
+          position: absolute
+          right: 0px
+          top: 62px
+          //float: right
+//#id_users
+  //height: 400px
+//
+//#id_users
+//  clear: both

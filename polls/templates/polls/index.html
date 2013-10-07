@@ -1,0 +1,12 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+			<div class="post">
+				<p>
+				polls is a super simple polliing system. You create a poll and can link to that poll from any place. Anyone can reply to your polls. <em>No registartion necessary</em>
+				</p>
+				<p>
+					So we call it Poll n go! What are you waiting for? <a href="{% url polls_create %}">Create a poll.</a>
+				</p>
+			</div>
+{% endblock %}

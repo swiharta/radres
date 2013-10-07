@@ -1,0 +1,49 @@
+// Imports -------------------------------------------------------------------
+
+@import base_fixed
+
+/* Layout ------------------------------------------------------------------
+
+#page
+  +container
+  +susy-grid-background
+  max-width: 960px
+
+#header
+  clear: both
+  .logo
+    +span-columns(7,16)
+    sup
+      font-size: 0.55em
+      position: relative
+      bottom: 5px
+  #controls
+    +span-columns(9, 16)
+    +omega(16)
+    #nav
+      margin-top: 15px !important // needed after float clear hack
+
+.bar
+  clear: both
+  height: 30px
+  background: #FF9148 url(../images/menubg.gif) repeat-x
+  margin-bottom: 7px
+
+#resources-1
+  +span-columns(3)
+  +alpha
+
+#body
+  +span-columns(9)
+  p, ul, dl
+    +pad(1,1,9)
+    //margin-top: 1.5em
+  h2
+    margin-right: $gutter-width
+
+#resources-2
+  +span-columns(4)
+  +omega
+
+#footer
+  clear: both

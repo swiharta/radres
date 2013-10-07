@@ -1,0 +1,91 @@
+/* --------------------------------------------------------------
+ *  
+ *   Boilerplate Print Styles
+ *   * Version:   0.5 (2007-11-19)
+ *	 
+ *-------------------------------------------------------------- */
+/* line 8, ../../sass/boilerplate/print.sass */
+body {
+  line-height: 1.5;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  color: black;
+  background: none;
+  font-size: 10pt;
+}
+
+/* line 15, ../../sass/boilerplate/print.sass */
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 18, ../../sass/boilerplate/print.sass */
+code {
+  font: 0.9em Courier, monospace;
+}
+
+/* line 21, ../../sass/boilerplate/print.sass */
+img {
+  float: left;
+  margin: 1.5em 1.5em 1.5em 0;
+}
+
+/* line 25, ../../sass/boilerplate/print.sass */
+a img {
+  border: none;
+}
+
+/* line 28, ../../sass/boilerplate/print.sass */
+p img.top {
+  margin-top: 0;
+}
+
+/* line 31, ../../sass/boilerplate/print.sass */
+hr {
+  background: #cccccc;
+  color: #cccccc;
+  width: 100%;
+  height: 2px;
+  margin: 2em 0;
+  padding: 0;
+  border: none;
+}
+
+/* line 40, ../../sass/boilerplate/print.sass */
+blockquote {
+  margin: 1.5em;
+  padding: 1em;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+/* line 46, ../../sass/boilerplate/print.sass */
+.small {
+  font-size: 0.9em;
+}
+
+/* line 49, ../../sass/boilerplate/print.sass */
+.large {
+  font-size: 1.1em;
+}
+
+/* line 52, ../../sass/boilerplate/print.sass */
+.quiet {
+  color: #999999;
+}
+
+/* line 55, ../../sass/boilerplate/print.sass */
+.hide {
+  display: none;
+}
+
+/* line 59, ../../sass/boilerplate/print.sass */
+a:link, a:visited {
+  background: transparent;
+  font-weight: 700;
+  text-decoration: underline;
+}
+/* line 63, ../../sass/boilerplate/print.sass */
+a:link:after, a:visited:after {
+  content: " (" attr(href) ") ";
+  font-size: 90%;
+}

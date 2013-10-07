@@ -1,0 +1,607 @@
+/* line 11, ../sass/radcal.sass */
+#full {
+  clear: both;
+}
+
+/* line 16, ../sass/radcal.sass */
+#sidebar {
+  width: 13.2%;
+  float: left;
+  margin-right: 2.4%;
+  display: inline;
+  margin-bottom: 20px;
+}
+/* line 21, ../sass/radcal.sass */
+#sidebar h3 {
+  margin-top: 16px;
+}
+/* line 23, ../sass/radcal.sass */
+#sidebar input {
+  width: 95%;
+}
+
+/* line 26, ../sass/radcal.sass */
+.button {
+  font-size: 100%;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  padding: 0.3em 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEDEDED', endColorstr='#FFBABABA');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #f7f7f7), color-stop(51%, #ededed));
+  background: -webkit-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -moz-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -o-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: linear-gradient(#f7f7f7 50%, #ededed 51%);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid lightgrey;
+  color: #444444;
+  text-shadow: white 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:hover {
+  background-color: #cecece;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #e5e5e5), color-stop(51%, #cecece));
+  background: -webkit-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -moz-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -o-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: linear-gradient(#e5e5e5 50%, #cecece 51%);
+}
+/* line 33, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:active {
+  -webkit-box-shadow: #cccccc 0 1px 2px inset;
+  -moz-box-shadow: #cccccc 0 1px 2px inset;
+  box-shadow: #cccccc 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button.disabled, .button[disabled] {
+  opacity: 0.6;
+  background: #e0e0e0;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 30, ../sass/radcal.sass */
+.collapse {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+/* line 34, ../sass/radcal.sass */
+.collapse.in {
+  height: auto;
+  overflow: visible;
+}
+
+/* line 40, ../sass/radcal.sass */
+#filters {
+  margin: 2px 0 3em;
+  position: relative;
+}
+/* line 43, ../sass/radcal.sass */
+#filters .filter {
+  text-align: center;
+}
+/* line 45, ../sass/radcal.sass */
+#filters .filter h4 {
+  line-height: 1.5;
+}
+/* line 47, ../sass/radcal.sass */
+#filters .filter h4#night_call_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6ACDC3', endColorstr='#FF359C92');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6acdc3), color-stop(100%, #6acdc3));
+  background: -webkit-linear-gradient(#6acdc3, #6acdc3);
+  background: -moz-linear-gradient(#6acdc3, #6acdc3);
+  background: -o-linear-gradient(#6acdc3, #6acdc3);
+  background: linear-gradient(#6acdc3, #6acdc3);
+  -webkit-box-shadow: #a3e0da 0 1px 0 inset;
+  -moz-box-shadow: #a3e0da 0 1px 0 inset;
+  box-shadow: #a3e0da 0 1px 0 inset;
+  border: 1px solid #57c7bb;
+  color: #444444;
+  text-shadow: #aae2dd 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#night_call_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#night_call_filter.active:hover {
+  background-color: #57c7bb;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #57c7bb), color-stop(100%, #57c7bb));
+  background: -webkit-linear-gradient(#57c7bb, #57c7bb);
+  background: -moz-linear-gradient(#57c7bb, #57c7bb);
+  background: -o-linear-gradient(#57c7bb, #57c7bb);
+  background: linear-gradient(#57c7bb, #57c7bb);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#night_call_filter.active:active {
+  -webkit-box-shadow: #4bc3b7 0 1px 2px inset;
+  -moz-box-shadow: #4bc3b7 0 1px 2px inset;
+  box-shadow: #4bc3b7 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#night_call_filter.active.disabled, #filters .filter h4#night_call_filter.active[disabled] {
+  opacity: 0.6;
+  background: #6acdc3;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 49, ../sass/radcal.sass */
+#filters .filter h4#IR_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD5B3D5', endColorstr='#FFB171B1');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5b3d5), color-stop(100%, #d5b3d5));
+  background: -webkit-linear-gradient(#d5b3d5, #d5b3d5);
+  background: -moz-linear-gradient(#d5b3d5, #d5b3d5);
+  background: -o-linear-gradient(#d5b3d5, #d5b3d5);
+  background: linear-gradient(#d5b3d5, #d5b3d5);
+  -webkit-box-shadow: #f0e4f0 0 1px 0 inset;
+  -moz-box-shadow: #f0e4f0 0 1px 0 inset;
+  box-shadow: #f0e4f0 0 1px 0 inset;
+  border: 1px solid #cca3cc;
+  color: #444444;
+  text-shadow: #f3eaf3 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#IR_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#IR_filter.active:hover {
+  background-color: #cca3cc;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cca3cc), color-stop(100%, #cca3cc));
+  background: -webkit-linear-gradient(#cca3cc, #cca3cc);
+  background: -moz-linear-gradient(#cca3cc, #cca3cc);
+  background: -o-linear-gradient(#cca3cc, #cca3cc);
+  background: linear-gradient(#cca3cc, #cca3cc);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#IR_filter.active:active {
+  -webkit-box-shadow: #c699c6 0 1px 2px inset;
+  -moz-box-shadow: #c699c6 0 1px 2px inset;
+  box-shadow: #c699c6 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#IR_filter.active.disabled, #filters .filter h4#IR_filter.active[disabled] {
+  opacity: 0.6;
+  background: #d5b3d5;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 51, ../sass/radcal.sass */
+#filters .filter h4#ED_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFC88558', endColorstr='#FF8C542E');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c88558), color-stop(100%, #c88558));
+  background: -webkit-linear-gradient(#c88558, #c88558);
+  background: -moz-linear-gradient(#c88558, #c88558);
+  background: -o-linear-gradient(#c88558, #c88558);
+  background: linear-gradient(#c88558, #c88558);
+  -webkit-box-shadow: #dbaf92 0 1px 0 inset;
+  -moz-box-shadow: #dbaf92 0 1px 0 inset;
+  box-shadow: #dbaf92 0 1px 0 inset;
+  border: 1px solid #c27745;
+  color: #e0e0e0;
+  text-shadow: #794828 0 -1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#ED_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#ED_filter.active:hover {
+  background-color: #c27745;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c27745), color-stop(100%, #c27745));
+  background: -webkit-linear-gradient(#c27745, #c27745);
+  background: -moz-linear-gradient(#c27745, #c27745);
+  background: -o-linear-gradient(#c27745, #c27745);
+  background: linear-gradient(#c27745, #c27745);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#ED_filter.active:active {
+  -webkit-box-shadow: #ba6f3d 0 1px 2px inset;
+  -moz-box-shadow: #ba6f3d 0 1px 2px inset;
+  box-shadow: #ba6f3d 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#ED_filter.active.disabled, #filters .filter h4#ED_filter.active[disabled] {
+  opacity: 0.6;
+  background: #c88558;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 53, ../sass/radcal.sass */
+#filters .filter h4#day_call_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD5C4B2', endColorstr='#FFB19170');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5c4b2), color-stop(100%, #d5c4b2));
+  background: -webkit-linear-gradient(#d5c4b2, #d5c4b2);
+  background: -moz-linear-gradient(#d5c4b2, #d5c4b2);
+  background: -o-linear-gradient(#d5c4b2, #d5c4b2);
+  background: linear-gradient(#d5c4b2, #d5c4b2);
+  -webkit-box-shadow: #f0eae4 0 1px 0 inset;
+  -moz-box-shadow: #f0eae4 0 1px 0 inset;
+  box-shadow: #f0eae4 0 1px 0 inset;
+  border: 1px solid #ccb7a1;
+  color: #444444;
+  text-shadow: #f3eee9 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#day_call_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#day_call_filter.active:hover {
+  background-color: #ccb7a1;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ccb7a1), color-stop(100%, #ccb7a1));
+  background: -webkit-linear-gradient(#ccb7a1, #ccb7a1);
+  background: -moz-linear-gradient(#ccb7a1, #ccb7a1);
+  background: -o-linear-gradient(#ccb7a1, #ccb7a1);
+  background: linear-gradient(#ccb7a1, #ccb7a1);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#day_call_filter.active:active {
+  -webkit-box-shadow: #c7af98 0 1px 2px inset;
+  -moz-box-shadow: #c7af98 0 1px 2px inset;
+  box-shadow: #c7af98 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#day_call_filter.active.disabled, #filters .filter h4#day_call_filter.active[disabled] {
+  opacity: 0.6;
+  background: #d5c4b2;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 55, ../sass/radcal.sass */
+#filters .filter h4#moon_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEDA883', endColorstr='#FFE0692A');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eda883), color-stop(100%, #eda883));
+  background: -webkit-linear-gradient(#eda883, #eda883);
+  background: -moz-linear-gradient(#eda883, #eda883);
+  background: -o-linear-gradient(#eda883, #eda883);
+  background: linear-gradient(#eda883, #eda883);
+  -webkit-box-shadow: #f7d7c6 0 1px 0 inset;
+  -moz-box-shadow: #f7d7c6 0 1px 0 inset;
+  box-shadow: #f7d7c6 0 1px 0 inset;
+  border: 1px solid #ea986d;
+  color: #333333;
+  text-shadow: #f8dccd 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#moon_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#moon_filter.active:hover {
+  background-color: #ea986d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ea986d), color-stop(100%, #ea986d));
+  background: -webkit-linear-gradient(#ea986d, #ea986d);
+  background: -moz-linear-gradient(#ea986d, #ea986d);
+  background: -o-linear-gradient(#ea986d, #ea986d);
+  background: linear-gradient(#ea986d, #ea986d);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#moon_filter.active:active {
+  -webkit-box-shadow: #e88f5f 0 1px 2px inset;
+  -moz-box-shadow: #e88f5f 0 1px 2px inset;
+  box-shadow: #e88f5f 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+#filters .filter h4#moon_filter.active.disabled, #filters .filter h4#moon_filter.active[disabled] {
+  opacity: 0.6;
+  background: #eda883;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 57, ../sass/radcal.sass */
+#filters #switches {
+  margin-top: 1em;
+}
+/* line 59, ../sass/radcal.sass */
+#filters h4.big_label {
+  display: inline;
+  margin-left: 8%;
+  font-size: 180%;
+  color: white;
+  -webkit-border-radius: 1em 0 1em 0;
+  -moz-border-radius: 1em 0 1em 0;
+  -ms-border-radius: 1em 0 1em 0;
+  -o-border-radius: 1em 0 1em 0;
+  border-radius: 1em 0 1em 0;
+  background-color: #bc531b;
+  padding: 0px 5px;
+}
+/* line 65, ../sass/radcal.sass */
+#filters #conflict_switch {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 70, ../sass/radcal.sass */
+body.calendar #calendar {
+  width: 84.4%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -3em;
+  display: inline;
+}
+/* line 76, ../sass/radcal.sass */
+body.calendar #calendar th {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* line 80, ../sass/radcal.sass */
+body.calendar #calendar th.this_month {
+  font-size: 150%;
+  padding: 0px 5px 12px;
+}
+/* line 83, ../sass/radcal.sass */
+body.calendar #calendar th .new_month {
+  margin: 0 3px;
+  text-align: center;
+  font-size: 100%;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  padding: 0.3em 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  width: 4%;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEDEDED', endColorstr='#FFBABABA');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #f7f7f7), color-stop(51%, #ededed));
+  background: -webkit-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -moz-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -o-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: linear-gradient(#f7f7f7 50%, #ededed 51%);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid lightgrey;
+  color: #444444;
+  text-shadow: white 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.calendar #calendar th .new_month:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.calendar #calendar th .new_month:hover {
+  background-color: #cecece;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #e5e5e5), color-stop(51%, #cecece));
+  background: -webkit-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -moz-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -o-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: linear-gradient(#e5e5e5 50%, #cecece 51%);
+}
+/* line 33, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.calendar #calendar th .new_month:active {
+  -webkit-box-shadow: #cccccc 0 1px 2px inset;
+  -moz-box-shadow: #cccccc 0 1px 2px inset;
+  box-shadow: #cccccc 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.calendar #calendar th .new_month.disabled, body.calendar #calendar th .new_month[disabled] {
+  opacity: 0.6;
+  background: #e0e0e0;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 89, ../sass/radcal.sass */
+body.calendar #calendar td {
+  height: 80px;
+  padding: 0px;
+  border: 1px solid #dddddd;
+}
+/* line 93, ../sass/radcal.sass */
+body.calendar #calendar td.noday {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(80%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #e0e0e0, #ffffff 80%);
+  background-image: -moz-linear-gradient(top, #e0e0e0, #ffffff 80%);
+  background-image: -o-linear-gradient(top, #e0e0e0, #ffffff 80%);
+  background-image: linear-gradient(top, #e0e0e0, #ffffff 80%);
+}
+/* line 96, ../sass/radcal.sass */
+body.calendar #calendar td.today {
+  background-color: #f6eef6;
+  border: none;
+  outline: 1px solid gray;
+}
+/* line 100, ../sass/radcal.sass */
+body.calendar #calendar td.today li.you, body.calendar #calendar td.today li.selected {
+  background-color: white;
+}
+/* line 110, ../sass/radcal.sass */
+body.calendar #calendar td li {
+  clear: both;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 0 5px;
+}
+/* line 117, ../sass/radcal.sass */
+body.calendar #calendar td li .name {
+  float: left;
+}
+/* line 119, ../sass/radcal.sass */
+body.calendar #calendar td li.moderating .name {
+  border-bottom: 1px dashed #d5b3d5;
+}
+/* line 121, ../sass/radcal.sass */
+body.calendar #calendar td li.mod {
+  display: none;
+}
+/* line 123, ../sass/radcal.sass */
+body.calendar #calendar td li.mod .name {
+  background-color: #c1eeb9;
+}
+/* line 125, ../sass/radcal.sass */
+body.calendar #calendar td li .shift {
+  -webkit-border-radius: 1em 0 1em 0;
+  -moz-border-radius: 1em 0 1em 0;
+  -ms-border-radius: 1em 0 1em 0;
+  -o-border-radius: 1em 0 1em 0;
+  border-radius: 1em 0 1em 0;
+  background-color: #6acdc3;
+  padding: 0px 5px;
+  float: right;
+  position: relative;
+  color: #333333;
+}
+/* line 130, ../sass/radcal.sass */
+body.calendar #calendar td li.odd .shift {
+  -webkit-border-radius: 0 1em 0 1em;
+  -moz-border-radius: 0 1em 0 1em;
+  -ms-border-radius: 0 1em 0 1em;
+  -o-border-radius: 0 1em 0 1em;
+  border-radius: 0 1em 0 1em;
+  background-color: #6acdc3;
+  padding: 0px 5px;
+}
+/* line 132, ../sass/radcal.sass */
+body.calendar #calendar td li.day .shift {
+  background-color: #d5c4b2;
+}
+/* line 134, ../sass/radcal.sass */
+body.calendar #calendar td li.moon .shift {
+  background-color: #eda883;
+}
+/* line 136, ../sass/radcal.sass */
+body.calendar #calendar td li.ED .shift {
+  background-color: #c88558;
+  color: #e0e0e0;
+}
+/* line 139, ../sass/radcal.sass */
+body.calendar #calendar td li.IR .shift {
+  background-color: #d5b3d5;
+}
+/* line 141, ../sass/radcal.sass */
+body.calendar #calendar td li.you, body.calendar #calendar td li.selected {
+  background-color: #f6eef6;
+  border-color: #cdcdcd;
+  border-top: 1px solid #cdcdcd;
+}
+/* line 146, ../sass/radcal.sass */
+body.calendar #calendar td li.you .name, body.calendar #calendar td li.selected .name {
+  font-weight: bold;
+}
+/* line 148, ../sass/radcal.sass */
+body.calendar #calendar td li.you + li, body.calendar #calendar td li.selected + li {
+  border-top: 1px solid #e0e0e0;
+}
+/* line 150, ../sass/radcal.sass */
+body.calendar #calendar td li.you + li.you, body.calendar #calendar td li.you + li.selected, body.calendar #calendar td li.selected + li.you, body.calendar #calendar td li.selected + li.selected {
+  border-top: none;
+}
+/* line 153, ../sass/radcal.sass */
+body.calendar #calendar td li.conflict.odd .shift .conflict_label {
+  -webkit-border-radius: 0 1em 0 1em;
+  -moz-border-radius: 0 1em 0 1em;
+  -ms-border-radius: 0 1em 0 1em;
+  -o-border-radius: 0 1em 0 1em;
+  border-radius: 0 1em 0 1em;
+  background-color: #bc531b;
+  padding: 0px 5px;
+}
+/* line 155, ../sass/radcal.sass */
+body.calendar #calendar td li.conflict .shift {
+  padding-right: 1.2em;
+}
+/* line 157, ../sass/radcal.sass */
+body.calendar #calendar td li.conflict .shift .conflict_label {
+  color: white;
+  -webkit-border-radius: 1em 0 1em 0;
+  -moz-border-radius: 1em 0 1em 0;
+  -ms-border-radius: 1em 0 1em 0;
+  -o-border-radius: 1em 0 1em 0;
+  border-radius: 1em 0 1em 0;
+  background-color: #bc531b;
+  padding: 0px 5px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* line 173, ../sass/radcal.sass */
+#shift-table table {
+  width: 100%;
+}
+/* line 177, ../sass/radcal.sass */
+#shift-table table thead th, #shift-table table tfoot th {
+  background-color: #e7ddd3;
+}
+/* line 179, ../sass/radcal.sass */
+#shift-table table td, #shift-table table th {
+  text-align: center;
+}
+/* line 181, ../sass/radcal.sass */
+#shift-table table td {
+  min-width: 27px;
+}
+/* line 183, ../sass/radcal.sass */
+#shift-table table tr:hover {
+  background-color: #e0e0e0;
+}
+/* line 185, ../sass/radcal.sass */
+#shift-table table #scroller {
+  background-color: white;
+}
+/* line 187, ../sass/radcal.sass */
+#shift-table table tfoot {
+  font-style: normal;
+  background-color: white;
+}
+
+/* line 191, ../sass/radcal.sass */
+#filter_form, #switch_form, #myForm {
+  display: none;
+  clear: both;
+}
+
+/* line 197, ../sass/radcal.sass */
+#div_id_users label, #div_id_users #hint_id_users {
+  display: none;
+}
+
+/* line 202, ../sass/radcal.sass */
+#div_id_recipients {
+  display: none;
+}

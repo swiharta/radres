@@ -1,0 +1,167 @@
+@import base
+@import compass
+
+body.cases .sidebar
+  +span-columns(5, 16)
+  .qq-upload-success
+    display: none
+
+body.cases .image-container
+  +span-columns(11 omega, 16)
+  #image
+    position: relative
+    overflow: hidden
+    background-color: #000
+    .note
+      display: block
+      position: absolute
+      top: -2px
+      left: 0
+      z-index: 10
+      //background: url(/playground/playground/awesome-overlays/notes-bg.png) no-repeat 0 0
+      background: #0044cc
+      width: 25px
+      height: 25px
+      font-size: 12px
+      font-weight: bold
+      line-height: 25px
+      letter-spacing: -1px
+      text-align: center
+      color: #fff
+      text-decoration: none
+      text-shadow: 0 1px 1px rgba(0,0,0,.15)
+      display: block
+    #image-overlay
+      position: absolute
+      z-index: 2
+      bottom: 0
+      left: 0
+      width: 100%
+      text-align: center
+      a.btn
+        margin: 0px 8px
+      #edit-controls
+        position: absolute
+        bottom: 0
+        background: #222
+        width: 96%
+        padding: 2%
+        text-align: left
+        a.btn.annotate
+          margin-right: 200px
+        h3, h4, p, select, input
+          float: left
+          margin: 0 8px
+        h3, p
+          color: #aaa
+        h4
+          color: #555
+        select, input
+          position: relative
+          bottom: 5px
+          margin-right: 16px
+          background-color: #ddd
+        .image-attributes
+          clear: both
+          margin-top: 50px
+          input
+            width: 5%
+        .button-controls
+          clear: both
+          margin-top: 120px
+          background-color: transparent
+      #annotate-controls
+        position: absolute
+        bottom: 0
+        background: transparent
+        width: 96%
+        padding: 0 2% 2%
+      #nav-controls // adapted from http://stackoverflow.com/q/10210615/416687
+        a, a:hover, a:focus
+          color: #000
+        a
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 40%
+          cursor: pointer
+          div
+            font-size: 800%
+            font-weight: bold
+            float: left
+            width: 25%
+            height: 100%
+            zoom: 1
+            +opacity(0)
+            //background: #ffffff url('../images/circle-arrow-l.jpg') repeat 0 0
+            background-color: #ffffff
+            span
+              position: absolute
+              top: 48%
+              +opacity(0)
+          &:hover
+            div
+              +opacity(0.2)
+              span
+                +opacity(1)
+          &.prev
+            span
+              left: 5%
+          &.edit
+            right: 30%
+            left: auto
+            div
+              float: none
+              width: 80%
+              position: absolute
+              right: 10%
+              span
+                width: 80%
+                display: block
+                left: 10%
+          &.next
+            left: auto
+            right: 0
+            div
+              float: right
+              span
+                right: 5%
+
+
+body.cases #images
+  list-style: none
+  margin: 0.5em 0 0
+  li
+    float: left
+    margin: 1em
+    width: 100px
+    height: 100px
+    position: relative
+    border: 5px solid #fff
+    &.ui-selecting
+      border: 5px solid #aa33ff
+      //margin: 0
+    &.ui-selected
+      border: 5px solid #ffaa33
+      //margin: 0
+    .grip
+      position: absolute
+      top: 0
+      height: 19px
+      width: 100px
+      background-color: #fff
+      +opacity(0.5)
+      cursor: move
+      span, a
+        padding: 1px 3px // need to set `span` to display: block for top / bottom padding to work
+      a
+        cursor: pointer
+        &.edit-image
+          float: right
+
+body.cases #fine-uploader
+  margin-top: 2em
+
+body.cases #tags
+  margin-bottom: 2em

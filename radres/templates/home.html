@@ -1,0 +1,41 @@
+{% extends "site_base.html" %}
+
+{% load fiber_tags %}
+
+{% block extra_head %}
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	// $('textarea').growfield();
+	$('.edit').editable('{% url notes_jedit %}', {
+		indicator : 'Saving...',
+		cancel    : 'Cancel',
+		submit    : 'OK',
+		tooltip   : 'Click to edit...',
+		submitdata : {
+			"csrfmiddlewaretoken": "{{ csrf_token }}",
+		},
+	});
+	$('.edit_area').editable('{% url notes_jedit %}', { 
+		type      : 'textarea',
+		cancel    : 'Cancel',
+		submit    : 'OK',
+		indicator : '<img src="img/indicator.gif"/>',
+		tooltip   : 'Click to edit...',
+		submitdata : {
+			"csrfmiddlewaretoken": "{{ csrf_token }}",
+		},
+	});
+
+});
+</script>
+{% endblock %}
+
+{% block body %}
+<div id="grid">
+<div class="grid_16">
+
+<p class="fiber">{% show_page_content "Important Links" %}</p>
+<p class="fiber">{% show_page_content "Rad Links" %}</p>
+<p class="fiber">{% show_page_content "On Call Info" %}</p>
+<p class="fiber">{% show_page_content "Forms" %}</p>
+<p class="fiber">{% show_page_content "AFIP Info" %}</p>

@@ -1,0 +1,37 @@
+{% extends "account/base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Log out" %}{% endblock %}
+
+{#{% block main %}#}
+{#<div id="modalContent">#}
+{#            <form method="POST" action="{% url "account_logout" %}" class="form-horizontal form ajax">#}
+{#                <div class="modal-header"><h3>{% trans "Are you sure you want to log out?" %}</h3></div>#}
+{#                <!--<fieldset class="modal-body">-->#}
+{#                    {% csrf_token %}#}
+{#                    <!--<p>Really?</p>-->#}
+{#                <!--</fieldset>-->#}
+{#                <div class="modal-footer">#}
+{#                    <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button>#}
+{#                </div>#}
+{#            </form>#}
+{#</div>#}
+{#{% endblock %}#}
+
+{% block form_url %}{% url "account_logout" %}
+{% endblock %}
+
+{% block modal-header %}{% trans "Are you sure you want to log out?" %}
+{% endblock %}
+
+{% block modal-body-base %}
+{#    {% if redirect_field_value %}#}
+{#        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />#}
+{#    {% endif %}#}
+{% endblock %}
+
+{% block modal-footer %}
+    <button type="submit" class="btn btn-primary">{% trans "Log out" %}</button>
+{% endblock %}

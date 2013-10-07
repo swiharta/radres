@@ -1,0 +1,49 @@
+@import "compass"
+@import base
+
+@mixin sassy-button-default-structure
+  display: inline-block
+  width: 100%
+  height: auto
+  cursor: pointer
+  padding: .3em 0
+
+@mixin my-button($background: $white, $font: $grey1, $effect: "simple")
+  +sassy-button-gradient($effect, $background, $background, $font)
+
+@mixin blob($color, $side-pad: 5px)
+  background-color: $color
+  padding: $top-bottom-pad $side-pad
+  +border-radius(1em)
+
+@mixin blobL($color, $side-pad: 5px, $top-bottom-pad: 0px, $corner1: 1em, $corner2: 0, $corner3: 1em, $corner4: 0)
+  +border-radius($corner1 $corner2 $corner3 $corner4)
+  background-color: $color
+  padding: $top-bottom-pad $side-pad
+
+@mixin blobR($bgcolor, $side-pad: 5px, $top-bottom-pad: 0px, $corner1: 0, $corner2: 1em, $corner3: 0, $corner4: 1em)
+  +border-radius($corner1 $corner2 $corner3 $corner4)
+  background-color: $bgcolor
+  padding: $top-bottom-pad $side-pad
+
+@mixin addInactive($bgcolor, $font-color: $grey1)
+  div
+    background-color: $bgcolor
+    color: $font-color
+  &.inactive div
+    background-color: lighten($bgcolor, 15%)
+    color: lighten($font-color, 20%)
+
+@mixin respond-to($media)
+  //@if $media == normal // default is wide screen
+  //  @media only screen and (max-width: 959px)
+  //    @content
+  @if $media == wide
+    @media only screen and (min-width: 926px)  // 960px
+      @content
+  @if $media == tablet
+    @media only screen and (max-width: 925px) // 959px
+      @content
+  @if $media == mobile
+    @media only screen and (max-width: 480px)
+      @content

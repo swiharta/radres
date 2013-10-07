@@ -1,0 +1,48 @@
+{% extends "radprofile/base.html" %}
+
+{% load i18n %}
+{#{% load pagination_tags %}#}
+{% load avatar_tags %}
+{% load humanize %}
+{% load radprofile_tags %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% blocktrans %}All Profiles{% endblocktrans %}{% endblock %}
+
+{% block main %}
+    <h1>{% trans "Profiles" %}</h1>
+    
+    <form method="GET" action="">
+        {% csrf_token %}
+        {{ user_select|crispy }}
+{#        {{ user_select|as_uni_form }}#}
+{#        <input type="text" name="search" value="{{ search_terms }}" />#}
+{#        <input type="submit" value="Search" />#}
+{#        {% if search_terms %}#}
+{#            <a href="{% clear_search_url request %}">Clear Search Terms</a>#}
+{#        {% endif %}#}
+    </form>
+    
+    {% if users %}
+        <p>{% trans "Order by:" %}
+            {% ifequal order 'date' %}
+                <a href="{% url profile_list %}?order=name">{% trans "Name" %} &uarr;</a>
+            {% else %}
+                <a href="{% url profile_list %}?order=date">{% trans "Date" %} &darr;</a>
+            {% endifequal %}
+        </p>
+        
+{#        {% autopaginate users %}#}
+        {% load endless %}
+            {% paginate users %}
+            {% for user in users %}
+                {% show_profile user %}
+            {% endfor %}
+        
+{#        {% paginate %}#}
+        {% show_pages %}
+
+       {% else %}
+           <p>No profile were found.</p>
+      {% endif %}
+{% endblock %}

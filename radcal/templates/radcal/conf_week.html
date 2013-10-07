@@ -1,0 +1,61 @@
+{#<div id="{{ prev_sunday|date:"m-d-y" }}" class="new_week" onclick="">^</div>#}
+{#{% for event in conferences %}#}
+{#    <div class="day {{ event.get_classes }}">#}
+{#        <dt class="{{ event.get_classes }} {% if forloop.first %}first{% endif %}">#}
+{#            {{ event.date|date:"D, F j" }}#}
+            {#<span class="week_day">{{ event.date|date:"D" }}</span> #}
+            {#<span class="num_day">{{ event.date|date:"j" }}</span>#}
+            {#{% ifchanged %}#}
+            {#    <span class="month"> {{ event.date|date:"M" }}</span>#}
+            {#{% endifchanged %}#}
+{#        </dt>#}
+{#        <dd class="{{ event.get_classes }}{{ event.cycle|yesno:"even,odd" }}">#}
+            {# extra div below needed for proper background-color in IE6 #}
+{#            {% if event.presenter %}<span class="presenter">{{ event.presenter }}&nbsp;</span>{% endif %}#}
+{#            {% if event.div %}<span class="div">{{ event.div }}&nbsp;</span>{% endif %}#}
+{#            {% if event.title %}#}
+{#                <span class="title">#}
+{#                {% if event.link %}#}
+{#                    <a href="{{ event.link }}">{{ event.title }}</a>#}
+{#                {% else %}#}
+{#                    {{ event.title }}#}
+{#                {% endif %}#}
+{#                </span>#}
+{#            {% endif %}#}
+{#        </dd>#}
+{#    </div>#}
+{#{% endfor %}#}
+{#<div id="{{ next_sunday|date:"m-d-y" }}" class="new_week" onclick="">v</div>#}
+
+<div id="{{ prev_sunday|date:"m-d-y" }}" class="new_week" onclick="">^</div>
+{% for day, events in conferences.items %}
+    <div class="day">
+        <dt class="{% if day != today %}inactive {% endif %}{% if forloop.first %}first{% endif %}">
+            {{ day|date:"D, F j" }}
+            {#<span class="week_day">{{ event.date|date:"D" }}</span> #}
+            {#<span class="num_day">{{ event.date|date:"j" }}</span>#}
+            {#{% ifchanged %}#}
+            {#    <span class="month"> {{ event.date|date:"M" }}</span>#}
+            {#{% endifchanged %}#}
+        </dt>
+        <dd class="{% if day == today %}active{% else %} inactive{% endif %}">{# {% cycle 'even' 'odd' %} #}
+        {% for event in events %}
+                {# extra div below needed for proper background-color in IE6 #}
+                <span class="start">{{ event.get_short_time }}&nbsp;</span>
+                {% if event.presenter %}<span class="presenter">{{ event.presenter }}&nbsp;</span>{% endif %}
+                {% if event.div %}<span class="div">{{ event.div }}&nbsp;</span>{% endif %}
+                {% if event.title %}
+                    <span class="title">
+                    {% if event.link %}
+                        <a href="{{ event.link }}">{{ event.title }}</a>
+                    {% else %}
+                        {{ event.title }}
+                    {% endif %}
+                    </span>
+                {% endif %}
+            <br />
+        {% endfor %}
+        </dd>
+    </div>
+{% endfor %}
+<div id="{{ next_sunday|date:"m-d-y" }}" class="new_week" onclick="">v</div>

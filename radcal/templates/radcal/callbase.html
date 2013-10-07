@@ -1,0 +1,156 @@
+{% extends "site_base.html" %}
+{% load compress %}
+{% block body_class %}full-calendar{% endblock %}
+{% block calendar-name %}Calendar{% endblock %}
+
+{% block main %}
+    <div id="full">
+        {% block full %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {#    cleaner look to end of schedule list   #}
+{% endblock %}
+
+{% block extra_body_base  %}
+
+    {% compress js %}
+        <script type='text/javascript' src='{{ STATIC_URL }}js/fullcalendar.min.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/gcal.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/underscore.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/backbone.js'></script>
+        <script type='text/javascript' src='{{ STATIC_URL }}js/backbone-tastypie.js'></script>
+        <script type='text/coffeescript' charset='utf-8' src='{{ STATIC_URL }}js/call.coffee'></script>
+    {% endcompress %}
+
+
+    <script>
+        var authorized;
+        {% if perms.radcal.add_confevent %}
+            authorized = true;
+        {% else %}
+            authorized = false;
+        {% endif %}
+        var ef_json = '{{ ef_json|escapejs }}';
+        var ce_json = '{{ ce_json|escapejs }}';
+        var se_json = '{{ se_json|escapejs }}';
+        var c_json = '{{ c_json|escapejs }}';
+        var s_json = '{{ s_json|escapejs }}';
+        var u_json = '{{ u_json|escapejs }}';
+
+        var sub_json = '{{ sub_json|escapejs }}';
+
+        var user_id = '{{ user_id }}';
+    </script>
+    {#    <script type='text/javascript' src='{{ STATIC_URL }}js/moment.min.js'></script>#}
+    {#    <script type='text/javascript' src='{{ STATIC_URL }}js/backbone-relational.js'></script>#}
+
+    <script type="text/template" id="shiftevent_template">
+{#        <div id="<%= id %>" class="event shift-event <%= shift_initials %>" rel=tooltip title="<%= first_name %> <%= last_name %> - phone: <%= phone %> - <%= shift_name %> - <%= start_time %>-<%= end_time %><% if (shift_cash) { %> - $<%= shift_cash %><% } %>">#}
+        <div id="<%= id %>" class="event shift-event <%= shift_initials %>" title='<%= shift_name %> <%= start_time %>-<%= end_time %><% if (shift_cash) { %> $<%= shift_cash %><% } %>' data-content='<% if (profile) { %><%= first_name + " " + last_name %> <br> pager: <%= profile.short_range %> <br> phone: <%= profile.phone %><% } else { %><%= resident %><% } %>'>
+{#        <div id="<%= id %>" class="event shift-event <%= shift_initials %>">#}
+{#        <div id="<%= id %>" class="event shift-event <%= shift_initials %>" title='<%= shift_name %> <%= start_time %>-<%= end_time %><% if (shift_cash) { %> $<%= shift_cash %><% } %>' data-content='<%= first_name %> <%= last_name %><% if (profile) { %> <br> pager: <%= profile.short_range %> <br> phone: <%= profile.phone %><% } %>'>#}
+{#        <div id="<%= id %>" class="event shift-event <%= shift_initials %>" title='<%= shift_name %> <%= start_time %>-<%= end_time %><% if (shift_cash) { %> $<%= shift_cash %><% } %>' data-content='<% if (first_name) { %><%= first_name %> <%= last_name %> <br/> pager: <%= pager %> <br/> phone: <%= phone %><% } else { %><%= resident %><% } %>'>#}
+{#        <div id="<%= id %>" class="event shift-event <%= shift_initials %>" title='<%= shift_name %> <%= start_time %>-<%= end_time %><% if (shift_cash) { %> $<%= shift_cash %><% } %>' data-content='df'>#}
+            <div class="time no-narrow"><%= start_time %><span class="end">-<%= end_time %></span></div>
+{#            title="<%= shiftName %> - <%= shiftStart %>-<%= shiftEnd %><%= shiftCash %>"#}
+            <span class="event-tag"><%= shift_initials %></span>
+{#            <span class="event-tag no-narrow"><%= shift_abbr %></span>#}
+            
+            <span class="name">
+              <% if (last_name) { %>
+                <%= last_name %>
+              <% } else { %>
+                <%= resident %>
+              <% } %>
+            </span>
+{#            <div class="ui-resizable-handle ui-resizable-s" style="">=</div>#}
+        </div>
+    </script>
+
+    <script type="text/template" id="popover_title_template">
+        <%= shift_name %> <%= start_time %>-<%= end_time %><% if (shift_cash) { %> $<%= shift_cash %><% } %>
+    </script>
+    <script type="text/template" id="popover_template">
+        <%= resident %><% if (profile) { %> <br> pager: <%= profile.short_range %> <br> phone: <%= profile.phone %><% } %>
+    </script>
+
+    <script type="text/template" id="confevent_template">
+        <div id="<%= id %>" class="event conf-event <%= division %>">
+            <div class="time"><%= start_time %><span class="end">-<%= end_time %></span></div>
+            <span class="event-tag"><%= division %></span>
+            <span class="name"><%= presenter %></span>
+            <% if (url) { %><a href="<%= url %>"><span class="title"><%= title %></span></a>
+            <% } else { %><span class="title"><%= title %></span><% } %>
+            <div class="ui-resizable-handle ui-resizable-s" style="">=</div>
+        </div>
+    </script>
+
+    <script type="text/template" id="event_filter_template">
+{#        <h3>Shifts</h3>#}
+        <select id="shifts" class="chzn-select" data-placeholder="SHIFTS" multiple="" tabindex="3">
+            <% _.each(shifts, function(shift) { %>
+                <option class="shift" <% if ($.inArray(shift.resource_uri, filter.shifts) >= 0) { %>selected<% } %> value='<%= shift.resource_uri %>'><%= shift.name %></option>
+            <% }); %>
+        </select>
+{#        <h3>Users</h3>#}
+        <select id="users" class="chzn-select" data-placeholder="RESIDENTS" multiple="" tabindex="3">
+            <% _.each(users, function(user) { %>
+                <option class="user" <% if ($.inArray(user.resource_uri, filter.users) >= 0) { %>selected<% } %> value='<%= user.resource_uri %>'><%= user.first_name %> <%= user.last_name %></option>
+            <% }); %>
+        </select>
+{#        <h3>Conferences</h3>#}
+        <select id="conferences" class="chzn-select" data-placeholder="CONFERENCES" multiple="" tabindex="3">
+            <% _.each(conferences, function(conference) { %>
+            <option class="conference" <% if ($.inArray(conference.resource_uri, filter.conferences) >= 0) { %>selected<% } %> value='<%= conference.resource_uri %>'><%= conference.name %></option>
+            <% }); %>
+        </select>
+        <select id="subspecialties" class="chzn-select" data-placeholder="TOPICS" multiple="" tabindex="3">
+            <% _.each(subspecialties, function(subspecialty) { %>
+            <option class="subspecialty" <% if ($.inArray(subspecialty.resource_uri, filter.subspecialties) >= 0) { %>selected<% } %> value='<%= subspecialty.resource_uri %>'><%= subspecialty.name %></option>
+            <% }); %>
+        </select>
+    </script>
+
+    <script type="text/template" id="event_filters_template">
+        <div class='event-filter'>
+            <a href="<%= filter.resource_uri %>" class="btn filter <%= filter.abbr %> <%= on %>"><%= filter.abbr %></a>
+        </div>
+    </script>
+
+    <script type="text/template" id="event_filters_static_template">
+        <div class='btn-toolbar'>
+            <div class='event-filter btn-group'>
+                <a href="#" class="btn add-all">All</a>
+                <a href="#" class="btn reset">None</a>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="event_filters_nav_template">
+{#        <h3><%= title %></h3>#}
+        <ul class="nav nav-tabs">
+{#            <li class="calendar yes-narrow">#}
+{#                <a class="toggle" href="<%= view %>">Calendar</a>#}
+{#            </li>#}
+            <li class="active">
+                <a class="toggle" href="<%= view %>">Easy</a>
+{#                <span class="btn btn-mini">Filters</span>#}
+            </li>
+            <li class="edit">
+                <a class="toggle" href="<%= view %>">Advanced</a>
+{#                <span class="tag">Tag</span>#}
+            </li>
+        </ul>
+{#        <input class="name-input input-small" type="text" placeholder="Name this filter...">#}
+{#        <ul class="nav nav-pills">#}
+{#            <li class="save"><a href="#">Save</a></li>#}
+{#        </ul>#}
+    </script>
+
+    {# IE8 stupidly needs to have this .coffee file separate from the others, might also be django-compressor issue #}
+    {#    {% compress js %}#}
+    {#        <script type='text/coffeescript' charset='utf-8' src='{{ STATIC_URL }}js/radcal.coffee'></script>#}
+    {#    {%  endcompress %}#}
+{% endblock %}

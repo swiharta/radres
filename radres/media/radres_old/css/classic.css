@@ -1,0 +1,680 @@
+/* 
+
+	project: internet services - 2nd edition
+	author: luka cvrk (www.solucija.com) */
+
+/* reset
+   -------------- */
+fieldset { border: 0; }   
+
+/* my additions
+   -------------- */
+
+a img { border: none; }
+
+p, label, textarea, input, dl, ul { font-size: 12px; }
+
+/*  pre { display: none; } 
+      erases stw_category_tree crap at top of page */
+
+textarea, input { font-family: Arial, "Trebuchet MS", Tahoma, sans-serif; }
+
+#nav input[type="text"] { float: left; border: 1px solid #BDBDBD; border-right: none; margin: 2px 0; padding: 5px; }
+
+#nav input[type="submit"] { float: left; background: #fff url(../images/search.gif) no-repeat center right; border: 1px solid #BDBDBD; border-left: none; width:23px; height:27px; font-size: 0; margin: 2px 0; }
+
+/* use below with #header-resources
+#header-resources input[type="submit"], #header-resources input[type="submit"] { margin: 11px 0; }
+
+.search-box { float: left; margin: 0 15px; } */
+
+/* when you get the nemu working in IE, here's the old CSS:
+
+#header input[type="text"] { float: left; border: 1px solid #BDBDBD; border-right: none; margin: 11px 0;  }
+
+#header input[type="submit"] { float: left; background: #fff url(../images/search.gif) no-repeat center right; border: 1px solid #BDBDBD; border-left: none; width:23px; height:22px; font-size: 0; margin: 11px 0; } */
+
+#body .rating p { color: #808080; font-size: 1.2em;  }
+
+.rating strong { color: #444; }
+
+#body-big p.tag-cloud { font-size: 1.5em; margin: 15px 10px; }
+
+#header-resources form { float: left; }
+
+#resources-2 h3 small { line-height:0; }
+
+p.tag-cloud { line-height: 1.5; margin-bottom: 15px; }
+
+h1.logo { float: left; display: inline; }
+
+h2#comment { margin-bottom: 20px; }
+
+h2.delicious-banner { display: none }
+
+h3 { font-size: 14px; line-height: 16px; color: #444; }
+
+h4.login { font-family:Arial; /* float:right; */ font-weight:bold; font-size:11.2px; line-height: 17.9px; color: #808080 }
+
+/* ol.comments li, #cpreview { ****font-size: 12px;**** margin-bottom: 23px; } */
+
+.comment-details { font-weight: bold; color: #808080; }
+
+span.caption {
+  position:relative;
+  top:-28px;
+  color:#808080;
+  padding: 0 10px;
+  line-height: 2.333em;
+  display: block; 
+  font-size: 12px;
+  background-color: #000;
+    /* For Firefox/Opera/Safari/Chrome */
+	opacity: .8;
+    /* For IE 5-7 */
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    /* For IE 8 */
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+ul#categories li ul li { margin-left: 13px; }
+
+ul.cbs_category_list { font-size: 1.2em; line-height: 2; }
+
+
+ul.cbs_category_list a.active, ul.cbs_category_list a.active:hover, p.tag-cloud a.active, p.tag-cloud a.active:hover { background-color:#e8e8e8; color: #000; text-decoration: none; font-size: 1.5em; }
+
+.cases li {  margin: 14px 16px 0px; background-color: #000; }
+li.case  { }
+li.case a, li.case img { display: block; }
+.cases h3 { float: left; width: 40px; color:#e8e8e8; text-align: center; }
+.image-overlay a:hover h3  { color:#fff; }
+.cases div.rating { color:#ddd; }
+.cases p.date, .cases p.author, .cases p.rating { float: left; width: 55px; color: #444; }
+.cases p.author { width: 65px; }
+.cases p.rating { width: 45px; font-size: 1.5em; text-align: center; }
+.cases p.author-date-rating { float: left; color:#fff; }
+.image-overlay a:hover p.author-date-rating { color:#E0691A; }
+.cases-small { margin: 10px 0; }
+#resources-2 h2 { line-height: 3; }
+#resources-2 .tab_container p { line-height: 1.6; margin: 2.0em 0 0; }
+#resources-2 .tab_container p.first { margin-top: 0; }
+#related .toggle h2 { line-height: 1; }
+.cases-small h4 { display: inline; font-size: 12px; }
+.cases-small .division { color: #808080; }
+.cases .division { color: #808080; }
+.cases .modality, .cases-small .modality { background-color: #999; color: #fff }
+.cases .votes { background-color: #DDD; color: #444; }
+.cases .division, .cases .modality, .cases .votes { font-weight: normal; }
+.cases .rating { font-weight: bold; }
+/* .cases-image { float: left; width: 220px; height: 268px; } */
+
+.cb { clear: both; }
+
+.center { text-align: center; }
+
+p.edit a { display:block; width: 32px; height: 32px; margin: 0 10px 0 0; background: url(../images/edit-icon.jpg) no-repeat center right; cursor:pointer; }
+
+.entry { margin: 7px 0 0 4px; } /* to compensate for original table layout, which added a few pixels of margin */
+
+.entry { margin-bottom: 18px; }
+
+.entry-content { padding-top: 18px; }
+
+.entry-content table { margin-bottom: 1.4em; }
+
+.entry-content th { border-bottom: 2px solid #ddd; font-weight: bold; }
+
+.entry-content td { border-bottom: 1px solid #ddd; }
+
+.entry-content th, .entry-content td { padding: 4px 10px 4px 0; }
+
+.entry-content tfoot { font-style: italic; }
+
+.entry-content caption { background: #ffc; }
+
+/* .findings p, .diagnosis p, .diagnosis li { margin-top: 13px; }  */
+
+.case_content  { height: 400px; overflow: auto; margin-bottom: 2em; }
+
+
+.fl     {  float: left; }
+
+.fr     {  float: right; }
+
+.hidden, a#-button.hidden { display: none; }
+
+.identifiers { float: right; color: #808080; }
+
+.image  {  padding-top: 10px; }
+
+.LTprovided { display: none; }
+
+.nav { /* display: none; clear: left; */ color: #fff; }
+
+.nav-container { background: #fff; height: 24px; padding: 2px 6px; }
+
+.mailer a { float: right; clear: right; width: 50px; height: 50px; margin: 25px 11px 0; background: #fff url(../images/mail50.jpg) no-repeat bottom left; text-align: center; }
+
+.mailer a:hover { background: #fff url(../images/mail50.jpg) no-repeat bottom left; }
+
+ul.pagination {  list-style-type: none; text-align: center; word-spacing: 2em; }
+
+ul.pagination li {  margin 1em 0; padding 1em 0; }
+
+ul.pagination a {
+    text-decoration: none;
+    margin: 0;
+    float: none;
+    background: inherit;
+}
+
+.search-bar {
+          margin-top: 3px;
+}
+
+.selector { margin: 8px 8px 28px; float: left; }
+
+.selector.right { float: right; }
+
+#tab_container  { /* margin-top: 54px ;  overflow: auto; */ }
+
+#thumbs { margin: 0 auto 2em; width: 273px; }
+
+.thumbnail    { width: 75px; margin: 13px 7px 0; /* margin-right: 10px */ }
+
+.toggle h2 { cursor:pointer; }
+
+.toggle h2 span { color: #E0691A; font-size: x-small; }
+
+#infscr-loading { position: fixed; bottom: 40px; left: 40%; z-index: 500; }
+
+img.odd { float: left; display: inline; clear: left; }
+
+img.even { float: right; display: inline; clear: right; }
+
+img.replaced { width: 585px; /* was 540px */ height: auto; }
+
+img.replaced.hover { width: 700px; z-index:99999 !important; }
+
+#nav li a#toggler { display: block; width:30px; height:30px; background: #fff url(../images/lightBulb.jpg) no-repeat center right; cursor: pointer; padding: 0; margin: 0; }
+
+a#toggler:hover { background-image:url(../images/moon.jpg); }   
+
+/* .zemText {display: none; } */
+
+
+
+/*------------ nav ---------------*/
+
+/* remove the list style */
+#nav {
+        float: right;
+	margin: 8px 0 0; 
+	padding:0; 
+	list-style:none;
+}	
+	
+	/* make the LI display inline */
+	/* it's position relative so that position absolute */
+	/* can be used in submenu */
+	#nav li {
+		float:left; 
+		display:block; 
+		width:auto;
+                padding: 0 10px;
+		background:#fff; 
+		position:relative;
+		z-index:500; 
+		margin:0;
+	}
+		
+	/* this is the parent menu */
+	#nav li a {
+		display:block; 
+		padding:8px 5px 0 5px; 
+		height:23px; 
+		text-decoration:none; 
+		text-align:center; 
+		color:#737373;
+	}
+
+	#nav li a:hover {
+		color:#E0691A;
+	}
+	
+		/* submenu, it's hidden by default */
+		#nav ul {
+			position:absolute; 
+			left:0; 
+			display:none; 
+			margin:0 0 0 -1px; 
+			padding:0; 
+			list-style:none;
+		}
+		
+		#nav ul li {
+			width:110px; 
+			float:left; 
+                        border:1px solid #BDBDBD;
+			border-bottom: none; /* this isn't working for some reason */
+		}
+		#nav ul li.last {
+			border-bottom:1px solid #BDBDBD;
+                }
+		
+		/* display block will make the link fill the whole area of LI */
+		#nav ul a {
+			display:block;  
+			height:15px;
+			padding: 8px 5px; 
+			color:#737373;
+		}
+		
+		#nav ul a:hover {
+		}
+		#nav ul a.active { /* display: none; */
+		}
+
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+	margin:0 0 0 -2px;
+}
+
+
+
+/* -------------------------------------------------------------- 
+   
+   Tabs
+   * A basic ruleset for beginning tabs
+   
+-------------------------------------------------------------- */
+
+ul.tabs { margin: 0 0 16px 800px; /*margin-bottom was 16px*/
+          padding: 0; 
+}
+#resources-2 ul.tabs { clear: both; margin: 1em 0 2em; /*margin-bottom was 16px*/
+          padding: 0; 
+}
+ul.tabs li { float: left; list-style: none; margin: 0; padding: 0; }
+ul.tabs li a { float: left; display: block; }
+
+/* Clearing floats without extra markup  */
+ul.tabs { display: inline-block; }
+ul.tabs:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html ul.tabs { height: 1%; }
+ul.tabs { display: block; }
+
+ul.tabs { /* border-bottom: 1px solid #ddd; */ }
+ul.tabs li { margin-right: 1px; }
+ul.tabs a { padding: 5px 15px; background:#DDD; color: #EA7F37; text-decoration: none; }
+ul.tabs li.active a { background:#fff; color: #444;}
+ul.tabs a:hover { background:#E8E8E8; }
+
+p.tabs-label { font-weight: bold; margin: 0; float: left; padding: 5px 15px; }
+
+#resources-2 ul.tabs a { padding: 5px 10px; }
+
+
+/* rating css from http://thinkwithstyle.com/2008/11/06/pure-css-star-rating-i-mean-also-for-ie6/ 
+
+ul.rating {list-style: none;position: relative;width: 100px;height: 20px;background-image: url("../images/ratings.png");background-position: -100px 0;background-repeat: no-repeat;padding: 0;left: 50px;margin-left: -50px;overflow: hidden;}
+.rating li {margin: 0;padding: 0;float: left;}
+.rating li a {display: block;position: absolute;width: 20px;height: 20px;text-indent: -9999px;overflow: hidden;z-index: 20;}
+ul.worst { background-position: -80px 0;}
+ul.bad { background-position: -60px 0;}
+ul.fair { background-position: -40px 0;}
+ul.good { background-position: -20px 0;}
+ul.best { background-position: 0 0;}
+.rating a.worst { left: 0; }
+.rating a.bad { left: 20px; }
+.rating a.fair { left: 40px; }
+.rating a.good { left: 60px; }
+.rating a.best { left: 80px; }
+.rating li a:hover {background: transparent url("../images/star.png") left top repeat-x;left: 0;z-index: 1;}
+.rating a.worst:hover {width: 20px;}
+.rating a.bad:hover {width: 40px;}
+.rating a.fair:hover {width: 60px;}
+.rating a.good:hover {width: 80px;}
+.rating a.best:hover {width: 100px;} ---------- */
+
+/* jmd_rate
+.rating {}
+.rating, .rating * {
+margin: 0;
+border: 0;
+padding: 0;
+}
+
+.rating ul {
+height: 18px;
+position: relative;
+}
+
+.rating ul, .rating .current_rating, .rating a:hover {
+background: url(/stars.png);
+}
+
+.rating li {
+list-style: none;
+text-indent: -9999px;
+}
+
+.rating .current_rating {
+background-position: 0 -18px;
+z-index: 1;
+}
+
+.rating .current_rating, .rating a {
+height: 18px;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.rating a {
+width: 19px;
+height: 18px;
+overflow: hidden;
+z-index: 3;
+}
+
+.rating a:hover {
+background-position: left center;
+left: 0;
+z-index: 2;
+}
+
+.rating_1 a:hover { width: 19px }
+.rating_2 a { left: 19px }
+.rating_2 a:hover { width: 38px }
+.rating_3 a { left: 38px }
+.rating_3 a:hover { width: 57px }
+.rating_4 a { left: 57px }
+.rating_4 a:hover { width: 76px }  ------*/
+				
+
+/* default styles
+   -------------- */
+* { margin: 0; padding: 0; }
+* body { 
+	font: .7em Arial, "Trebuchet MS", Tahoma, sans-serif; 
+	line-height: 1.6em;
+	background: #fff; 
+	color: #444; 
+}
+
+a {	color: #E0691A;	background: inherit;}
+a:hover { color: #6C757A; background: inherit; }
+a:active { outline: 0 none; }
+a:focus { outline: 0 none; } /* gets rid of dotted border around links after clicking */
+
+h1 { font: normal 2.4em "Trebuchet MS", Arial, Sans-Serif; padding: 7px 0 0 8px; margin: 0; }
+h1 a { color: #737373; background: inherit; }
+.orange { color: #E0692A; }
+sup { font-size: .5em; }
+
+h1 a, h2 a { text-decoration: none; }
+h1 a:hover, h2 a:hover { color: #FF6600; background: inherit; }
+h2 { font-size: 1.6em; margin-bottom: 5px; color: #444; background: inherit; }
+p {	margin: 0 0 5px 0; }
+
+ul { list-style : none; }
+
+#body ul { list-style-type: disc; list-style-position: inside; }
+
+td {
+	font: Arial, "Trebuchet MS", Tahoma, sans-serif;
+	font-size:12px;
+	color: #444;
+}	
+
+.style10 {  font-size: x-small;  }
+
+/* layout
+   ------ */
+
+/* my additions
+   ----------------------------------------*/
+
+#header-resources { float: right; line-height:45px; }
+
+#old-margin { margin-top: 6px; }
+
+#resources-1 {
+        float: left;
+        width: 160px;
+        padding-right: 15px; padding-left: 4px;
+}
+
+#body {
+        float: left;
+        width: 585px; /* was 575px (or 540px for smaller image size) */
+        padding: 0 25px;
+        margin-bottom: 28px;
+        height: 750px; /* was 680px */
+        overflow: hidden;
+}
+
+#body-big {
+/*        width: 687px;
+        margin-left: 4px; */
+        margin: 0 25px;
+        clear: both;
+}
+
+#resources-2 {
+        float: right;
+        width: 300px;
+        padding-right:25px
+}
+
+#resources-3 { clear: both; padding: 0 25px 56px; border-bottom: 1px solid #ccc; margin-bottom: 20px;
+}
+
+#resources-3 div { width: 265px; padding: 0 20px; float: left; }
+
+/*------------------------------------------*/
+.content { 
+	margin: 0 auto;
+	width: 980px;
+	padding: 10px; 
+}
+
+.header { 
+	height: 70px;
+	background: #fff url(../images/headerbg.gif) repeat-x bottom;
+	color: #808080;
+	margin: 3px 0 0;
+	padding: 10px 0 0 0;
+}
+
+.top_info {
+	float: right;
+	width: 555px;
+	padding: 5px 0 4px 0;
+	color: #808080;
+}
+
+	.top_info_left {
+		width: 200px;
+		float: left;
+	}
+
+	.top_info_right {
+		float: right;
+		width: 290px;
+		padding: 0 0 0 35px;
+		border-left: 1px solid #eee;
+	}
+
+.browse_category  {
+	width: 390px;
+	color: #FFF;
+	background: inherit;
+}
+
+.bar { 
+	clear: both;
+	font-size: 1.1em;
+	height: 30px; 
+	color: #FFF;
+	background: #FF9148 url(../images/menubg.gif) repeat-x;
+}
+
+	.bar li { 
+		padding: 6px 12px 6px 12px;
+		color: #FFEADC;
+		float: left; 
+	}
+	
+	.bar li.active { 
+		background: #E0691A url(../images/bar.gif) repeat-x; 
+		color: #fff;
+		font-weight: bold; 
+		
+	}
+	
+	.bar li a { 
+		font-weight: bold;
+		color: #FFF; 
+		background: inherit;
+		text-decoration: none;
+	} 
+	
+/* search form */
+.search_field { 
+	background: #fff url(../images/searchbg.gif) no-repeat right; 
+	color: #808080;
+	clear: both;
+	font-weight: bold;
+	padding: 7px 12px 10px 10px;
+	margin: 5px 0;
+}
+	input.search { 
+		width: 292px; 
+		border: 0;
+		background: #FFF url(../images/input.gif) no-repeat;
+		padding: 4px; 
+		color: #E0691A;
+		font-weight: bold;
+		margin: 0 0 0 3px;
+	}
+	input.submit {
+		background: #E0691A url(../images/submit.gif) no-repeat;
+		border: 0;
+		padding: 4px 0;
+		width: 65px;
+		margin: 0 10px 1px 0;
+		color: #FFF;
+		font: bold 1em Arial, Sans-Serif;
+	}
+	.grey { color: #808080; background: inherit; font-weight: normal; }
+	.search_form { float: right; }
+
+/* left side
+   --------- */
+
+#body h2 {
+	clear: both;
+	background: #E8E8E8 url(../images/h2bg.gif) no-repeat center left;
+	color: #444;
+	padding: 3px 0 3px 43px;
+	font: bold 1.5em "Trebuchet MS", Arial, Sans-Serif;
+	margin: 0 0 10px 0;
+}
+	.left_side {
+		float: left;
+		width: 470px;
+		padding: 0 0 0 10px;
+		margin: 10px 0 0 10px;
+	}
+		
+	.left_side a, .right_side a { color: #414141; background: #FFF; }
+		
+	.right_side {
+		float: right;
+                text-align: right;
+		width: 230px;
+		background: #FFF url(../images/dotted.gif) repeat-y;
+		color: #414141;
+		padding: 0 10px 0 0;
+		margin: 10px 10px 0 0;
+	}
+	.left_box { 
+		margin: 0 0 10px 0; 
+		color: #000; 
+		background: #FFF; 
+		padding: 3px 0; 
+	}
+
+/* right side
+   ---------- */
+		
+	#resources-2 h3 {
+		background: #BDBDBD  url(../images/h3bg.gif) no-repeat center right;
+		color: #FFF;
+		padding: 8px 0 7px 5px;
+		font: bold 1.1em Tahoma, Arial, Sans-Serif;
+		margin: 0 0 3px 0;
+	}
+	.right_articles {
+		background: #f5f5f5;
+		color: #414141;
+		padding: 8px;	
+		margin: 0 0 3px 0;
+	}
+	.notice {
+		background: #eee;
+		color: #808080;
+		padding: 12px 8px;	
+		margin: 0 0 3px 0;
+	}
+
+
+/* footer
+   ------ */
+
+.footer { 
+	clear: both;
+	text-align: center;
+	padding: 10px 0;
+        margin-top: 10px;
+        border-top: 1px solid #ccc;
+}
+	.footer a { /* background: #e8e8e8; */ }
+
+.toggle-off { /* clear: both; text-align: center; width:905px; margin: 0 auto;
+ -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;  */
+clear: both;
+margin: 0 auto; 
+width:920px; 
+border-top: 1px solid #ccc;
+padding: 20px 10px 0 15px;
+}
+
+.toggle-off h2 { text-align: center; /* color: #222; */}
+
+.toggle-off .image-overlay li { /* background: #e8e8e8; */}
+
+.h2circle { clear: both; float: left; width:30px; height: 30px; background: #fff url(../images/h2circle.gif) no-repeat center left; }
+
+h2.link { 	margin: 0 !important; font: bold 1.4em "Trebuchet MS", Arial, Sans-Serif; clear: none; line-height: 2.5; color: #222; text-align: center;  }
+
+a.l-arrow  { display:inline-block; margin: 11px 35px 2px 0; width:18px; height:18px;  float: right; background: #bdbdbd url(../images/circle-arrow-r.gif) no-repeat center center; }
+
+a.r-arrow { display:inline-block; margin: 11px 0 2px 35px; width:18px; height:18px; float: left; background: #bdbdbd url(../images/circle-arrow-l.gif) no-repeat center center; }
+
+a.r-arrow:hover, a.l-arrow:hover { background-color: #E0691A; }
+
+#resources-2 h3.link { background: #BDBDBD url(../images/h3bg-semi.gif) no-repeat center right; width: 215px; }
+
+ul.tabs li.active a.invisible { display: none; }
+
+ul#cat_menu li { margin-left: 10px; }
+ul#cat_menu li ul li { margin-left: 20px; }
+ul#cat_menu li ul li ul li { margin-left: 30px; }

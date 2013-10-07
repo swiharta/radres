@@ -1,0 +1,26 @@
+{% extends "account/base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Log in" %}
+{% endblock %}
+
+{% block form_url %}{% url "account_login" %}
+{% endblock %}
+
+{% block modal-header %}{% trans "Log in to an existing account" %}
+{% endblock %}
+
+{% block modal-body %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+{% endblock %}
+
+{% block modal-footer %}
+    <a href="{% url "account_password_reset" %}" class="btn pull-left">{% trans "Forgot your password?" %}</a>
+    <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+{% endblock %}

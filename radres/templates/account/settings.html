@@ -1,0 +1,21 @@
+{% extends "account/base.html" %}
+
+{% load url from future %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}{% trans "Account Settings" %}
+{% endblock %}
+
+{% block form_url %}{% url "account_settings" %}
+{% endblock %}
+
+{% block modal-header %}{% trans "Account Settings" %}
+{% endblock %}
+
+{% block modal-body %}{{ form|crispy }}
+{% endblock %}
+
+{% block modal-footer %}
+    <button class="btn btn-primary" type="submit" disabled="disabled">Save</button>
+{% endblock %}

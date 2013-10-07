@@ -1,0 +1,16 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{# using blockbots instead of extrahead because this stuff would get inserted before the admin's Jquery #}
+{#{% block blockbots %}{{ block.super }}#}
+{#    <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_select.js"></script>#}
+{#    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/ajax_select.css"/>#}
+{#{% endblock %}#}
+
+{% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">{% trans 'Django administration' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

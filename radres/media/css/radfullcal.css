@@ -1,0 +1,1034 @@
+/* line 9, ../sass/radfullcal.sass */
+#filter-controls .chzn-select {
+  width: 100% !important;
+}
+/* line 12, ../sass/radfullcal.sass */
+#filter-controls .filter-control {
+  margin-bottom: 2em;
+}
+/* line 15, ../sass/radfullcal.sass */
+#filter-controls h3, #filter-controls h4 {
+  margin-top: 1em;
+}
+/* line 17, ../sass/radfullcal.sass */
+#filter-controls .event-filter {
+  margin: 1em 0;
+}
+/* line 20, ../sass/radfullcal.sass */
+#filter-controls h4 {
+  color: #737373;
+}
+/* line 22, ../sass/radfullcal.sass */
+#filter-controls .btn + .btn {
+  margin-left: 0;
+}
+/* line 24, ../sass/radfullcal.sass */
+#filter-controls .btn {
+  text-align: center;
+  font-weight: bold;
+  width: 85%;
+}
+/* line 30, ../sass/radfullcal.sass */
+#filter-controls .btn.on.Moonlighting {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #d8c8b8;
+  background-image: -moz-linear-gradient(top, #e7ddd3, #c3aa91);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e7ddd3), to(#c3aa91));
+  background-image: -webkit-linear-gradient(top, #e7ddd3, #c3aa91);
+  background-image: -o-linear-gradient(top, #e7ddd3, #c3aa91);
+  background-image: linear-gradient(to bottom, #e7ddd3, #c3aa91);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFE7DDD3', endColorstr='#FFC3AA91', GradientType=0);
+  border-color: #c3aa91 #c3aa91 #a8845f;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #c3aa91;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 502, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.Moonlighting:hover, #filter-controls .btn.on.Moonlighting:focus, #filter-controls .btn.on.Moonlighting:active, #filter-controls .btn.on.Moonlighting.active, #filter-controls .btn.on.Moonlighting.disabled, #filter-controls .btn.on.Moonlighting[disabled] {
+  color: white;
+  background-color: #c3aa91;
+  *background-color: #ba9d81;
+}
+/* line 510, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.Moonlighting:active, #filter-controls .btn.on.Moonlighting.active {
+  background-color: #b19170 \9;
+}
+/* line 32, ../sass/radfullcal.sass */
+#filter-controls .btn.on.ED {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #eeae8b;
+  background-image: -moz-linear-gradient(top, #f4c7af, #e78956);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4c7af), to(#e78956));
+  background-image: -webkit-linear-gradient(top, #f4c7af, #e78956);
+  background-image: -o-linear-gradient(top, #f4c7af, #e78956);
+  background-image: linear-gradient(to bottom, #f4c7af, #e78956);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF4C7AF', endColorstr='#FFE78956', GradientType=0);
+  border-color: #e78956 #e78956 #d25d1e;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #e78956;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 502, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.ED:hover, #filter-controls .btn.on.ED:focus, #filter-controls .btn.on.ED:active, #filter-controls .btn.on.ED.active, #filter-controls .btn.on.ED.disabled, #filter-controls .btn.on.ED[disabled] {
+  color: white;
+  background-color: #e78956;
+  *background-color: #e47940;
+}
+/* line 510, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.ED:active, #filter-controls .btn.on.ED.active {
+  background-color: #e0692a \9;
+}
+/* line 34, ../sass/radfullcal.sass */
+#filter-controls .btn.on.Night {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #e6e6e6;
+  background-image: -moz-linear-gradient(top, #f0f0f0, #d7d7d7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f0f0f0), to(#d7d7d7));
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #d7d7d7);
+  background-image: -o-linear-gradient(top, #f0f0f0, #d7d7d7);
+  background-image: linear-gradient(to bottom, #f0f0f0, #d7d7d7);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0F0F0', endColorstr='#FFD7D7D7', GradientType=0);
+  border-color: #d7d7d7 #d7d7d7 #b0b0b0;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #d7d7d7;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 502, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.Night:hover, #filter-controls .btn.on.Night:focus, #filter-controls .btn.on.Night:active, #filter-controls .btn.on.Night.active, #filter-controls .btn.on.Night.disabled, #filter-controls .btn.on.Night[disabled] {
+  color: white;
+  background-color: #d7d7d7;
+  *background-color: #cacaca;
+}
+/* line 510, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.Night:active, #filter-controls .btn.on.Night.active {
+  background-color: #bdbdbd \9;
+}
+/* line 36, ../sass/radfullcal.sass */
+#filter-controls .btn.on.Day {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #b5eaad;
+  background-image: -moz-linear-gradient(top, #d3f3ce, #8ade7c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#d3f3ce), to(#8ade7c));
+  background-image: -webkit-linear-gradient(top, #d3f3ce, #8ade7c);
+  background-image: -o-linear-gradient(top, #d3f3ce, #8ade7c);
+  background-image: linear-gradient(to bottom, #d3f3ce, #8ade7c);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFD3F3CE', endColorstr='#FF8ADE7C', GradientType=0);
+  border-color: #8ade7c #8ade7c #54cf3f;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #8ade7c;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 502, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.Day:hover, #filter-controls .btn.on.Day:focus, #filter-controls .btn.on.Day:active, #filter-controls .btn.on.Day.active, #filter-controls .btn.on.Day.disabled, #filter-controls .btn.on.Day[disabled] {
+  color: white;
+  background-color: #8ade7c;
+  *background-color: #78d968;
+}
+/* line 510, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.Day:active, #filter-controls .btn.on.Day.active {
+  background-color: #66d454 \9;
+}
+/* line 38, ../sass/radfullcal.sass */
+#filter-controls .btn.on.IR {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #e5d0e5;
+  background-image: -moz-linear-gradient(top, #f0e4f0, #d5b3d5);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f0e4f0), to(#d5b3d5));
+  background-image: -webkit-linear-gradient(top, #f0e4f0, #d5b3d5);
+  background-image: -o-linear-gradient(top, #f0e4f0, #d5b3d5);
+  background-image: linear-gradient(to bottom, #f0e4f0, #d5b3d5);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF0E4F0', endColorstr='#FFD5B3D5', GradientType=0);
+  border-color: #d5b3d5 #d5b3d5 #ba82ba;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #d5b3d5;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 502, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.IR:hover, #filter-controls .btn.on.IR:focus, #filter-controls .btn.on.IR:active, #filter-controls .btn.on.IR.active, #filter-controls .btn.on.IR.disabled, #filter-controls .btn.on.IR[disabled] {
+  color: white;
+  background-color: #d5b3d5;
+  *background-color: #cca3cc;
+}
+/* line 510, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_mixins.scss */
+#filter-controls .btn.on.IR:active, #filter-controls .btn.on.IR.active {
+  background-color: #c392c3 \9;
+}
+/* line 41, ../sass/radfullcal.sass */
+#filter-controls .btn-group {
+  width: 41%;
+}
+/* line 43, ../sass/radfullcal.sass */
+#filter-controls .nav-pills, #filter-controls .nav-tabs {
+  font-size: 90%;
+  text-align: center;
+}
+/* line 50, ../sass/radfullcal.sass */
+#filter-controls .nav-pills .edit a .tag, #filter-controls .nav-tabs .edit a .tag {
+  background-color: #e0e0e0;
+  color: #737373;
+  font-weight: bold;
+  font-size: 90%;
+  -webkit-border-radius: 1em 0 1em 0;
+  -moz-border-radius: 1em 0 1em 0;
+  -ms-border-radius: 1em 0 1em 0;
+  -o-border-radius: 1em 0 1em 0;
+  border-radius: 1em 0 1em 0;
+  padding: 3px 6px;
+}
+/* line 57, ../sass/radfullcal.sass */
+#filter-controls .nav-pills > li > a, #filter-controls .nav-tabs > li > a {
+  padding: 6px 4px;
+}
+/* line 59, ../sass/radfullcal.sass */
+#filter-controls #event-filter {
+  display: none;
+}
+/* line 61, ../sass/radfullcal.sass */
+#filter-controls .nav-pills {
+  float: right;
+  display: none;
+  margin-bottom: 1em;
+}
+/* line 65, ../sass/radfullcal.sass */
+#filter-controls .name-input {
+  width: 120px;
+  display: none;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+/* line 73, ../sass/radfullcal.sass */
+#calendar .fc-header tbody {
+  z-index: 99;
+  background-color: white;
+  padding-top: 20px;
+}
+/* line 82, ../sass/radfullcal.sass */
+#calendar .fc-header tbody tr {
+  border-bottom: none;
+}
+/* line 84, ../sass/radfullcal.sass */
+#calendar .fc-header tbody h2 {
+  position: relative;
+  top: 0.25em;
+}
+/* line 89, ../sass/radfullcal.sass */
+#calendar .fc-content tr.fc-first {
+  border-top: 2px solid #eeeeee;
+}
+
+/* line 123, ../sass/radfullcal.sass */
+#calendar .fc-border-separate thead th {
+  font-weight: bold !important;
+}
+/* line 125, ../sass/radfullcal.sass */
+#calendar .fc-view-month .ui-resizable-handle {
+  cursor: pointer;
+}
+
+/* line 128, ../sass/radfullcal.sass */
+#calendar h2 {
+  font-size: 150%;
+  position: relative;
+  bottom: 7px;
+  color: #444444;
+  display: inline;
+  margin: 0 0.5em;
+}
+
+/* line 151, ../sass/radfullcal.sass */
+.button {
+  font-size: 100%;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  padding: 0.3em 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEDEDED', endColorstr='#FFBABABA');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #f7f7f7), color-stop(51%, #ededed));
+  background: -webkit-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -moz-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -o-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: linear-gradient(#f7f7f7 50%, #ededed 51%);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid lightgrey;
+  color: #444444;
+  text-shadow: white 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:hover {
+  background-color: #cecece;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #e5e5e5), color-stop(51%, #cecece));
+  background: -webkit-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -moz-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -o-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: linear-gradient(#e5e5e5 50%, #cecece 51%);
+}
+/* line 33, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button:active {
+  -webkit-box-shadow: #cccccc 0 1px 2px inset;
+  -moz-box-shadow: #cccccc 0 1px 2px inset;
+  box-shadow: #cccccc 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+.button.disabled, .button[disabled] {
+  opacity: 0.6;
+  background: #e0e0e0;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 155, ../sass/radfullcal.sass */
+body.full-calendar #filters {
+  margin: 1em 0 3em;
+  position: relative;
+}
+/* line 158, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter {
+  text-align: center;
+}
+/* line 160, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter h4 {
+  line-height: 1.5;
+}
+/* line 162, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter h4#night_call_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6ACDC3', endColorstr='#FF359C92');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6acdc3), color-stop(100%, #6acdc3));
+  background: -webkit-linear-gradient(#6acdc3, #6acdc3);
+  background: -moz-linear-gradient(#6acdc3, #6acdc3);
+  background: -o-linear-gradient(#6acdc3, #6acdc3);
+  background: linear-gradient(#6acdc3, #6acdc3);
+  -webkit-box-shadow: #a3e0da 0 1px 0 inset;
+  -moz-box-shadow: #a3e0da 0 1px 0 inset;
+  box-shadow: #a3e0da 0 1px 0 inset;
+  border: 1px solid #57c7bb;
+  color: #444444;
+  text-shadow: #aae2dd 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#night_call_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#night_call_filter.active:hover {
+  background-color: #57c7bb;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #57c7bb), color-stop(100%, #57c7bb));
+  background: -webkit-linear-gradient(#57c7bb, #57c7bb);
+  background: -moz-linear-gradient(#57c7bb, #57c7bb);
+  background: -o-linear-gradient(#57c7bb, #57c7bb);
+  background: linear-gradient(#57c7bb, #57c7bb);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#night_call_filter.active:active {
+  -webkit-box-shadow: #4bc3b7 0 1px 2px inset;
+  -moz-box-shadow: #4bc3b7 0 1px 2px inset;
+  box-shadow: #4bc3b7 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#night_call_filter.active.disabled, body.full-calendar #filters .filter h4#night_call_filter.active[disabled] {
+  opacity: 0.6;
+  background: #6acdc3;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 164, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter h4#IR_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD5B3D5', endColorstr='#FFB171B1');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5b3d5), color-stop(100%, #d5b3d5));
+  background: -webkit-linear-gradient(#d5b3d5, #d5b3d5);
+  background: -moz-linear-gradient(#d5b3d5, #d5b3d5);
+  background: -o-linear-gradient(#d5b3d5, #d5b3d5);
+  background: linear-gradient(#d5b3d5, #d5b3d5);
+  -webkit-box-shadow: #f0e4f0 0 1px 0 inset;
+  -moz-box-shadow: #f0e4f0 0 1px 0 inset;
+  box-shadow: #f0e4f0 0 1px 0 inset;
+  border: 1px solid #cca3cc;
+  color: #444444;
+  text-shadow: #f3eaf3 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#IR_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#IR_filter.active:hover {
+  background-color: #cca3cc;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cca3cc), color-stop(100%, #cca3cc));
+  background: -webkit-linear-gradient(#cca3cc, #cca3cc);
+  background: -moz-linear-gradient(#cca3cc, #cca3cc);
+  background: -o-linear-gradient(#cca3cc, #cca3cc);
+  background: linear-gradient(#cca3cc, #cca3cc);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#IR_filter.active:active {
+  -webkit-box-shadow: #c699c6 0 1px 2px inset;
+  -moz-box-shadow: #c699c6 0 1px 2px inset;
+  box-shadow: #c699c6 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#IR_filter.active.disabled, body.full-calendar #filters .filter h4#IR_filter.active[disabled] {
+  opacity: 0.6;
+  background: #d5b3d5;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 166, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter h4#ED_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFC88558', endColorstr='#FF8C542E');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c88558), color-stop(100%, #c88558));
+  background: -webkit-linear-gradient(#c88558, #c88558);
+  background: -moz-linear-gradient(#c88558, #c88558);
+  background: -o-linear-gradient(#c88558, #c88558);
+  background: linear-gradient(#c88558, #c88558);
+  -webkit-box-shadow: #dbaf92 0 1px 0 inset;
+  -moz-box-shadow: #dbaf92 0 1px 0 inset;
+  box-shadow: #dbaf92 0 1px 0 inset;
+  border: 1px solid #c27745;
+  color: #e0e0e0;
+  text-shadow: #794828 0 -1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#ED_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#ED_filter.active:hover {
+  background-color: #c27745;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c27745), color-stop(100%, #c27745));
+  background: -webkit-linear-gradient(#c27745, #c27745);
+  background: -moz-linear-gradient(#c27745, #c27745);
+  background: -o-linear-gradient(#c27745, #c27745);
+  background: linear-gradient(#c27745, #c27745);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#ED_filter.active:active {
+  -webkit-box-shadow: #ba6f3d 0 1px 2px inset;
+  -moz-box-shadow: #ba6f3d 0 1px 2px inset;
+  box-shadow: #ba6f3d 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#ED_filter.active.disabled, body.full-calendar #filters .filter h4#ED_filter.active[disabled] {
+  opacity: 0.6;
+  background: #c88558;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 168, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter h4#day_call_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD5C4B2', endColorstr='#FFB19170');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d5c4b2), color-stop(100%, #d5c4b2));
+  background: -webkit-linear-gradient(#d5c4b2, #d5c4b2);
+  background: -moz-linear-gradient(#d5c4b2, #d5c4b2);
+  background: -o-linear-gradient(#d5c4b2, #d5c4b2);
+  background: linear-gradient(#d5c4b2, #d5c4b2);
+  -webkit-box-shadow: #f0eae4 0 1px 0 inset;
+  -moz-box-shadow: #f0eae4 0 1px 0 inset;
+  box-shadow: #f0eae4 0 1px 0 inset;
+  border: 1px solid #ccb7a1;
+  color: #444444;
+  text-shadow: #f3eee9 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#day_call_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#day_call_filter.active:hover {
+  background-color: #ccb7a1;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ccb7a1), color-stop(100%, #ccb7a1));
+  background: -webkit-linear-gradient(#ccb7a1, #ccb7a1);
+  background: -moz-linear-gradient(#ccb7a1, #ccb7a1);
+  background: -o-linear-gradient(#ccb7a1, #ccb7a1);
+  background: linear-gradient(#ccb7a1, #ccb7a1);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#day_call_filter.active:active {
+  -webkit-box-shadow: #c7af98 0 1px 2px inset;
+  -moz-box-shadow: #c7af98 0 1px 2px inset;
+  box-shadow: #c7af98 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#day_call_filter.active.disabled, body.full-calendar #filters .filter h4#day_call_filter.active[disabled] {
+  opacity: 0.6;
+  background: #d5c4b2;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 170, ../sass/radfullcal.sass */
+body.full-calendar #filters .filter h4#moon_filter.active {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEDA883', endColorstr='#FFE0692A');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eda883), color-stop(100%, #eda883));
+  background: -webkit-linear-gradient(#eda883, #eda883);
+  background: -moz-linear-gradient(#eda883, #eda883);
+  background: -o-linear-gradient(#eda883, #eda883);
+  background: linear-gradient(#eda883, #eda883);
+  -webkit-box-shadow: #f7d7c6 0 1px 0 inset;
+  -moz-box-shadow: #f7d7c6 0 1px 0 inset;
+  box-shadow: #f7d7c6 0 1px 0 inset;
+  border: 1px solid #ea986d;
+  color: #333333;
+  text-shadow: #f8dccd 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#moon_filter.active:hover {
+  text-decoration: none;
+}
+/* line 36, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#moon_filter.active:hover {
+  background-color: #ea986d;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ea986d), color-stop(100%, #ea986d));
+  background: -webkit-linear-gradient(#ea986d, #ea986d);
+  background: -moz-linear-gradient(#ea986d, #ea986d);
+  background: -o-linear-gradient(#ea986d, #ea986d);
+  background: linear-gradient(#ea986d, #ea986d);
+}
+/* line 39, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#moon_filter.active:active {
+  -webkit-box-shadow: #e88f5f 0 1px 2px inset;
+  -moz-box-shadow: #e88f5f 0 1px 2px inset;
+  box-shadow: #e88f5f 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #filters .filter h4#moon_filter.active.disabled, body.full-calendar #filters .filter h4#moon_filter.active[disabled] {
+  opacity: 0.6;
+  background: #eda883;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 172, ../sass/radfullcal.sass */
+body.full-calendar #filters #switches {
+  margin-top: 1em;
+}
+/* line 174, ../sass/radfullcal.sass */
+body.full-calendar #filters h4.big_label {
+  display: inline;
+  margin-left: 8%;
+  font-size: 180%;
+  color: white;
+  -webkit-border-radius: 1em 0 1em 0;
+  -moz-border-radius: 1em 0 1em 0;
+  -ms-border-radius: 1em 0 1em 0;
+  -o-border-radius: 1em 0 1em 0;
+  border-radius: 1em 0 1em 0;
+  background-color: #bc531b;
+  padding: 0px 5px;
+}
+/* line 180, ../sass/radfullcal.sass */
+body.full-calendar #filters #conflict_switch {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 193, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-agenda-days tbody, body.conf-calendar #calendar .fc-agenda-days tbody {
+  border-left: 1px solid #e0e0e0 !important;
+}
+/* line 195, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header, body.conf-calendar #calendar .fc-header {
+  margin-bottom: 0;
+}
+/* line 197, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header td, body.conf-calendar #calendar .fc-header td {
+  white-space: nowrap;
+  padding-bottom: 12px;
+}
+/* line 200, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header tr, body.conf-calendar #calendar .fc-header tr {
+  border-bottom-color: #eeeeee;
+}
+/* line 206, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header tr td.fc-header-left .btn-toolbar, body.full-calendar #calendar .fc-header tr td.fc-header-right .btn-toolbar, body.conf-calendar #calendar .fc-header tr td.fc-header-left .btn-toolbar, body.conf-calendar #calendar .fc-header tr td.fc-header-right .btn-toolbar {
+  margin-top: 0px;
+}
+/* line 208, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header tr td.fc-header-center, body.conf-calendar #calendar .fc-header tr td.fc-header-center {
+  text-align: center;
+}
+/* line 210, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header tr td.fc-header-left, body.conf-calendar #calendar .fc-header tr td.fc-header-left {
+  width: 25%;
+}
+/* line 213, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header tr td.fc-header-right, body.conf-calendar #calendar .fc-header tr td.fc-header-right {
+  width: 25%;
+  text-align: right;
+}
+/* line 217, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header-space, body.conf-calendar #calendar .fc-header-space {
+  padding-left: 10px;
+}
+/* line 219, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-state-disabled, body.conf-calendar #calendar .fc-state-disabled {
+  cursor: default;
+  background-image: none;
+  background-color: #e6e6e6;
+  opacity: 0.65;
+}
+/* line 226, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-agenda .fc-agenda-axis, body.conf-calendar #calendar .fc-agenda .fc-agenda-axis {
+  width: 50px;
+  padding: 0 4px;
+  vertical-align: middle;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: normal;
+}
+/* line 239, ../sass/radfullcal.sass */
+body.full-calendar #calendar th, body.conf-calendar #calendar th {
+  color: #444444;
+  font-weight: normal;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* line 246, ../sass/radfullcal.sass */
+body.full-calendar #calendar th.this_month, body.conf-calendar #calendar th.this_month {
+  font-size: 150%;
+  padding: 0px 5px 12px;
+}
+/* line 249, ../sass/radfullcal.sass */
+body.full-calendar #calendar th .new_month, body.conf-calendar #calendar th .new_month {
+  margin: 0 3px;
+  text-align: center;
+  font-size: 100%;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  padding: 0.3em 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  width: 4%;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEDEDED', endColorstr='#FFBABABA');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #f7f7f7), color-stop(51%, #ededed));
+  background: -webkit-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -moz-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: -o-linear-gradient(#f7f7f7 50%, #ededed 51%);
+  background: linear-gradient(#f7f7f7 50%, #ededed 51%);
+  -webkit-box-shadow: white 0 1px 0 inset;
+  -moz-box-shadow: white 0 1px 0 inset;
+  box-shadow: white 0 1px 0 inset;
+  border: 1px solid lightgrey;
+  color: #444444;
+  text-shadow: white 0 1px 0;
+}
+/* line 15, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #calendar th .new_month:hover, body.conf-calendar #calendar th .new_month:hover {
+  text-decoration: none;
+}
+/* line 30, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #calendar th .new_month:hover, body.conf-calendar #calendar th .new_month:hover {
+  background-color: #cecece;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(50%, #e5e5e5), color-stop(51%, #cecece));
+  background: -webkit-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -moz-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: -o-linear-gradient(#e5e5e5 50%, #cecece 51%);
+  background: linear-gradient(#e5e5e5 50%, #cecece 51%);
+}
+/* line 33, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #calendar th .new_month:active, body.conf-calendar #calendar th .new_month:active {
+  -webkit-box-shadow: #cccccc 0 1px 2px inset;
+  -moz-box-shadow: #cccccc 0 1px 2px inset;
+  box-shadow: #cccccc 0 1px 2px inset;
+}
+/* line 6, ../../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/sassy-buttons-0.1.4/stylesheets/sassy-buttons/_sassy-button-pseudo-states.sass */
+body.full-calendar #calendar th .new_month.disabled, body.full-calendar #calendar th .new_month[disabled], body.conf-calendar #calendar th .new_month.disabled, body.conf-calendar #calendar th .new_month[disabled] {
+  opacity: 0.6;
+  background: #e0e0e0;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 255, ../sass/radfullcal.sass */
+body.full-calendar #calendar td, body.conf-calendar #calendar td {
+  padding: 0px;
+  border: 1px solid #dddddd;
+}
+/* line 259, ../sass/radfullcal.sass */
+body.full-calendar #calendar td.noday, body.conf-calendar #calendar td.noday {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e0e0e0), color-stop(80%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #e0e0e0, #ffffff 80%);
+  background-image: -moz-linear-gradient(top, #e0e0e0, #ffffff 80%);
+  background-image: -o-linear-gradient(top, #e0e0e0, #ffffff 80%);
+  background-image: linear-gradient(top, #e0e0e0, #ffffff 80%);
+}
+/* line 262, ../sass/radfullcal.sass */
+body.full-calendar #calendar td.fc-state-highlight, body.conf-calendar #calendar td.fc-state-highlight {
+  background-color: #f6eef6;
+  border: none;
+  outline: 1px solid gray;
+}
+/* line 266, ../sass/radfullcal.sass */
+body.full-calendar #calendar td.fc-state-highlight li.you, body.full-calendar #calendar td.fc-state-highlight li.selected, body.conf-calendar #calendar td.fc-state-highlight li.you, body.conf-calendar #calendar td.fc-state-highlight li.selected {
+  background-color: white;
+}
+/* line 269, ../sass/radfullcal.sass */
+body.full-calendar #calendar td.fc-other-month .fc-day-number, body.conf-calendar #calendar td.fc-other-month .fc-day-number {
+  color: #bdbdbd;
+}
+/* line 274, ../sass/radfullcal.sass */
+body.full-calendar #calendar td.fc-today .fc-day-number, body.conf-calendar #calendar td.fc-today .fc-day-number {
+  color: #444444;
+  font-weight: bold;
+}
+/* line 285, ../sass/radfullcal.sass */
+body.full-calendar #calendar td li, body.conf-calendar #calendar td li {
+  clear: both;
+  overflow: hidden;
+  *zoom: 1;
+  padding: 0 5px;
+}
+/* line 289, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-content td:active, body.conf-calendar #calendar .fc-content td:active {
+  background-color: #e5f8e2;
+}
+/* line 291, ../sass/radfullcal.sass */
+body.full-calendar #calendar .fc-header td, body.conf-calendar #calendar .fc-header td {
+  border: 0;
+  height: auto;
+}
+/* line 295, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.fc-event-draggable, body.conf-calendar #calendar div.fc-event-draggable {
+  cursor: pointer;
+}
+/* line 297, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.fc-day-content, body.conf-calendar #calendar div.fc-day-content {
+  padding: 0;
+  clear: both;
+}
+/* line 300, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .event-tag, body.full-calendar #calendar div.fc-day-number, body.conf-calendar #calendar div .event-tag, body.conf-calendar #calendar div.fc-day-number {
+  padding: 0 5px;
+}
+/* line 303, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.fc-event, body.conf-calendar #calendar div.fc-event {
+  background-color: transparent;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 307, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.fc-event:hover, body.conf-calendar #calendar div.fc-event:hover {
+  background-color: #e9e9e9;
+}
+/* line 309, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event, body.conf-calendar #calendar div.event {
+  padding-left: 5px;
+  position: relative;
+  z-index: 1;
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  -ms-border-radius: 0.3em;
+  -o-border-radius: 0.3em;
+  border-radius: 0.3em;
+  height: inherit;
+}
+/* line 316, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.conf-event, body.conf-calendar #calendar div.event.conf-event {
+  background-color: #e9e9e9;
+}
+/* line 318, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Cardiac, body.conf-calendar #calendar div.event.Cardiac {
+  background-color: #f4c7af;
+}
+/* line 320, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Chest, body.conf-calendar #calendar div.event.Chest {
+  background-color: #bdbdbd;
+}
+/* line 322, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.ENT, body.conf-calendar #calendar div.event.ENT {
+  background-color: #89b3e1;
+}
+/* line 326, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Grand, body.conf-calendar #calendar div.event.Grand {
+  background-color: #8ade7c;
+}
+/* line 328, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.GU, body.full-calendar #calendar div.event.GI, body.full-calendar #calendar div.event.AI, body.conf-calendar #calendar div.event.GU, body.conf-calendar #calendar div.event.GI, body.conf-calendar #calendar div.event.AI {
+  background-color: #afe8a5;
+}
+/* line 330, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Mammo, body.conf-calendar #calendar div.event.Mammo {
+  background-color: #f0eae4;
+}
+/* line 332, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.MSK, body.conf-calendar #calendar div.event.MSK {
+  background-color: #f0b799;
+}
+/* line 334, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Neuro, body.conf-calendar #calendar div.event.Neuro {
+  background-color: #cddae9;
+}
+/* line 336, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Nucs, body.conf-calendar #calendar div.event.Nucs {
+  background-color: #d2f3c1;
+}
+/* line 338, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Peds, body.conf-calendar #calendar div.event.Peds {
+  background-color: #ded0c3;
+}
+/* line 340, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Physics, body.conf-calendar #calendar div.event.Physics {
+  background-color: #d7d7d7;
+}
+/* line 342, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.IR.conf-event, body.conf-calendar #calendar div.event.IR.conf-event {
+  background-color: #f0e4f0;
+}
+/* line 344, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.WI, body.conf-calendar #calendar div.event.WI {
+  background-color: #dec3de;
+}
+/* line 346, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.ED, body.conf-calendar #calendar div.event.ED {
+  background-color: #eda883;
+}
+/* line 349, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.EB .event-tag, body.full-calendar #calendar div.event.EN .event-tag, body.conf-calendar #calendar div.event.EB .event-tag, body.conf-calendar #calendar div.event.EN .event-tag {
+  background-color: #e78956;
+}
+/* line 352, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.Mg .event-tag, body.full-calendar #calendar div.event.Mv .event-tag, body.full-calendar #calendar div.event.Sp .event-tag, body.full-calendar #calendar div.event.H .event-tag, body.full-calendar #calendar div.event.Mt .event-tag, body.conf-calendar #calendar div.event.Mg .event-tag, body.conf-calendar #calendar div.event.Mv .event-tag, body.conf-calendar #calendar div.event.Sp .event-tag, body.conf-calendar #calendar div.event.H .event-tag, body.conf-calendar #calendar div.event.Mt .event-tag {
+  background-color: #c3aa91;
+}
+/* line 356, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.PUH .event-tag, body.full-calendar #calendar div.event.CHP .event-tag, body.full-calendar #calendar div.event.SHY .event-tag, body.conf-calendar #calendar div.event.PUH .event-tag, body.conf-calendar #calendar div.event.CHP .event-tag, body.conf-calendar #calendar div.event.SHY .event-tag {
+  background-color: #d7d7d7;
+}
+/* line 360, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.N .event-tag, body.full-calendar #calendar div.event.MN .event-tag, body.full-calendar #calendar div.event.Che .event-tag, body.conf-calendar #calendar div.event.N .event-tag, body.conf-calendar #calendar div.event.MN .event-tag, body.conf-calendar #calendar div.event.Che .event-tag {
+  background-color: #8ade7c;
+}
+/* line 364, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.event.IR.shift-event .event-tag, body.conf-calendar #calendar div.event.IR.shift-event .event-tag {
+  background-color: #d5b3d5;
+}
+/* line 366, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.fc-day-number, body.conf-calendar #calendar div.fc-day-number {
+  color: #444444;
+  float: left;
+}
+/* line 371, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .title, body.conf-calendar #calendar div .title {
+  font-weight: bold;
+  text-align: center;
+}
+/* line 374, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .name, body.conf-calendar #calendar div .name {
+  display: block;
+  color: #444444;
+  z-index: 100;
+}
+/* line 379, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.shift-event .name, body.conf-calendar #calendar div.shift-event .name {
+  font-weight: normal;
+}
+/* line 381, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .time, body.conf-calendar #calendar div .time {
+  color: gray;
+  float: left;
+  padding-right: 5px;
+  font-size: 85%;
+}
+/* line 386, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .end, body.conf-calendar #calendar div .end {
+  display: none;
+}
+/* line 388, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .fc-agenda .end, body.conf-calendar #calendar div .fc-agenda .end {
+  display: inline;
+}
+/* line 390, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .event-tag, body.conf-calendar #calendar div .event-tag {
+  display: block;
+  font-weight: bold;
+  color: #333333;
+  position: absolute;
+  right: 0px;
+  z-index: 200;
+  -webkit-border-radius: 0 0.5em 0 0.5em;
+  -moz-border-radius: 0 0.5em 0 0.5em;
+  -ms-border-radius: 0 0.5em 0 0.5em;
+  -o-border-radius: 0 0.5em 0 0.5em;
+  border-radius: 0 0.5em 0 0.5em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 400, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.conf-event .event-tag, body.conf-calendar #calendar div.conf-event .event-tag {
+  background-color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 411, ../sass/radfullcal.sass */
+body.full-calendar #calendar div .shift, body.conf-calendar #calendar div .shift {
+  float: right;
+  position: relative;
+}
+/* line 419, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.day .shift, body.conf-calendar #calendar div.day .shift {
+  background-color: #d5c4b2;
+}
+/* line 421, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.moon .shift, body.conf-calendar #calendar div.moon .shift {
+  background-color: #eda883;
+}
+/* line 423, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.ED .shift, body.conf-calendar #calendar div.ED .shift {
+  background-color: #c88558;
+  color: #e0e0e0;
+}
+/* line 426, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.IR .shift, body.conf-calendar #calendar div.IR .shift {
+  background-color: #d5b3d5;
+}
+/* line 428, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.you, body.full-calendar #calendar div.selected, body.conf-calendar #calendar div.you, body.conf-calendar #calendar div.selected {
+  background-color: #f6eef6;
+  border-color: #cdcdcd;
+  border-top: 1px solid #cdcdcd;
+}
+/* line 435, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.you + li, body.full-calendar #calendar div.selected + li, body.conf-calendar #calendar div.you + li, body.conf-calendar #calendar div.selected + li {
+  border-top: 1px solid #e0e0e0;
+}
+/* line 437, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.you + li.you, body.full-calendar #calendar div.you + li.selected, body.full-calendar #calendar div.selected + li.you, body.full-calendar #calendar div.selected + li.selected, body.conf-calendar #calendar div.you + li.you, body.conf-calendar #calendar div.you + li.selected, body.conf-calendar #calendar div.selected + li.you, body.conf-calendar #calendar div.selected + li.selected {
+  border-top: none;
+}
+/* line 440, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.conflict.odd .shift .conflict_label, body.conf-calendar #calendar div.conflict.odd .shift .conflict_label {
+  -webkit-border-radius: 0 1em 0 1em;
+  -moz-border-radius: 0 1em 0 1em;
+  -ms-border-radius: 0 1em 0 1em;
+  -o-border-radius: 0 1em 0 1em;
+  border-radius: 0 1em 0 1em;
+  background-color: #bc531b;
+  padding: 0px 5px;
+}
+/* line 442, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.conflict .shift, body.conf-calendar #calendar div.conflict .shift {
+  padding-right: 1.2em;
+}
+/* line 444, ../sass/radfullcal.sass */
+body.full-calendar #calendar div.conflict .shift .conflict_label, body.conf-calendar #calendar div.conflict .shift .conflict_label {
+  color: white;
+  -webkit-border-radius: 1em 0 1em 0;
+  -moz-border-radius: 1em 0 1em 0;
+  -ms-border-radius: 1em 0 1em 0;
+  -o-border-radius: 1em 0 1em 0;
+  border-radius: 1em 0 1em 0;
+  background-color: #bc531b;
+  padding: 0px 5px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* line 455, ../sass/radfullcal.sass */
+.ui-timepicker-list {
+  overflow-y: auto;
+  height: 150px;
+  width: 6.5em;
+  background: white;
+  border: 1px solid #dddddd;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 464, ../sass/radfullcal.sass */
+.ui-timepicker-list.ui-timepicker-with-duration {
+  width: 11em;
+}
+
+/* line 466, ../sass/radfullcal.sass */
+.ui-timepicker-duration {
+  margin-left: 5px;
+  color: #888888;
+}
+
+/* line 469, ../sass/radfullcal.sass */
+.ui-timepicker-list:hover .ui-timepicker-duration {
+  color: #888888;
+}
+
+/* line 471, ../sass/radfullcal.sass */
+.ui-timepicker-list li {
+  padding: 3px 0 3px 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: black;
+  list-style: none;
+  margin: 0;
+}
+
+/* line 478, ../sass/radfullcal.sass */
+.ui-timepicker-list:hover .ui-timepicker-selected {
+  background: white;
+  color: black;
+}
+
+/* line 481, ../sass/radfullcal.sass */
+li.ui-timepicker-selected, .ui-timepicker-list li:hover, .ui-timepicker-list:hover .ui-timepicker-selected:hover {
+  background: #1980ec;
+  color: white;
+}
+
+/* line 484, ../sass/radfullcal.sass */
+li.ui-timepicker-selected .ui-timepicker-duration, .ui-timepicker-list li:hover .ui-timepicker-duration {
+  color: #cccccc;
+}

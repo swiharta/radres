@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load compress %}
+{% load i18n %}
+
+{% block main %}
+    <div id="resources-1">
+        {% block resources-1 %}&nbsp;{% endblock %}
+    </div>
+    <div id="body">
+        {% block body %}{% endblock %}
+    </div>
+    <div id="resources-2">
+        {% block resources-2 %}&nbsp;{% endblock %}
+    </div>
+{% endblock %}

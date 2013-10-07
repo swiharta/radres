@@ -1,0 +1,390 @@
+// Imports -----------------------------------------------------------------
+
+@import base
+@import colors
+@import mixins
+
+$baseFontSize: 12px
+$baseLineHeight: 18px
+$iconSpritePath: '../images/glyphicons-halflings.png'
+$iconWhiteSpritePath: '../images/glyphicons-halflings-white.png'
+$linkColor: $orange //#588dc9 - got this blue from color designer 3 plugging in the orange as the main color
+$linkColorHover: darken($linkColor, 15%)
+$btnPrimaryBackground: #588dc9
+//$navbarHeight: 70px // apparently not implemented in bootstrap-sass
+$navbarHeight: 40px
+$navbarBackground: lighten($grey5, 5%) //$orange
+$navbarBackgroundHighlight: $white //#ffb37f
+$navbarText: $grey2
+$navbarLinkColor: $navbarText
+$navbarLinkColorHover: $grey1
+//$dropdownBackground: $lightblue
+//$dropdownLinkColor: $black
+//$dropdownBorder:
+@import bootstrap
+@import responsive-767px-max
+//@import bootstrap-responsive
+@import compass
+// below need to really refactor Boilerplate CSS to flow into Bootstrap
+
+ul.mri-protocols-left
+  +span-columns(6, 14)
+ul.mri-protocols-right
+  +span-columns(6 omega, 14)
+
+body.case #image img
+  width: auto
+
+#thumbs li
+  list-style-type: none
+
+#choices ul.tabs
+  li a, li
+    float: none
+
+.tab_container
+  margin-top: 8px
+
+.results_on_deck a
+  margin-left: 1em
+
+// need to do something about this, have to put it where bootstrap is imported
+.fc-state-active
+  +buttonBackground($grey5, $grey3)
+
+  // below from https://github.com/addyosmani/jquery-ui-bootstrap/issues/37#issuecomment-6248593
+.fc-button.fc-state-default 
+  @extend .btn
+  /* .btn-group > .btn */
+  position: relative
+  /*float: left*/
+  /*margin-left: -1px*/
+  +border-radius(0)
+
+.fc-button.fc-state-active 
+  @extend .btn.active
+
+.fc-button.fc-state-disabled 
+  @extend .btn.disabled
+
+.fc-button.fc-state-disabled:active 
+  +box-shadow(none)
+
+.fc-button.fc-corner-left 
+  /* .btn-group > .btn:first-child */
+  margin-left: 0
+  -webkit-border-top-left-radius: 4px
+  -moz-border-radius-topleft: 4px
+  border-top-left-radius: 4px
+  -webkit-border-bottom-left-radius: 4px
+  -moz-border-radius-bottomleft: 4px
+  border-bottom-left-radius: 4px
+
+.fc-button.fc-corner-right 
+  /* .btn-group > .btn:last-child, .btn-group > .dropdown-toggle */
+  -webkit-border-top-right-radius: 4px
+  -moz-border-radius-topright: 4px
+  border-top-right-radius: 4px
+  -webkit-border-bottom-right-radius: 4px
+  -moz-border-radius-bottomright: 4px
+  border-bottom-right-radius: 4px
+
+/* Override some FullCalendar CSS properties that conflict with Twitter Bootstrap btn. */
+
+.fc-state-default .fc-button-inner 
+  background: transparent
+  border-width: 0 0
+
+.fc-button-content 
+  line-height: $baseLineHeight
+  height: $baseLineHeight
+  padding: 0 0
+
+.fc-state-default .fc-button-effect span 
+  +buttonBackground($btnBackground, $btnBackgroundHighlight)
+
+//.fc-state-active .fc-button-inner
+//  color: $grayDark
+
+
+
+body
+  margin: 40px 0 1.5em
+  &.newlayout
+    margin-bottom: 0px
+.popover h3
+  margin-bottom: 0
+
+.modal.fade, .modal-backdrop.fade.in
+  -webkit-transition: opacity .1s linear, none
+  -moz-transition: opacity .1s linear, none
+  -ms-transition: opacity .1s linear, none
+  -o-transition: opacity .1s linear, none
+  transition: opacity .1s linear, none
+
+.modal-backdrop, .modal-backdrop.fade.in
+  +opacity(0.1) //0.65 - I'm overriding this in the source to prevent flickering in IE
+
+//.navbar .nav > li > a  // I like the default in Bootstrap 2.2.2, so removed this
+//  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.15)
+//  padding-bottom: 12px // 10px default is too short
+
+.navbar-fixed-top .navbar-inner
+  +box-shadow(0 1px 10px rgba(0, 0, 0, 0.2))
+//  +border-radius(0 0 1em 1em)
+.navbar .nav .open > .dropdown-toggle, .navbar .nav .active > .dropdown-toggle, .navbar .nav .open.active > .dropdown-toggle
+  color: $grey1
+  background-color: #ededed
+.navbar .nav .open > .dropdown-toggle
+  background-color: transparent
+.navbar .nav .active > .dropdown-toggle:hover
+  color: $grey1
+.navbar .nav .dropdown-toggle .caret, .navbar .nav .open.dropdown .caret
+  border-top-color: $grey1
+  border-bottom-color: $grey1
+//.navbar .dropdown-menu:after // to change color of up arrow in nav dropdown
+//  border-bottom-color: $lightblue
+//.navbar-fixed-top .container, .navbar-fixed-bottom .container
+.navbar-fixed-top .container, .navbar-fixed-bottom .container
+  +container //$total-grid-width
+  width: auto
+  //*zoom: 1
+  //margin: auto
+  //width: 101em
+  //max-width: 100%
+//.navbar .nav
+//  height: 50px
+.navbar .nav.pull-right
+  //+pad(0,0.0001,16) // needed with +container hack on .navbar-fixed-bottom .container
+  //+pad(0,0.345,16) // needed with +container hack on .navbar-fixed-bottom .container
+//.dropdown-menu
+//  top: 108% // pull down drop-down slightly
+h1#header-logo
+  float: left
+  font-family: 'Trebuchet MS', Arial, sans-serif
+  font-weight: normal
+  //font-size: 2.3em
+  font-size: 1.65em
+  color: $grey4
+  //margin: 15px 0 0.5em 7px
+  //margin: 7px 1em 7px 0
+  //margin-right: 10px // matches navbar nav elements
+  line-height: 2
+  margin: 0 15px 0 0
+  //+pad(0.345,0,16) // needed with +container hack on .navbar-fixed-bottom .container
+  //+pad(0.0001,0,16) // needed with +container hack on .navbar-fixed-bottom .container
+  a
+    color: $grey2
+  sup
+    //font-size: 57%
+    font-size: 0.475em
+    vertical-align: 0.7em
+h2
+  line-height: 1.5
+  margin-bottom: 0.75em
+h3
+  font-size: 1.5em
+  line-height: 1
+  margin-bottom: 1em
+  margin-top: 0
+h4
+  line-height: 1.25
+  margin-bottom: 1.25em
+  margin-top: 0
+p
+  margin-bottom: 1.5em
+p, li, dt
+  line-height: 1.5
+//.checkbox input[type="checkbox"] //for facebox
+//  margin-left: 0
+.footer .close //for facebox
+  opacity: 1
+  &:hover
+    opacity: 0.7
+.modal-header h3
+  margin-bottom: 0
+//.modal-body input[type="text"]
+//  width: 62%
+.modal
+  form
+    margin-bottom: 0
+
+
+// Layout ------------------------------------------------------------------
+
+
+#page
+  padding-top: 20px
+  +container
+  width: auto
+
++respond-to('wide')
+  +with-grid-settings(16,5em,3em,3em)
+    body.newlayout #page, body.newlayout .navbar-fixed-top .container, body.newlayout .navbar-fixed-bottom .container
+      +container
+  +with-grid-settings(16,5em,1em,3em)
+    body.radres #page, body.radres .navbar-fixed-top .container, body.radres .navbar-fixed-bottom .container
+      +container
+
++respond-to('tablet')
+  +with-grid-settings(16,5em,3em,1em)
+    body.newlayout #page, body.newlayout .navbar-fixed-top .container, body.newlayout .navbar-fixed-bottom .container
+      +container
+  +with-grid-settings(16,5em,1em,8em)
+    body.radres #page, body.radres .navbar-fixed-top .container, body.radres .navbar-fixed-bottom .container
+      +container
+
++respond-to('mobile')
+  +with-grid-settings(16,5em,1em,1em)
+    body
+      &.newlayout, &.radres
+        #page, .navbar-fixed-top .container, .navbar-fixed-bottom .container
+          +container
+
+#full
+  clear: both
+
+body.full-calendar
+  #full
+    #filter-controls
+      +span-columns(2.1,16)
+      //+span-columns(2.2,16) // from radcal.sass
+    #calendar
+      +span-columns(13.3 omega,16)
+      //+span-columns(13.4 omega,16) // from radcal.sass
+
+  //+pad(1,1,16)
+
+#resources-1, #body, #resources-2
+  margin-top: 7px // long time was margin-top: 7px
+
+#resources-1
+  +span-columns(3)
+
+#body
+  +span-columns(9)
+  p, ul, dl
+    +pad(1,1,9)
+    //margin-top: 1.5em
+  p.normal
+    padding: 0
+  h2
+    margin-right: 1em
+  #agenda
+    +pad(1,0,9)
+    +span-columns(2,9)
+    margin-bottom: 50px
+  #agenda-cal
+    +span-columns(4 omega,9)
+    +pad(1,1,9)
+
+#resources-2
+  +span-columns(4 omega)
+
+#resources-3
+  +pad(1,1)
+  +span-columns(14 omega)
+
+#footer
+  //+full()
+  clear: both
+  text-align: center
+  .label
+    width: 120px
+    margin: auto
+
+.yes-narrow
+  display: none !important
+
+//@media screen and (max-width: 767px)
+@media screen and (max-width: 925px) // as of 1/15/2013
+  body.full-calendar
+    #full
+      #filter-controls
+        +span-columns(16 omega,16)
+        //margin-top: 46px
+        .chzn-container-multi .chzn-choices .search-choice
+          margin: 3px
+        .btn, .btn-group
+          width: auto !important
+        .btn
+          padding: 4px 15px !important
+        //.btn-group .btn
+        //  margin-right: 0px !important
+        .event-filter
+          float: left
+          margin: 8px 8px 4px 0 !important
+      #calendar
+        +span-columns(16 omega,16)
+        margin-top: 1em
+        .fc-content
+          margin-top: 0px
+
+  body .no-narrow
+    display: none !important
+
+  body .yes-narrow
+    display: inline-block !important
+    
+  body.radres #body
+    //display: none
+    +span-columns(16)
+    h2
+      margin-right: 0
+    #agenda
+      display: none
+    #agenda-cal
+      +span-columns(14 omega,16)
+      +pad(1,1,16)
+
+  body.radres #header
+    #logo
+      +span-columns(8,16)
+      h1 sup
+        display: none
+    #controls
+      +span-columns(8 omega, 16)
+    .search-bar
+      display: none
+
+  body.radres #resources-1
+    +span-columns(16)
+    //+alpha
+    //display: none
+
+  body.radres #resources-2
+    //+span-columns(10)
+    //+omega
+    +span-columns(16)
+
+  body.questions #body
+    +span-columns(12)
+
+  body.questions #resources-1
+    display: none
+
+  body.questions #resouces-2
+    +span-columns(4 omega)
+
+  //.modal
+  //  position: fixed
+  //  top:   20px
+  //  left:  20px
+  //  right: 20px
+  //  width: auto
+  //  margin: 0
+  //  &.fade
+  //    top: -100px
+  //  &.fade.in
+  //    top: 20px
+
+@media screen and (max-width: 650px)
+  #calendar .fc-header-right
+    display: none
+  #calendar .fc-header-left
+    width: 100%
+  ul.nav
+    margin: 0 !important
+  //body.question
+  //  #resources-1, #resources-2
+  //    display: none

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="Andrew Swihart"/>
+
+    <style type="text/css">
+        body {
+            font-size: 80%;
+            font-family: Helvetica, Arial, sans-serif;
+            color: #444;
+            margin: 1em 0;
+        }
+
+        h3 {
+            margin-bottom: 3em;
+            color: #707070;
+        }
+
+        th, td {
+            padding:  10px;
+            text-align: center;
+        }
+        
+        th {
+            font-weight: bold;
+        }
+
+        .active {
+            background-color: #E0692A;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+<h3>Call / Moonlighting schedule for {{ day|date:'l, F jS, Y' }}:</h3>
+<table>
+    <tr>
+        {% for event in events %}
+            <th class="{% if event.user == user %}active{% endif %}">{{ event.shift.abbr }}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for event in events %}
+            {% if event.user == user %}
+                {% if event.user.get_profile.last_name %}
+                    <th>{{ event.user.get_profile.last_name }}</th>
+                {% else %}
+                    <th>{{ event.resident }}</th>
+                {% endif %}
+                {% else %}
+                {% if event.user.get_profile.last_name %}
+                    <td>{{ event.user.get_profile.last_name }}</td>
+                {% else %}
+                    <td>{{ event.resident }}</td>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </tr>
+</table>
+</body>
+</html>

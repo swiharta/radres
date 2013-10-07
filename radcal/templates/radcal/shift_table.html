@@ -1,0 +1,129 @@
+{% extends "radcal/base.html" %}
+{% block body_class %}calendar change{% endblock %}
+{% block calendar-name %}Call Table{% endblock %}
+
+{% block full %}
+
+    <form id="myForm" method="post" action="{% url cal_index %}">
+        {% csrf_token %}
+        <ul id="changeList">
+            {% for form in shift_formset %}
+                <li>
+                    {{ form.date }}
+                    {{ form.user }}
+                    {{ form.shift }}
+                    {{ form.DELETE }}
+                </li>
+            {% endfor %}
+            {#        {{ shift_formset }}#}
+        </ul>
+        {{ shift_formset.management_form }}
+        <input type="submit" name="submit" id="cal_change_submit"/>
+    </form>
+
+    <div id="status">
+    </div>
+
+    <div id="shift-table">
+
+        <table id="scroll-table">
+            {#            <tr></tr>#}
+            {#        {% for day in day_events %}#}
+            {#            {{ day }}#}
+            {#        {% endfor %}#}
+            <thead>
+            <tr id="scroller-anchor"></tr>
+            <tr id="scroller">
+                <th>Date</th>
+                <th>&nbsp;</th>
+                {% for shift in shifts %}
+                    <th>{{ shift.abbr }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for k,v in day_events.items %}
+                {#                {% ifchanged %}#}
+                {#                    <tr>#}
+                {#                        <td class="year">{{ k|date:"Y" }}</td>#}
+                {#                    </tr>#}
+                {#                {% endifchanged %}#}
+                <tr>
+                    <td>{{ k|date:'m/j/y' }}</td>
+                    {# M is three letter month #}
+                    <th>{{ k|date:'D' }}</th>
+                    {% for shift in shifts %}
+                        <td>
+                            {% for u in v %}
+                                {% if shift == u.shift %}
+                                    <ul>
+                                        <li>{{ u.resident|cut:" " }}</li>
+                                    </ul>
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+
+                    {#            {% for day in days %}#}
+                    {#                {% if day == today %}#}
+                    {#                        <tr class="today">#}
+                    {#                    {% else %}#}
+                    {#                        <tr>#}
+                    {#                {% endif %}#}
+                    {#                    <th>{{ day|date:"M/d"|lower }}</th>#}
+
+                    {#                    <td>{{ day|date:"j" }}</td>#}
+                    {#                {% if day in day_events %}#}
+                    {#                    {{ day_events.items }}#}
+                    {#                    {% for k,v in day_events.items %}#}
+                    {#                        <td>{{ k }} --> {% for u in v %}{{ u.resident }}{% endfor %}</td>#}
+                    {#                        {% for event in day_events.events %}#}
+                    {#                            <td>{{ event }}</td>#}
+                    {#                        {% endfor %}#}
+                    {#                            <td>{{ event.date }}</td>#}
+                    {#                            <td>{{ event.resident }}</td>#}
+                    {#                            <td>{{ event.shift }}</td>#}
+                    {#                    {% endfor %}#}
+                    {#                {% endif %}#}
+                    {#                    {% for shift in shifts %}#}
+                    {#                        <td>{{ shift }}</td>#}
+                    {#                    {% endfor %}#}
+                </tr>
+            {% endfor %}
+{# I hate having the below tr but I needed it to make the thead / tfoot keep the right widths #}
+{# jQuery / CSS width screwiness occurs when there is an empty column cell in tbody #}
+{#            <tr class="fake-hide">#}
+{#                <th>Date</th>#}
+{#                <th>&nbsp;</th>#}
+{#                {% for shift in shifts %}#}
+{#                    <th>{{ shift.abbr }}</th>#}
+{#                {% endfor %}#}
+{#            </tr>#}
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Date</th>
+                <th>&nbsp;</th>
+                {% for shift in shifts %}
+                    <th>{{ shift.abbr }}</th>
+                {% endfor %}
+            </tr>
+            </tfoot>
+        </table>
+{#            <table id="foot">#}
+{#            <tr>#}
+{#                <th>Date</th>#}
+{#                <th>&nbsp;</th>#}
+{#                {% for shift in shifts %}#}
+{#                    <th>{{ shift.abbr }}</th>#}
+{#                {% endfor %}#}
+{#            </tr>#}
+{#            </table>#}
+    </div>
+{% endblock %}
+
+
+{#{% block extra_body_base %}#}
+{#    {% block extra_body %}#}
+{#    {% endblock %}#}
+{#{% endblock %}#}

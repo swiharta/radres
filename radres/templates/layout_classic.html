@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load compress %}
+{% load i18n %}
+
+{% block extra_head_base %}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/blogs.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/locations.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/microblogging.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/wiki.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/jquery.autocomplete.css"/>#}
+{#        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/ajax_select/iconic.css"/>#}
+{#    {% compress css %}#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/avatar.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/comments.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/friends.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/groups.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/messages.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/pagination.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/photos.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}pinax/css/topics.css"/>#}
+{#        <link rel="stylesheet" href="{{ STATIC_URL }}bookmarks/css/bookmarks.css"/>#}
+{#        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/ui-lightness/jquery-ui-1.8.16.custom.css"/>#}
+{#        <!-- TODO: remove iconic.css -->#}
+{#    {% endcompress %}#}
+
+    {% block extra_head %}{% endblock %}
+{% endblock %}
+
+{% if user.is_authenticated %}
+    {% block nav %}
+{#        <ul id="nav">#}
+{#            <li class="first"><a href="{% url case_list %}">Cases</a>#}
+{#                <ul id="cases">#}
+{#                    <li><a href="{% url add_case %}">Create a Case</a></li>#}
+{#                    <li><a href="{% url user_case_list %}">Edit Cases</a></li>#}
+{#                    <li class="last"><a href="{% url case_list %}">View Cases</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li><a href="{% url surveys-visible %}">Surveys</a>#}
+{#                <ul id="surveys">#}
+{#                    <li><a href="{% url survey-add %}">Create a Survey</a></li>#}
+{#                    <li><a href="{% url surveys-editable %}">Edit Surveys</a></li>#}
+{#                    <li class="last"><a href="{% url surveys-visible %}">View Surveys</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li><a href="{% url polls_index %}">Polls</a>#}
+{#                <ul id="polls">#}
+{#                    <li><a href="{% url polls_create %}">Create a Poll</a></li>#}
+{#                    <li><a href="{% url polls_index %}">View Polls</a></li>#}
+{#                    <li class="last"><a href="{% url polls_help %}">Help</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class=><a href="{% url question_index %}">{% trans "Questions" %}</a>#}
+{#                <ul id="questions">#}
+{#                    <li><a href="{% url question_index %}">{% trans "All Questions" %}</a></li>#}
+{#                    <li class="last"><a href="{% url user_question_stats %}">{% trans "Your Question Stats" %}</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="first"><a href="#">{% trans "Calendar" %}</a>#}
+{#                <ul id="schedule">#}
+{#                    <li><a href="{% url cal_index %}">{% trans "Call Calendar" %}</a></li>#}
+{#                    <li><a href="{% url fullcal %}">{% trans "Conf Calendar" %}</a></li>#}
+{#                    <li class="last"><a href="{% url shift_table %}">{% trans "Call List" %}</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li><a id="toggler"></a>#}
+{#            </li>#}
+{#        </ul>#}
+    {% endblock %}
+{% endif %}
+
+{% comment %}
+{% block rad_search %}
+    <!-- Google CSE Search Box Begins  -->
+    <form id="searchbox_008466791108937414871:oabpp0iyt10" action="http://google.com/cse">
+        <input type="hidden" name="cx" value="008466791108937414871:oabpp0iyt10"/>
+        <input type="hidden" name="cof" value="FORID:0"/>
+        <input name="q" type="text" size="40"/>
+        <input type="submit" name="sa" value="Search" class="submit-button"/>
+    </form>
+    <script type="text/javascript"
+            src="http://google.com/coop/cse/brand?form=searchbox_008466791108937414871%3Aoabpp0iyt10"></script>
+    <!-- Google CSE Search Box Ends -->
+{% endblock %}
+{% endcomment %}
+
+{% block main %}
+    <div id="resources-1">
+        {% block resources-1 %}&nbsp;{% endblock %}
+    </div>
+    <div id="body">
+        {% block body %}{% endblock %}
+    </div>
+    <div id="resources-2">
+        {% block resources-2 %}&nbsp;{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+{#    <div class="legal">#}
+{##}
+{#        <p class="label label-info">{% trans "&copy; 2012 Andrew Swihart" %}</p>#}
+{#        - <a href="{% url about %}">{% trans "About" %}</a>#}
+{#        - <a href="{% url terms %}">{% trans "Terms of Service" %}</a>#}
+{#        - <a href="{% url privacy %}">{% trans "Privacy Policy" %}</a>#}
+{#        - <a href="{% url dmca %}">{% trans "DMCA Notice" %}</a>#}
+{#    </div>#}
+{% endblock %}
+
+{% block extra_body_base %}
+    {% comment %}{% ga %}{% endcomment %}
+    {#  <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_select/ajax_select.js"></script>#}
+    {#  <script type="text/javascript" src="{{ STATIC_URL }}js/ajax_select/jquery.autocomplete.js"></script>#}
+    {#  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jeditable.mini.js"></script>#}
+    {#  <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.min.js"></script>#}
+    {#	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jeditable.growfield.js"></script>#}
+    {#	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.growfield2.ycomp.js"></script>#}
+    {% block extra_body %}
+    {% endblock %}
+{% endblock %}

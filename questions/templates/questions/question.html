@@ -1,0 +1,177 @@
+{% extends "questions/base.html" %}
+
+{#{% load comments_tag %}#}
+{% load i18n %}
+
+{% block head_title %}Question {{ question.id }} | {% endblock %}
+
+{% block body_class %}questions question{% endblock %}
+{% block extra_head %}
+{% endblock %}
+
+{% block resources-1 %}&nbsp;
+    {% if userchoice.choice %}
+        <p>You answered {{ userchoice.choice.correct|yesno:"correctly,incorrectly" }}
+            on {{ userchoice.choice_date }}</p>
+    {% endif %}
+    {% if userchoice.choice.correct %}
+        <span id="reveal_answer"></span>
+    {% endif %}
+
+    <h4 id="mark" class="button{% if userchoice.mark %} active{% endif %}">Mark</h4>
+    <h4 id="ignore" class="button{% if userchoice.ignore %} active{% endif %}">Flag</h4>
+
+{% endblock %}
+
+{% block body %}
+    <h2 class="first">Question {{ question.id }}</h2>
+
+    <p>{{ question.text }}</p>
+    <ul id="choices">
+        {% for choice in choices %}
+            <li id="{{ choice.letter }}" class="choice">{{ choice.text }}</li>
+        {% endfor %}
+    </ul>
+
+    <form id="userchoice_form" method="post"
+          class="focus-input" action="{% url userchoice question_id=question.id %}">
+        {% csrf_token %}
+        {{ ucform.choice }}
+        {{ ucform.ignore }}
+        {{ ucform.mark }}
+        <input type="submit" value="{% trans 'Submit' %}" name="submit" id="userchoice_submit"/>
+    </form>
+
+    <div id="show"><h2>Answer</h2></div>
+
+    <div id="answers">
+        {% for answer in question.answers.all %}
+            <p>{% if answer.text %}{{ answer.text|linebreaks }}{% else %}No explanation provided{% endif %}</p>
+            {% if answer.user %}<p style="text-align: right; font-weight: bold;">
+                - {{ answer.user.username }}</p>{% endif %}
+        {% endfor %}
+    </div>
+
+{#    {% comments question %}#}
+{% endblock %}
+
+{% block resources-2 %}
+    <h1 id="prev">
+        {% if prev_id %}
+            <a href="{% url question question_id=prev_id %}">&larr;</a>
+        {% endif %}
+    </h1>
+    <div id="queryset">
+        <p style="text-align: center;">
+            <a href="{% url question_index %}">Back to List</a>
+        </p>
+        {% for filter in filters %}
+            {% if filter %}<h4 class="browsing">{{ filter|capfirst }}</h4>{% endif %}
+        {% endfor %}
+    </div>
+    <h1 id="next">
+        {% if next_id %}
+            <a href="{% url question question_id=next_id %}">&rarr;</a>
+        {% endif %}
+    </h1>
+
+{% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $('#choices li.choice').click(function() {
+    var ch_letter = $(this).attr('id');
+    $('#id_choice').val(ch_letter);
+    if ($('#choices .active').length) { // check for existing answer
+    smoke.confirm('really change your answer?', function(e) {
+    if (e) {
+    //                            smoke.signal('alrighty then', 2000);
+    $("#userchoice_form").ready(userchoice_submit);
+    } else {
+    //                            smoke.signal('that\'s a prudent decision', 2000);
+    }
+    });
+    } else {
+    $("#userchoice_form").ready(userchoice_submit);
+    }
+    });
+
+    $('#mark').click(function() {
+    var mark = $('#id_mark').prop('checked');
+    $('#id_mark').attr('checked', !(mark));
+    $("#userchoice_form").ready(userchoice_submit);
+    });
+    $('#ignore').click(function() {
+    var ignore = $('#id_ignore').prop('checked');
+    $('#id_ignore').attr('checked', !(ignore));
+    $("#userchoice_form").ready(userchoice_submit);
+    });
+
+    $('#show').click(function() {
+    if (!($('#reveal_answer').length)) {
+    smoke.confirm('really show the answer?', function(e) {
+    if (e) {
+    $('#answers').fadeToggle('fast');
+    } else {
+    //                            smoke.signal('you\'re dignity is intact', 2000);
+    }
+    });
+    } else {
+    $('#answers').fadeToggle('fast');
+    }
+    });
+
+    function userchoice_submit() {
+    // cancel the default action
+    var form = $(this);
+    var data = {
+    choice: form.find('#id_choice').val(),
+    ignore: form.find('#id_ignore').is(':checked'),
+    mark: form.find('#id_mark').is(':checked')
+    };
+    $.post("{% url userchoice question_id=question.id %}", data, function(result) {
+    if (result != "failure") {
+    //choice_id = form.find('#id_choice').val();
+    $('li.active').removeClass('active');
+
+    if (result.mark) {
+    $('#mark').addClass('active');
+    } else {
+    $('#mark').removeClass('active');
+    }
+    if (result.ignore) {
+    $('#ignore').addClass('active');
+    } else {
+    $('#ignore').removeClass('active');
+    }
+    //  $('#' + result.answer_letters[0]).addClass('correct');  this needs to be put into a loop
+    //  $('#' + result.answer_letters[1]).addClass('correct');  this needs to be put into a loop
+    if (result.answer_letters) {
+        if (result.answer_letters[0] != 'z') {
+        $('#' + result.answer_letters[0]).addClass('correct');
+        $('#' + result.answer_letters[1]).addClass('correct');
+        } else {
+        $('#show h2').html('No correct answer'); // alert('hey');
+        }
+    }
+    $('#' + result.letter).addClass('active'); // style chosen answer after successful AJAX request
+
+    // A letter has to be sent to be returned. The letter form starts empty,
+    // and only gets filled in on clicking an answer. But, if you have an
+    // old answer and are just changing 'ignore' / 'mark', it won't be erased,
+    if (result.letter) { // TODO: Don't show the answer unless you actually clicked a choice.
+    $('#answers').fadeIn('fast');
+    } else {
+    }
+    } else {
+    alert("You already answered.");
+    }
+    });
+    return false;
+    }
+
+    $("#userchoice_form").submit(userchoice_submit);
+  });
+</script>
+{% endblock %}

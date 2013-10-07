@@ -1,0 +1,30 @@
+{% extends "radcal/base.html" %}
+{% block body_class %}calendar shift_event{% endblock %}
+
+{% block full %}
+    <h2>{{ event.shift.name }} - {{ event.date }}</h2>
+    <h3>{{ event.resident }}</h3>
+
+    <form id="Form" method="post" action="{% url shift_event event_id=event.id %}">
+        {% csrf_token %}
+        <ul id="changeList">
+{#            {% for form in shift_formset.forms %}#}
+                <li>
+                    {{ shift_form.date }}
+                    {{ shift_form.resident }}
+                    {{ shift_form.user }}
+                    {{ shift_form.shift }}
+                </li>
+{#            {% endfor %}#}
+            {#        {{ shift_formset }}#}
+        </ul>
+{#        {{ shift_formset.management_form }}#}
+        <input type="submit" name="submit" id="cal_change_submit"/>
+    </form>
+
+{% endblock %}
+
+{#{% block extra_body_base %}#}
+{#    {% block extra_body %}#}
+{#    {% endblock %}#}
+{#{% endblock %}#}

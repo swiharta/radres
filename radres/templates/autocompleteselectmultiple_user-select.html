@@ -1,0 +1,63 @@
+{% load i18n %}
+{% if bootstrap %}{% include "ajax_select/bootstrap.html" %}{% endif %}
+<input class="defaultText" title="Search residents..." type="text" name="{{name}}_text" id="{{html_id}}_text" value="Search residents..." {{ extra_attrs }} />
+{% if add_link %}
+	<a href="{{ add_link }}" class="add-another addlink" id="add_{{ html_id }}" onclick="return showAddAnotherPopup(this);"> add</a>
+{% endif %}
+<input type="hidden" name="{{name}}" id="{{html_id}}" value="{{current_ids}}" />
+<div id="{{html_id}}_on_deck" class="results_on_deck"></div>
+<script type="text/javascript">//<![CDATA[
+jQuery(document).ready(function($){
+//	$("#id_residents_text").click(function() {
+//            alert('hey');
+//    });
+//
+//	$("#id_residents_text").autocomplete({
+//		source: ["aaa", "java", "php", "coldfusion", "javascript", "asp", "ruby"]
+//	});
+	addAutoComplete("{{html_id}}", function(html_id) {
+        $("#"+html_id).autocompleteselectmultiple({
+			minLength: {{min_length}},
+			source: '{{lookup_url}}',
+			initial: {{current_reprs}}
+		});
+	});
+{% block extra_script %}
+    $("#{{html_id}}_on_deck").bind('added',function() {
+            var data = {'users': $("#{{html_id}}").val()};
+            $("#filter_form").ready(residents_submit(data));
+    });
+    $("#{{html_id}}_on_deck").bind('killed',function() {
+            var data = {'users': $("#{{html_id}}").val()};
+            $("#filter_form").ready(residents_submit(data));
+    });
+    function residents_submit(ids) {
+        // cancel the default action
+        var form = $(this); // seems useless
+        $.post("{% url cal_residents %}", ids, function(result) {
+            if (result !== "failure") {
+                var data = {new_month: $('.this_month').attr('id')};
+                $.get("{% url cal_index %}", data, function(result) {
+                    var cal = $('#calendar');
+                    cal.empty();
+                    cal.html(result);
+                    cal.find('table tr td ul li:even').addClass('even');
+                    cal.find('table tr td ul li:odd').addClass('odd');
+//                            cal.find('table tr:last td.noday').addClass('noday-last');
+                    $('#calendar td li.you:last-child, #calendar td li.selected:last-child').each(function(){
+                        $(this).css({"border-bottom": "1px solid #e0e0e0"});
+                    });
+                });
+            } else {
+                alert("Failed to set filters.");
+            }
+        });
+        return false;
+    }
+{% endblock %}
+});
+//]]>
+</script>
+{# django admin adds the help text. this is for use outside of the admin #}
+{% block help %}{% if help_text %}<p class="help">{{help_text}}</p>{% endif %}{% endblock %}
+{{ inline }}
