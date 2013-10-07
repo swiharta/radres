@@ -43,8 +43,9 @@ Add directories to your Windows PATH (adds commands to use in cmd.exe):
  * Start button
  * Start typing 'environment'
  * Select `Change System Environment Variables`
- * Add to "PATH" variable under System Variables:
-   ``;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\PuTTY``
+ * Add to "PATH" variable under System Variables::
+ 
+    ;C:\Python27;C:\Python27\Scripts;C:\Program Files (x86)\PuTTY
 
 Open Console2 or cmd.exe and install pip and virtualenv::
 
@@ -126,7 +127,7 @@ Set a project directory so virtualenv will put you in there when you do ``workon
 
  setprojectdir <path_to_top_level_radres_project_directory>
  
-:Install the project requirements::
+Install the project requirements::
 
  pip install -r radres/requirements.txt
 
@@ -145,7 +146,7 @@ Open a browser and try loading http://127.0.0.1:8000
 
 |
 
-BELOW UNDER CONSTRUCTION
+UNDER CONSTRUCTION
 #############################
 
 |
