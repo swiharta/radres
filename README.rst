@@ -15,7 +15,7 @@ Setuptools 32-bit (adds 'easy_install' command)
 Ruby 1.9.3
  http://rubyinstaller.org/
 
-Node.js (now comes as an installer that includes npm!)
+Node.js
  http://nodejs.org/download/
 
 Putty
